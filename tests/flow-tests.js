@@ -44,12 +44,14 @@ try{
   check($('slot').options.length>=3&&$('slot').value===''&&$('install').disabled,'Destinations load before Install and require an explicit choice');
   selectTarget(280);check(!$('install').disabled,'Choosing a destination enables installation');
   selectGroup('motyarstudio');
-  check(visibleFaces().length===4&&[...root.querySelectorAll('.face-group')].filter(group=>!group.hidden).length===1,'The group picker shows only the four MotyarStudio variants');
+  check(visibleFaces().length===5&&[...root.querySelectorAll('.face-group')].filter(group=>!group.hidden).length===1,'The MotyarStudio group includes its four calendar faces and the radial face');
   check($('face-title').textContent===byTheme('white').name&&$('slot').value==='280'&&device.gatt.connected&&calls===1,'Changing groups preserves the preview, destination and connection');
   root.querySelector('[data-filter="digital"]').click();
+  check(visibleFaces().length===1&&visibleFaces()[0].dataset.theme==='radial-dark'&&visibleFaces()[0].textContent==='MotiyarStudios Radial Instruments','The renamed radial face belongs to MotyarStudio and remains discoverable as Digital');
+  selectGroup('braun');
   check(!$('empty').hidden&&root.querySelectorAll('.face-group:not([hidden])').length===0,'Group and type filters combine and explain an empty result');
   $('reset-filter').click();
-  check($('empty').hidden&&visibleFaces().length===4&&$('group-choice').value==='motyarstudio','Clearing the type filter restores the selected group');
+  check($('empty').hidden&&visibleFaces().length===3&&$('group-choice').value==='braun','Clearing the type filter restores the selected group');
   selectGroup('all');
   check(visibleFaces().length===all.length&&$('slot').value==='280'&&win.performance.timeOrigin===origin,'All groups restores the full library without navigation or losing the destination');
   for(const theme of ['black','bai-clock','photo-daytona-pearl'])await choose(theme);

@@ -2,8 +2,8 @@
   "theme": "motyarstudio-dark",
   "name": "MotyarStudio Dark",
   "kind": "analog",
-  "description": "Charcoal dial with larger mixed-weight branding, white weekday text on a red disc, a gray calendar split and dial-tone geometric date numerals.",
-  "revision": 4,
+  "description": "Charcoal dial with mixed-weight branding, white weekdays on red and geometric date numerals on a darker recessed disc.",
+  "revision": 5,
   "filename": "motyarstudio-dark.bin",
   "preview": "motyarstudio-dark-preview.png",
   "aodPreview": "motyarstudio-dark-aod-preview.png",
@@ -36,7 +36,8 @@
     "shadow": "inner-only",
     "dateFont": "same geometric paths as hour numerals",
     "dateFontScale": 0.84,
-    "datePaper": "dial-tone",
+    "datePaper": "darker recessed dial-tone",
+    "datePaperGain": 0.82,
     "weekdayPaper": "#b92f34",
     "weekdayInk": "#ffffff",
     "arcSag": 1.6,
@@ -73,7 +74,7 @@
     24,
     114
   ],
-  "sha256": "38a9f6195357a7e8b9c170bc7b0c7b3c07473e7851e01d9ffddc01983612c34d",
+  "sha256": "ca8149d3a32d2c0f548539502c729fe0dcd82abb60e068ab70e00d2609de7b39",
   "shadowCount": 3,
   "group": "expanded",
   "target": "CMF Watch Pro 2",
@@ -81,7 +82,7 @@
     466,
     466
   ],
-  "bytes": 239789,
+  "bytes": 239827,
   "decodedRgbaBytes": 3353328,
   "checks": {
     "byteExactRoundTrip": true,

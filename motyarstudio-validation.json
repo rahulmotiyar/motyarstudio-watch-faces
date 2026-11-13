@@ -2,8 +2,8 @@
   "theme": "bai-clock",
   "name": "MotyarStudio",
   "kind": "analog",
-  "description": "Ivory dial with larger mixed-weight branding, white weekday text on a red disc, a gray calendar split and dial-tone geometric date numerals.",
-  "revision": 8,
+  "description": "Ivory dial with mixed-weight branding, white weekdays on red and geometric date numerals on a darker recessed disc.",
+  "revision": 9,
   "filename": "motyarstudio.bin",
   "preview": "motyarstudio-preview.png",
   "aodPreview": "motyarstudio-aod-preview.png",
@@ -36,7 +36,8 @@
     "shadow": "inner-only",
     "dateFont": "same geometric paths as hour numerals",
     "dateFontScale": 0.84,
-    "datePaper": "dial-tone",
+    "datePaper": "darker recessed dial-tone",
+    "datePaperGain": 0.93,
     "weekdayPaper": "#b92f34",
     "weekdayInk": "#ffffff",
     "arcSag": 1.6,
@@ -73,7 +74,7 @@
     24,
     114
   ],
-  "sha256": "7f0c8940052c5216964de934b6031df19a4ba056ba5e1567cc04bc2f695c4d15",
+  "sha256": "a2ba322c3e1fc0615c622efd22afd426ccb260d67f1fe6364eb080742f34cc65",
   "shadowCount": 3,
   "group": "expanded",
   "target": "CMF Watch Pro 2",
@@ -81,7 +82,7 @@
     466,
     466
   ],
-  "bytes": 241823,
+  "bytes": 241914,
   "decodedRgbaBytes": 3353328,
   "checks": {
     "byteExactRoundTrip": true,

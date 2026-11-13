@@ -2,8 +2,8 @@
   "theme": "motyarstudio-sans-dark",
   "name": "MotyarStudio Sans Dark",
   "kind": "analog",
-  "description": "Charcoal dial with a dotted minute track, Helvetica Neue Bold hour and date numerals, mixed-weight branding, white weekdays on red and a gray calendar split.",
-  "revision": 2,
+  "description": "Charcoal dial with a dotted minute track, Helvetica Neue Bold hour and date numerals, mixed-weight branding, white weekdays on red and a darker recessed date disc.",
+  "revision": 3,
   "filename": "motyarstudio-sans-dark.bin",
   "preview": "motyarstudio-sans-dark-preview.png",
   "aodPreview": "motyarstudio-sans-dark-aod-preview.png",
@@ -35,7 +35,8 @@
     ],
     "shadow": "inner-only",
     "dateFont": "Helvetica Neue",
-    "datePaper": "dial-tone",
+    "datePaper": "darker recessed dial-tone",
+    "datePaperGain": 0.82,
     "weekdayPaper": "#b92f34",
     "weekdayInk": "#ffffff",
     "arcSag": 1.6,
@@ -86,7 +87,7 @@
     24,
     114
   ],
-  "sha256": "a0ada2ad6bc595536026a3294b9238b98f09f5801385b54e16e054ec4b916fd1",
+  "sha256": "4a7432344307aad5a1312129003300bb1af21f45c358d8cb3c0aed0e97527e9d",
   "shadowCount": 3,
   "group": "expanded",
   "target": "CMF Watch Pro 2",
@@ -94,7 +95,7 @@
     466,
     466
   ],
-  "bytes": 253034,
+  "bytes": 253053,
   "decodedRgbaBytes": 3353328,
   "checks": {
     "byteExactRoundTrip": true,

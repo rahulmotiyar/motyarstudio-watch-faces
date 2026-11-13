@@ -1,5 +1,5 @@
 {
-  "name": "MotyarStudio \u00b7 21 Watch Pro 2 Faces",
+  "name": "MotyarStudio Watch Faces",
   "releaseDate": "2026-11-14",
   "siteUrl": "https://rahulmotiyar.github.io/motyarstudio-watch-faces/",
   "target": "CMF Watch Pro 2",
@@ -10,8 +10,8 @@
   "faceCount": 21,
   "groups": {
     "Braun": 3,
-    "MotyarStudio": 4,
-    "Chronographs & Instruments": 5,
+    "MotyarStudio": 5,
+    "Chronographs & Instruments": 4,
     "Digital & Weather": 5,
     "Photographic Dials": 4
   },
@@ -65,8 +65,8 @@
       "name": "MotyarStudio",
       "theme": "bai-clock",
       "filename": "motyarstudio.bin",
-      "revision": 8,
-      "sha256": "7f0c8940052c5216964de934b6031df19a4ba056ba5e1567cc04bc2f695c4d15",
+      "revision": 9,
+      "sha256": "a2ba322c3e1fc0615c622efd22afd426ccb260d67f1fe6364eb080742f34cc65",
       "preview": "motyarstudio-preview.png",
       "aodPreview": "motyarstudio-aod-preview.png"
     },
@@ -74,8 +74,8 @@
       "name": "MotyarStudio Dark",
       "theme": "motyarstudio-dark",
       "filename": "motyarstudio-dark.bin",
-      "revision": 4,
-      "sha256": "38a9f6195357a7e8b9c170bc7b0c7b3c07473e7851e01d9ffddc01983612c34d",
+      "revision": 5,
+      "sha256": "ca8149d3a32d2c0f548539502c729fe0dcd82abb60e068ab70e00d2609de7b39",
       "preview": "motyarstudio-dark-preview.png",
       "aodPreview": "motyarstudio-dark-aod-preview.png"
     },
@@ -83,8 +83,8 @@
       "name": "MotyarStudio Sans",
       "theme": "motyarstudio-sans",
       "filename": "motyarstudio-sans.bin",
-      "revision": 2,
-      "sha256": "a41b4e587a7d65f43f67a12e260c48677379872777950b1e642038511284ae6f",
+      "revision": 3,
+      "sha256": "ceb25c49c94277d0850768dd2c2c60316d4d95d25639b7e91c9c8b41e6beef24",
       "preview": "motyarstudio-sans-preview.png",
       "aodPreview": "motyarstudio-sans-aod-preview.png"
     },
@@ -92,8 +92,8 @@
       "name": "MotyarStudio Sans Dark",
       "theme": "motyarstudio-sans-dark",
       "filename": "motyarstudio-sans-dark.bin",
-      "revision": 2,
-      "sha256": "a0ada2ad6bc595536026a3294b9238b98f09f5801385b54e16e054ec4b916fd1",
+      "revision": 3,
+      "sha256": "4a7432344307aad5a1312129003300bb1af21f45c358d8cb3c0aed0e97527e9d",
       "preview": "motyarstudio-sans-dark-preview.png",
       "aodPreview": "motyarstudio-sans-dark-aod-preview.png"
     },
@@ -125,11 +125,11 @@
       "aodPreview": "sternglas-aod-preview.png"
     },
     {
-      "name": "Radial Instruments",
+      "name": "MotiyarStudios Radial Instruments",
       "theme": "radial-dark",
       "filename": "radial-dark.bin",
-      "revision": 7,
-      "sha256": "7a0fa07e362ba17be92e4737fa4fa9cffe56f415a264ca2bf14715be493202a5",
+      "revision": 8,
+      "sha256": "9c133c0af59d2f88decada22524653fa955b41119bb5329d73fb5b08d61cfddf",
       "preview": "radial-dark-preview.png",
       "aodPreview": "radial-dark-aod-preview.png"
     },
