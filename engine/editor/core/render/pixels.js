@@ -1,0 +1,392 @@
+// Everything that turns pixels into assets and back: browser decode, canvas readback, the
+// non-destructive adjust/resize path, the accent tint and the embedded preview thumbnails.
+// No store access — the editor model owns when these run.
+//
+// `Resource` still appears here because that is what the .bin codec speaks: a file read or a
+// dropped image arrives as one, and becomes an ImageAsset the moment it joins a document.
+import { decodePixels, encodePixels, TAG,               } from "../format/index.js";
+                                               
+import { SCREEN } from "./screen.js";
+import {
+  framesOf,
+  isAccent,
+           
+                  
+                  
+               
+             
+} from "../document/doc.js";
+
+export async function bitmapOf(r          )                       {
+  const px = decodePixels(r);
+
+  return px
+    ? createImageBitmap(new ImageData(px, r.w, r.h))
+    : createImageBitmap(new Blob([r.data            ], { type: "image/jpeg" }));
+}
+
+/** RGBA readback at the given size — the only way back to pixels the browser scaled or decoded. */
+export function pixelsOf(
+  b             ,
+  w        ,
+  h        ,
+  filter = "none",
+)                                 {
+  const c = new OffscreenCanvas(w, h);
+  const cx = c.getContext("2d") ;
+
+  cx.filter = filter;
+  cx.drawImage(b, 0, 0, w, h);
+  return cx.getImageData(0, 0, w, h).data;
+}
+
+// brightness/contrast/saturation as a canvas filter — the browser's own image pipeline does
+// the pixel math, we only ever store the three numbers (Resource.adjust)
+export const filterOf = (r          ) =>
+  r.adjust
+    ? `brightness(${r.adjust.brightness}%) contrast(${r.adjust.contrast}%) ` +
+      `saturate(${r.adjust.saturate}%) hue-rotate(${r.adjust.hue}deg)`
+    : "none";
+
+export async function encodeBitmap(
+  b             ,
+  w        ,
+  h        ,
+  cf        ,
+  filter = "none",
+)                      {
+  if (cf === 1) {
+    // JPEG resource (backgrounds) — keep the codec, decodePixels/encodePixels can't touch it
+    const c = new OffscreenCanvas(w, h);
+    const cx = c.getContext("2d") ;
+
+    cx.filter = filter;
+    cx.drawImage(b, 0, 0, w, h);
+    return new Uint8Array(
+      await (await c.convertToBlob({ type: "image/jpeg", quality: 0.92 })).arrayBuffer(),
+    );
+  }
+  return encodePixels(pixelsOf(b, w, h, filter), w, h, cf).data;
+}
+
+/** A canvas as a resource — the encode side of pixelsOf. No bitmap: the caller already has the
+ *  canvas, and `createImageBitmap` on it is cheaper than decoding what was just encoded. */
+export function resourceFromCanvas(canvas                 , cf        )           {
+  const { width: w, height: h } = canvas;
+
+  return encodePixels(canvas.getContext("2d") .getImageData(0, 0, w, h).data, w, h, cf);
+}
+
+/** A size scaled down, never up, so neither side passes the panel. Nothing larger shows on the
+ *  watch, and the firmware has to hold every image in RAM (see MAX_IMAGE_SIDE). */
+export function fitScreen(w        , h        )                           {
+  const k = Math.min(1, SCREEN / Math.max(w, h));
+
+  return { w: Math.max(1, Math.round(w * k)), h: Math.max(1, Math.round(h * k)) };
+}
+
+/** A dropped/picked image file as a ready-to-use resource (bitmap included), fitted to the panel. */
+export async function resourceFromFile(file      , cf        )                    {
+  const img = await createImageBitmap(file);
+  const { w, h } = fitScreen(img.width, img.height);
+  const r = encodePixels(pixelsOf(img, w, h), w, h, cf);
+
+  r.bitmap = await bitmapOf(r);
+  return r;
+}
+
+/** A fully transparent frame at cf 5 (RGB565+alpha, what uploads already use) — the slot an
+ *  auto-grown frame set gets until the user drops art on it. cf is per resource, so a run may
+ *  mix this with cf 4 frames that can't carry alpha at all. */
+export async function blankFrame(w        , h        )                    {
+  const r = encodePixels(new Uint8ClampedArray(w * h * 4), w, h, 5);
+
+  r.bitmap = await bitmapOf(r);
+  return r;
+}
+
+/** One progress-line frame at `pct` percent: a `color` fill over a faint track of the same colour,
+ *  filling left to right, or bottom-up when `vertical`.
+ *  ponytail: baked colour, no accent flag (Hemisphere's picker has none); recolouring redraws
+ *  all 101 frames (progressLineColored). */
+export function progressLinePixels(
+  w        ,
+  h        ,
+  pct        ,
+  vertical         ,
+  color = "#ffffff",
+)                    {
+  const px = new Uint8ClampedArray(w * h * 4).fill(255);
+  const rgb = [1, 3, 5].map((i) => parseInt(color.slice(i, i + 2), 16));
+  const filled = Math.round(((vertical ? h : w) * pct) / 100);
+
+  for (let y = 0; y < h; y++)
+    for (let x = 0; x < w; x++) {
+      const o = (y * w + x) * 4;
+
+      px.set(rgb, o);
+      if (vertical ? h - 1 - y >= filled : x >= filled) px[o + 3] = 51;
+    }
+  return px;
+}
+
+export async function progressLineFrame(
+  w        ,
+  h        ,
+  pct        ,
+  vertical         ,
+  color         ,
+)                    {
+  const r = encodePixels(progressLinePixels(w, h, pct, vertical, color), w, h, 5);
+
+  r.bitmap = await bitmapOf(r);
+  return r;
+}
+
+const lineColors = new WeakMap                ();
+
+/** The colour a progress line was drawn in, read back off its full (100%) frame — through the
+ *  cache, since a resize leaves `data` stale. cf 5 keeps 5/6/5 bits, so it comes back rounded:
+ *  #ff5c00 reads #ff5d00. Memoised per bitmap/asset: the inspector asks on every document edit. */
+export function progressLineColor(full            , cache             )         {
+  const key = cache?.bitmap ?? full;
+  let color = lineColors.get(key);
+
+  if (!color) {
+    const px = cachedPixels(full, cache);
+
+    color = px
+      ? "#" + [...px.subarray(0, 3)].map((v) => v.toString(16).padStart(2, "0")).join("")
+      : "#ffffff";
+    lineColors.set(key, color);
+  }
+  return color;
+}
+
+/** `color` as a progress line's cf 5 frames store it — what progressLineColor would read back. */
+export const progressLineStored = (color        ) =>
+  progressLineColor({
+    id: ""           ,
+    ...encodePixels(progressLinePixels(1, 1, 100, false, color), 1, 1, 5),
+  });
+
+export async function opaqueBlack(w        , h        )                    {
+  const px = new Uint8ClampedArray(w * h * 4);
+
+  for (let i = 3; i < px.length; i += 4) px[i] = 255;
+  const r = encodePixels(px, w, h, 4);
+
+  r.bitmap = await bitmapOf(r);
+  return r;
+}
+
+// ---- Doc-side equivalents ----
+// Same maths, but an asset is immutable and its decoded pixels live in the cache, so these
+// return what changed instead of writing through a Resource. The cache is a plain Map the
+// caller owns — it is not part of the document and never reaches the file.
+
+/** Decode every asset of a document into bitmaps. Part of loading rather than a follow-up step:
+ *  a document whose pixels aren't decoded yet renders as a blank screen, so the two have to
+ *  become visible to the editor together. */
+export async function decodeAssets(
+  images                                  ,
+)                                    {
+  const out = new Map                     ();
+
+  for (const a of images.values())
+    out.set(a.id, { bitmap: await bitmapOf({ cf: a.cf, w: a.w, h: a.h, data: a.data }) });
+  return out;
+}
+
+/** Which assets the watch may repaint with the wearer's accent color (meta flags === 4). */
+export function accentFlaggedAssets(doc     )               {
+  const flagged = new Set         ();
+  const walk = (l       ) => {
+    if (l.kind !== "group" && l.kind !== "raw" && isAccent(l.meta))
+      framesOf(l).forEach((id) => flagged.add(id));
+    if (l.kind === "group") l.children.forEach(walk);
+    if (l.kind === "raw") l.children?.forEach(walk);
+  };
+
+  doc.screens.forEach((s) => s.layers.forEach(walk));
+  return flagged;
+}
+
+const cachedPixels = (a            , c             ) =>
+  c?.bitmap ? pixelsOf(c.bitmap, a.w, a.h) : decodePixels(a                       );
+
+/** Preview-only accent tint of one asset — never touches `data`, see accentBitmapFor. */
+export async function accentBitmapForAsset(
+  a            ,
+  cache                        ,
+  colorHex        ,
+)                                   {
+  if (a.cf === 1) return undefined; // JPEG — no per-pixel recolor
+  const px = cachedPixels(a, cache);
+
+  if (!px) return undefined;
+  const n = parseInt(colorHex.slice(1), 16);
+  let changed = false;
+
+  for (let i = 0; i < px.length; i += 4) {
+    if (px[i + 3] > 0) {
+      px[i] = (n >> 16) & 255;
+      px[i + 1] = (n >> 8) & 255;
+      px[i + 2] = n & 255;
+      changed = true;
+    }
+  }
+  return changed ? createImageBitmap(new ImageData(px, a.w, a.h)) : undefined;
+}
+
+/** Invert one asset. Returns the replacement plus its fresh bitmap — involutive, as before. */
+export async function invertAsset(
+  a            ,
+  cache                        ,
+)                                                             {
+  const px = cachedPixels(a, cache);
+
+  if (!px) return null;
+  for (let i = 0; i < px.length; i += 4) {
+    px[i] = 255 - px[i];
+    px[i + 1] = 255 - px[i + 1];
+    px[i + 2] = 255 - px[i + 2];
+  }
+  const bitmap = await createImageBitmap(new ImageData(px, a.w, a.h));
+
+  return { asset: { ...a, data: await encodeBitmap(bitmap, a.w, a.h, a.cf) }, bitmap };
+}
+
+/** Turn one asset's pixels by `deg` around their centre, growing the canvas to the rotated
+ *  bounding box. The file format has no angle of its own, so a rotation IS a pixel edit: the art
+ *  is re-baked (like invertAsset above) and `rotate` only records the running total for the
+ *  inspector. cf 4 has no alpha for the corners a non-square turn opens up, so it becomes cf 5;
+ *  a JPEG resource keeps its codec and gets black corners instead.
+ *  Every turn resamples the PINNED pre-rotation pixels (`cache.rot0`), never the already-turned
+ *  ones, so a hundred 1° nudges cost exactly as much quality as one 100° turn — and coming back to
+ *  the angle the pin carries restores it exactly. The pin is per session and is dropped wherever
+ *  the art is re-baked or rescaled non-uniformly (see assets.model). */
+export async function rotateAsset(
+  a            ,
+  cache                        ,
+  deg        ,
+)           
+                    
+                      
+                                        
+          {
+  const turn = (v        ) => ((v % 360) + 360) % 360;
+  const size = (v        ) => Math.max(1, Math.min(2047, Math.round(v))); // 11-bit, see encodePixels
+  const box = (w        , h        , deg        ) => {
+    const rad = (deg * Math.PI) / 180;
+    const cos = Math.abs(Math.cos(rad)),
+      sin = Math.abs(Math.sin(rad));
+
+    return { w: size(w * cos + h * sin), h: size(w * sin + h * cos) };
+  };
+  // `$cache` — the pin included — is outside the undo history, so an undo can leave a pin that
+  // no longer matches the document. Trusted only while turning it to the asset's current angle
+  // gives the asset's current box (a pixel of rounding either way); otherwise re-pinned from
+  // what's on screen. Not under an adjust either: the pin predates the filter, and the turn bakes
+  // the filter in and clears `adjust`, so the pin would lose it on the turn after.
+  const p = cache?.rot0;
+  const fits = p && box(p.w, p.h, turn((a.rotate ?? 0) - p.deg));
+  const pinned =
+    !a.adjust && fits && Math.abs(fits.w - a.w) <= 1 && Math.abs(fits.h - a.h) <= 1 ? p : undefined;
+  const rot0 = pinned ?? {
+    src: cache?.bitmap ?? (await bitmapOf({ cf: a.cf, w: a.w, h: a.h, data: a.data })),
+    deg: a.rotate ?? 0,
+    w: a.w,
+    h: a.h,
+  };
+  const rotate = turn((a.rotate ?? 0) + deg);
+  const ang = turn(rotate - rot0.deg); // how far the PIN turns, which isn't the delta the user drags
+  const rad = (ang * Math.PI) / 180;
+  // the pin's own box, not its bitmap's: an undone resize leaves a bitmap of the wrong size behind,
+  // and sizing off it would resize the widget on a turn
+  const sw = rot0.w,
+    sh = rot0.h;
+  const { w, h } = box(sw, sh, ang);
+  const cf = a.cf === 4 && ang % 90 !== 0 ? 5 : a.cf;
+  const c = new OffscreenCanvas(w, h);
+  const cx = c.getContext("2d") ;
+
+  cx.translate(w / 2, h / 2);
+  cx.rotate(rad);
+  cx.drawImage(rot0.src, -sw / 2, -sh / 2, sw, sh);
+  const bitmap = await createImageBitmap(c);
+
+  return {
+    rot0,
+    // the turned pixels are the ones the user was looking at, filter included — so `adjust` goes
+    // back to neutral rather than claiming it could still be dialled away
+    asset: {
+      ...a,
+      cf,
+      w,
+      h,
+      rotate,
+      adjust: undefined,
+      data: await encodeBitmap(bitmap, w, h, cf),
+    },
+    bitmap,
+  };
+}
+
+/** Re-encode every asset whose pixels were resized or adjusted, from the pinned original —
+ *  the downsampling and the filter land only in what gets exported, never in the preview. */
+export async function flushAssets(
+  images                                  ,
+  cache                                  ,
+)                                    {
+  const out = new Map(images);
+
+  for (const [id, a] of images) {
+    const src = cache.get(id)?.original;
+
+    if (!src) continue;
+    const filter = a.adjust
+      ? `brightness(${a.adjust.brightness}%) contrast(${a.adjust.contrast}%) ` +
+        `saturate(${a.adjust.saturate}%) hue-rotate(${a.adjust.hue}deg)`
+      : "none";
+
+    out.set(id, { ...a, data: await encodeBitmap(src, a.w, a.h, a.cf, filter) });
+  }
+  return out;
+}
+
+/** Re-bake each screen's embedded 0x28 thumbnail from the current render — the Doc counterpart
+ *  of regenPreviews. The preview node has no widget shape of its own, so it stays a RawLayer and
+ *  is found by tag rather than by kind. Returns the assets that changed. */
+export async function regenPreviewAssets(
+  doc     ,
+  store                                                                                       ,
+  sim     ,
+)                                                                    {
+  const { renderDoc } = await import("./render");
+  const out = new Map                                                     ();
+
+  for (const scr of doc.screens) {
+    const pv = scr.layers.find((l) => l.kind === "raw" && l.tag === TAG.preview);
+    const holder = pv?.kind === "raw" ? pv.children?.find((c) => framesOf(c).length) : null;
+    const id = holder ? framesOf(holder)[0] : null;
+    const a = id ? store.assets.get(id) : null;
+
+    if (!a || a.cf === 1) continue; // don't re-encode JPEG previews
+    // DOM canvas, not OffscreenCanvas: the two rasterise slightly differently, and after the
+    // RGB565 quantise that shows up as different bytes than the Resource path produces
+    const screen = document.createElement("canvas");
+
+    screen.width = screen.height = SCREEN;
+    renderDoc(screen.getContext("2d") , doc, store, scr.kind, sim);
+    const thumb = document.createElement("canvas");
+
+    thumb.width = a.w;
+    thumb.height = a.h;
+    thumb.getContext("2d") .drawImage(screen, 0, 0, a.w, a.h);
+    const bitmap = await createImageBitmap(thumb);
+
+    out.set(a.id, { asset: { ...a, data: await encodeBitmap(bitmap, a.w, a.h, a.cf) }, bitmap });
+  }
+  return out;
+}

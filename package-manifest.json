@@ -1,0 +1,85 @@
+{
+  "name": "MotyarStudio Watch Pro 2 \u2014 8 Faces",
+  "releaseDate": "2026-11-13",
+  "target": "CMF Watch Pro 2",
+  "resolution": [
+    466,
+    466
+  ],
+  "faceCount": 8,
+  "faces": [
+    {
+      "name": "Braun Round",
+      "theme": "white",
+      "filename": "braun-round.bin",
+      "revision": 5,
+      "sha256": "2c738c43c41a90db5916d0a10316b7110567b55830cfdefe296b77288b08b4e8",
+      "preview": "preview.png",
+      "aodPreview": "aod-preview.png"
+    },
+    {
+      "name": "Braun Black",
+      "theme": "black",
+      "filename": "braun-black.bin",
+      "revision": 5,
+      "sha256": "ad5a9f8012138d4a4d6078056555be67477749bab2c71ae5e4f50e095c75f6bb",
+      "preview": "black-preview.png",
+      "aodPreview": "aod-preview.png"
+    },
+    {
+      "name": "Casio World",
+      "theme": "casio",
+      "filename": "casio-world.bin",
+      "revision": 2,
+      "sha256": "30987ad67a10df77e4a987814e18b929483d3dcf798086002983bc6282689e84",
+      "preview": "casio-preview.png",
+      "aodPreview": "casio-aod-preview.png"
+    },
+    {
+      "name": "Braun Subdials",
+      "theme": "braun-subdials",
+      "filename": "braun-subdials.bin",
+      "revision": 3,
+      "sha256": "438b6004366b1b3eb9f1f29df1356331b43208526fa3d59500646a4a9aad08f8",
+      "preview": "braun-subdials-preview.png",
+      "aodPreview": "braun-subdials-aod-preview.png"
+    },
+    {
+      "name": "Skagen Dark",
+      "theme": "skagen",
+      "filename": "skagen-dark.bin",
+      "revision": 3,
+      "sha256": "69f14324ba37cc419386225ab1005ddcd35307a325e6975483b403c9deed0c20",
+      "preview": "skagen-preview.png",
+      "aodPreview": "skagen-aod-preview.png"
+    },
+    {
+      "name": "MotyarStudio",
+      "theme": "bai-clock",
+      "filename": "motyarstudio.bin",
+      "revision": 4,
+      "sha256": "0d59c5cf15b1fcd3aca4b8a7f711501455a7656111b67f0f8689a2b76fea3226",
+      "preview": "motyarstudio-preview.png",
+      "aodPreview": "motyarstudio-aod-preview.png"
+    },
+    {
+      "name": "Xeric Mint",
+      "theme": "xeric-mint",
+      "filename": "xeric-mint.bin",
+      "revision": 2,
+      "sha256": "177417188d2505f0c071ec82fa977e2ffe9d215047ea47586e4516ae6a2c8ec3",
+      "preview": "xeric-mint-preview.png",
+      "aodPreview": "xeric-mint-aod-preview.png"
+    },
+    {
+      "name": "Zenith Ice",
+      "theme": "zenith-ice",
+      "filename": "zenith-ice.bin",
+      "revision": 2,
+      "sha256": "e5eb10796cfa2b0dc3afc7f2dc9eef988ca8de824c37f17ed3804c9aaed99b1b",
+      "preview": "zenith-ice-preview.png",
+      "aodPreview": "zenith-ice-aod-preview.png"
+    }
+  ],
+  "hardwareVerification": "Recipient must verify on their physical watch; no creator device history is included."
+}

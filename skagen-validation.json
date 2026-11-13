@@ -1,0 +1,72 @@
+{
+  "theme": "skagen",
+  "name": "Skagen Dark",
+  "filename": "skagen-dark.bin",
+  "seed": "cmf-skagen-dark-v1",
+  "kind": "subdials",
+  "description": "Larger subdials at 12, 9 and 6, branding at 3, silver hands and gold seconds.",
+  "preview": "skagen-preview.png",
+  "aodPreview": "skagen-aod-preview.png",
+  "validationFile": "skagen-validation.json",
+  "hasDate": false,
+  "subdialLayout": {
+    "minute": [
+      137,
+      233
+    ],
+    "hour24": [
+      233,
+      137
+    ],
+    "second": [
+      233,
+      329
+    ],
+    "radius": 59,
+    "arrangement": "cardinal"
+  },
+  "shadowCount": 5,
+  "sha256": "69f14324ba37cc419386225ab1005ddcd35307a325e6975483b403c9deed0c20",
+  "revision": 3,
+  "target": "CMF Watch Pro 2",
+  "resolution": [
+    466,
+    466
+  ],
+  "bytes": 208187,
+  "decodedRgbaBytes": 3716288,
+  "checks": {
+    "byteExactRoundTrip": true,
+    "headerAndResourceCrc": true,
+    "allAssetsDecoded": true,
+    "maxImageSide": 466,
+    "previewsOnBothScreens": true,
+    "nativeSources": [
+      4,
+      10,
+      14,
+      114
+    ],
+    "live24hImageFrames": 24,
+    "nativeClockSubdials": true,
+    "alignedSubdialGeometry": true,
+    "artworkSupersampling": 4,
+    "mainHandWidgets": 10
+  },
+  "browserRendering": {
+    "nativeFileLoaded": true,
+    "hasDate": false,
+    "dateIsolated": true,
+    "secondsMove": true,
+    "minuteAndHourMove": true,
+    "clockBoundaryValues": true,
+    "metricChecks": [],
+    "aodLitFraction": 0.010190830554992723,
+    "passed": true
+  },
+  "hardware": {
+    "connected": false,
+    "uploaded": false,
+    "verifiedOnWatch": false
+  }
+}

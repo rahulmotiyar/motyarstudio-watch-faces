@@ -1,0 +1,35 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Installer selector regression checks</title>
+<style>body{font:16px/1.6 system-ui;max-width:850px;margin:40px auto;padding:20px;background:#f4f5ee;color:#24301f}label{display:grid;gap:8px;margin:20px 0}select,button{font:inherit;padding:10px}#hint{color:#65705a}li{margin:6px 0}</style>
+<h1>Installer selector regression checks</h1><p>Uses simulated face lists. No Bluetooth connection or device transfer.</p>
+<label>Choose a face to replace<select id="slot"></select><span id="hint"></span></label><button id="install" disabled>Install face</button>
+<ol id="results"></ol><p id="outcome" role="status">Running…</p>
+<script type="module">
+import {createFaceSelector} from '../face-slots.js';
+const select=document.querySelector('#slot'),hint=document.querySelector('#hint'),install=document.querySelector('#install');
+const rows=document.querySelector('#results');let count=0,selector;
+const check=(ok,name)=>{if(!ok)throw Error(name);const li=document.createElement('li');li.textContent='Passed: '+name;rows.append(li);count++;};
+selector=createFaceSelector({select,hint,onChange:()=>{install.disabled=selector?.target()==null;}});
+try{
+  const source=new DOMParser().parseFromString(await (await fetch('../install.html')).text(),'text/html');
+  const sourceSelect=source.querySelector('#slot'),sourceInstall=source.querySelector('#install');
+  check(!source.querySelector('#slot-label').hidden,'Production field is visible before connecting');
+  check(Boolean(sourceSelect.compareDocumentPosition(sourceInstall)&Node.DOCUMENT_POSITION_FOLLOWING),'Production field is above Install');
+  check(select.disabled&&install.disabled,'Disconnected state blocks installation and explains how to load faces');
+  selector.update({connected:true,choices:[],full:true});
+  check(install.disabled&&hint.textContent.includes('reconnect'),'Missing full-watch list explains recovery instead of showing a blank field');
+  selector.update({choices:[{id:12345,name:'Braun Round',confirmed:false},{id:23456,name:'Braun Black',confirmed:false}]});
+  check(select.options.length===3&&!select.disabled,'Previously installed faces appear before any install attempt');
+  check(install.disabled,'No replacement is silently selected');
+  select.value='12345';select.dispatchEvent(new Event('change'));
+  check(selector.target()===12345&&!install.disabled,'Explicit replacement enables Install with the correct target');
+  selector.update({choices:[{id:280,name:'Factory',confirmed:true},{id:12345,name:'Braun Round',confirmed:true},{id:23456,name:'Braun Black',confirmed:false}]});
+  check(select.value==='12345'&&!install.disabled,'Late watch notification preserves the selected face');
+  selector.update({busy:true});check(select.disabled&&install.disabled,'Busy state prevents changing the replacement');
+  selector.update({busy:false});check(!select.disabled&&!install.disabled,'Finishing a connection restores the explicit selection');
+  selector.update({full:false});select.value='new';select.dispatchEvent(new Event('change'));
+  check(selector.target()===0&&!install.disabled,'Adding a new face is an explicit separate choice');
+  selector.update({full:true});check(select.value===''&&install.disabled,'Full-watch response removes Add new and requires a replacement');
+  selector.update({connected:false});check(select.disabled&&install.disabled&&select.value==='','Disconnect clears the old device selection');
+  document.querySelector('#outcome').textContent=`All ${count} browser checks passed.`;
+}catch(e){document.querySelector('#outcome').textContent='FAILED: '+e.message;throw e;}
+</script></html>

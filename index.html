@@ -1,0 +1,26 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MotyarStudio · Eight watch faces</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#ecece6;color:#262a24;font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif}main{max-width:1510px;margin:auto;padding:45px 45px 28px}header{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:32px}h1{font-size:34px;font-weight:500;letter-spacing:-.04em;margin:0 0 10px}p{color:#697163;line-height:1.6;margin:0}.meta{font-size:11px;letter-spacing:.12em;margin-bottom:12px}.filters{display:flex;gap:8px;flex-wrap:wrap;margin:28px 0 42px}button{border:1px solid #c2c7ba;background:transparent;color:inherit;border-radius:24px;font:inherit;padding:9px 16px;cursor:pointer}button[aria-pressed=true]{background:#2c3429;color:white;border-color:#2c3429}.faces{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:44px 34px}figure{margin:0;text-align:center}img{display:block;width:100%;height:auto;aspect-ratio:1;border-radius:50%;box-shadow:0 12px 23px #20281c22}h2{font-size:17px;font-weight:500;letter-spacing:-.01em;margin:20px 0 6px}.description{font-size:12px;line-height:1.55;min-height:38px;max-width:280px;margin:auto}.actions{display:flex;justify-content:center;gap:18px;font-size:12px;margin-top:13px}a{color:inherit;text-decoration:none}a:hover{text-decoration:underline}a:focus-visible,button:focus-visible{outline:3px solid #c39e1d;outline-offset:5px}footer{display:flex;justify-content:space-between;gap:25px;border-top:1px solid #cbd0c1;margin-top:42px;padding-top:24px;font-size:11px;color:#697163}#count{font-size:12px}@media(max-width:1050px){.faces{grid-template-columns:repeat(3,minmax(0,1fr))}}@media(max-width:760px){main{padding:28px 22px}.faces{grid-template-columns:repeat(2,minmax(0,1fr));gap:35px 20px}header{display:block}h1{font-size:29px}#count{margin-top:14px}.description{font-size:11px}h2{font-size:15px}footer{display:block;line-height:2}}@media(max-width:390px){.faces{grid-template-columns:1fr}}
+</style>
+<main><header><div><div class="meta">CMF WATCH PRO 2 / 466 × 466</div><h1>Find your next watch face.</h1><p>Eight faces for CMF Watch Pro 2. Pick a design, connect your watch and install it from your computer.</p></div><div id="count" role="status">Loading faces…</div></header>
+<nav class="filters" aria-label="Filter faces"><button data-filter="all" aria-pressed="true">All eight</button><button data-filter="analog" aria-pressed="false">Analogue</button><button data-filter="digital" aria-pressed="false">Digital</button></nav>
+<p style="margin:0 0 32px">Use Chrome or Edge on Windows or Mac. No downloads or setup needed.</p><section class="faces" aria-label="Native face previews" id="faces"></section>
+<footer><span>AI-generated personal adaptations · Unofficial designs · Bluetooth transfer from your computer</span><span><a href="help.html">How to install</a> · <a href="downloads/MotyarStudio-Watch-Pro-2-8-Faces.zip">Source & licenses</a></span></footer></main>
+<script type="module">
+const variants=await(await fetch('variants.json',{cache:'no-store'})).json(),container=document.querySelector('#faces');
+const isDigital=v=>v.kind==='digital';
+function show(filter){
+  const selected=variants.filter(v=>filter==='all'||filter==='new'&&v.group==='expanded'||filter==='subdials'&&['braun-subdials','skagen'].includes(v.theme)||filter==='analog'&&!isDigital(v)||filter==='digital'&&isDigital(v));
+  container.style.gridTemplateColumns=filter==='subdials'?'repeat(2,minmax(0,1fr))':'';
+  container.style.maxWidth=filter==='subdials'?'1000px':'';container.style.margin=filter==='subdials'?'auto':'';
+  container.replaceChildren(...selected.map(v=>{
+    const fig=document.createElement('figure'),link=document.createElement('a'),image=document.createElement('img'),title=document.createElement('h2'),desc=document.createElement('p'),actions=document.createElement('div');
+    link.href='install.html?theme='+encodeURIComponent(v.theme);image.src=v.preview;image.alt=v.name+' native face preview';image.width=466;image.height=466;link.append(image);title.textContent=v.name;desc.className='description';desc.textContent=v.description;actions.className='actions';
+    const open=document.createElement('a'),download=document.createElement('a');open.href=link.href;open.textContent='Choose this face';download.href=v.filename;download.download=v.filename;download.textContent='Download .bin';actions.append(open);fig.append(link,title,desc,actions);return fig;
+  }));
+  document.querySelector('#count').textContent=selected.length+' faces';
+  for(const button of document.querySelectorAll('[data-filter]'))button.setAttribute('aria-pressed',String(button.dataset.filter===filter));
+}
+for(const button of document.querySelectorAll('[data-filter]'))button.addEventListener('click',()=>show(button.dataset.filter));show('all');
+</script></html>

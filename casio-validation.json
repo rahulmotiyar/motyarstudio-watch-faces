@@ -1,0 +1,102 @@
+{
+  "theme": "casio",
+  "name": "Casio World",
+  "filename": "casio-world.bin",
+  "seed": "cmf-casio-world-v1",
+  "kind": "digital",
+  "description": "Circular LCD time and calendar, a live analogue clock and AMS map target for Amsterdam.",
+  "preview": "casio-preview.png",
+  "aodPreview": "casio-aod-preview.png",
+  "validationFile": "casio-validation.json",
+  "hasDate": true,
+  "dateBox": {
+    "x": 100,
+    "y": 281,
+    "w": 271,
+    "h": 24
+  },
+  "digitalLayout": {
+    "ampm": [
+      357,
+      333,
+      27,
+      14
+    ],
+    "hours": [
+      92,
+      326,
+      84,
+      77
+    ],
+    "lcdCircle": [
+      233,
+      233,
+      218
+    ],
+    "lcdBand": [
+      319,
+      411
+    ]
+  },
+  "mapTarget": {
+    "label": "AMS",
+    "name": "Amsterdam",
+    "longitude": 4.9041,
+    "latitude": 52.3676,
+    "pixel": [
+      318.07062,
+      179.77903172413792
+    ],
+    "fixed": true
+  },
+  "shadowCount": 0,
+  "sha256": "30987ad67a10df77e4a987814e18b929483d3dcf798086002983bc6282689e84",
+  "revision": 2,
+  "target": "CMF Watch Pro 2",
+  "resolution": [
+    466,
+    466
+  ],
+  "bytes": 194078,
+  "decodedRgbaBytes": 2766640,
+  "checks": {
+    "byteExactRoundTrip": true,
+    "headerAndResourceCrc": true,
+    "allAssetsDecoded": true,
+    "maxImageSide": 466,
+    "previewsOnBothScreens": true,
+    "nativeSources": [
+      1,
+      10,
+      11,
+      14,
+      15,
+      19,
+      21,
+      23,
+      24,
+      114
+    ],
+    "live24hImageFrames": 0,
+    "nativeClockSubdials": false,
+    "artworkSupersampling": 4,
+    "allDigitalGlyphsInsideCircularLcd": true,
+    "mainHandWidgets": 3
+  },
+  "browserRendering": {
+    "nativeFileLoaded": true,
+    "hasDate": true,
+    "dateIsolated": true,
+    "secondsMove": true,
+    "minuteAndHourMove": true,
+    "clockBoundaryValues": true,
+    "metricChecks": [],
+    "aodLitFraction": 0.023867634327395974,
+    "passed": true
+  },
+  "hardware": {
+    "connected": false,
+    "uploaded": false,
+    "verifiedOnWatch": false
+  }
+}

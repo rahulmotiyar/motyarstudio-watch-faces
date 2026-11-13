@@ -1,0 +1,83 @@
+{
+  "theme": "zenith-ice",
+  "name": "Zenith Ice",
+  "kind": "analog",
+  "revision": 2,
+  "description": "The supplied Zenith dial image, with its original lettering, metal texture and depth, plus aligned live hands.",
+  "hasDate": false,
+  "supportsSeconds": true,
+  "subdialLayout": {
+    "minute": [
+      132,
+      233
+    ],
+    "minute30": [
+      334,
+      233
+    ],
+    "second": [
+      233,
+      345
+    ],
+    "radius": 76
+  },
+  "mainPivot": [
+    233,
+    233
+  ],
+  "artworkMode": "supplied-image",
+  "referenceCredit": "User-supplied Zenith dial image; details imported directly.",
+  "referenceNote": "Left register: current minute. Right register: minute modulo 30. Bottom register: current second. Clock values, not a stopwatch.",
+  "sourceImageSha256": "51be8cdbfd1912fe07e50e3114a467892b6330dceb0e38c0f1d66d64ac8ef0be",
+  "filename": "zenith-ice.bin",
+  "seed": "cmf-zenith-ice-v1",
+  "validationFile": "zenith-ice-validation.json",
+  "preview": "zenith-ice-preview.png",
+  "aodPreview": "zenith-ice-aod-preview.png",
+  "expectedSources": [
+    10,
+    11,
+    14,
+    114
+  ],
+  "sha256": "e5eb10796cfa2b0dc3afc7f2dc9eef988ca8de824c37f17ed3804c9aaed99b1b",
+  "shadowCount": 5,
+  "group": "expanded",
+  "target": "CMF Watch Pro 2",
+  "resolution": [
+    466,
+    466
+  ],
+  "bytes": 401686,
+  "decodedRgbaBytes": 4619712,
+  "checks": {
+    "byteExactRoundTrip": true,
+    "headerAndResourceCrc": true,
+    "allAssetsDecoded": true,
+    "maxImageSide": 466,
+    "previewsOnBothScreens": true,
+    "nativeSources": [
+      10,
+      11,
+      14,
+      114
+    ],
+    "artworkSupersampling": 4
+  },
+  "browserRendering": {
+    "nativeFileLoaded": true,
+    "hasDate": false,
+    "dateIsolated": true,
+    "secondsMove": true,
+    "minuteAndHourMove": true,
+    "clockBoundaryValues": true,
+    "metricChecks": [],
+    "aodLitFraction": 0.006571312788962773,
+    "passed": true
+  },
+  "hardware": {
+    "connected": false,
+    "uploaded": false,
+    "verifiedOnWatch": false
+  }
+}

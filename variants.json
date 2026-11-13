@@ -1,0 +1,294 @@
+[
+  {
+    "seed": "braun-round-pro2-v1",
+    "kind": "classic",
+    "description": "A softly shaded white dial, floating black hands, yellow seconds and a larger recessed date window.",
+    "preview": "preview.png",
+    "aodPreview": "aod-preview.png",
+    "validationFile": "validation.json",
+    "hasDate": true,
+    "dateBox": {
+      "x": 220,
+      "y": 342,
+      "w": 26,
+      "h": 28
+    },
+    "shadowCount": 3,
+    "theme": "white",
+    "name": "Braun Round",
+    "filename": "braun-round.bin",
+    "sha256": "2c738c43c41a90db5916d0a10316b7110567b55830cfdefe296b77288b08b4e8",
+    "revision": 5
+  },
+  {
+    "seed": "braun-black-pro2-v2",
+    "kind": "classic",
+    "description": "A charcoal dial with silver-white hands, yellow seconds and a larger recessed date window.",
+    "preview": "black-preview.png",
+    "aodPreview": "aod-preview.png",
+    "validationFile": "black-validation.json",
+    "hasDate": true,
+    "dateBox": {
+      "x": 220,
+      "y": 342,
+      "w": 26,
+      "h": 28
+    },
+    "shadowCount": 3,
+    "theme": "black",
+    "name": "Braun Black",
+    "filename": "braun-black.bin",
+    "sha256": "ad5a9f8012138d4a4d6078056555be67477749bab2c71ae5e4f50e095c75f6bb",
+    "revision": 5
+  },
+  {
+    "theme": "casio",
+    "name": "Casio World",
+    "filename": "casio-world.bin",
+    "seed": "cmf-casio-world-v1",
+    "kind": "digital",
+    "description": "Circular LCD time and calendar, a live analogue clock and AMS map target for Amsterdam.",
+    "preview": "casio-preview.png",
+    "aodPreview": "casio-aod-preview.png",
+    "validationFile": "casio-validation.json",
+    "hasDate": true,
+    "dateBox": {
+      "x": 100,
+      "y": 281,
+      "w": 271,
+      "h": 24
+    },
+    "digitalLayout": {
+      "ampm": [
+        357,
+        333,
+        27,
+        14
+      ],
+      "hours": [
+        92,
+        326,
+        84,
+        77
+      ],
+      "lcdCircle": [
+        233,
+        233,
+        218
+      ],
+      "lcdBand": [
+        319,
+        411
+      ]
+    },
+    "mapTarget": {
+      "label": "AMS",
+      "name": "Amsterdam",
+      "longitude": 4.9041,
+      "latitude": 52.3676,
+      "pixel": [
+        318.07062,
+        179.77903172413792
+      ],
+      "fixed": true
+    },
+    "shadowCount": 0,
+    "sha256": "30987ad67a10df77e4a987814e18b929483d3dcf798086002983bc6282689e84",
+    "revision": 2
+  },
+  {
+    "theme": "braun-subdials",
+    "name": "Braun Subdials",
+    "filename": "braun-subdials.bin",
+    "seed": "cmf-braun-subdials-v1",
+    "kind": "subdials",
+    "description": "Ivory dial, larger recessed subdials, hollow hands and broad soft shadows.",
+    "preview": "braun-subdials-preview.png",
+    "aodPreview": "braun-subdials-aod-preview.png",
+    "validationFile": "braun-subdials-validation.json",
+    "hasDate": true,
+    "dateBox": {
+      "x": 315,
+      "y": 291,
+      "w": 58,
+      "h": 58
+    },
+    "subdialLayout": {
+      "minute": [
+        154,
+        183
+      ],
+      "hour24": [
+        312,
+        183
+      ],
+      "second": [
+        233,
+        320
+      ],
+      "radius": 60,
+      "arrangement": "triangle"
+    },
+    "shadowCount": 5,
+    "sha256": "438b6004366b1b3eb9f1f29df1356331b43208526fa3d59500646a4a9aad08f8",
+    "revision": 3
+  },
+  {
+    "theme": "skagen",
+    "name": "Skagen Dark",
+    "filename": "skagen-dark.bin",
+    "seed": "cmf-skagen-dark-v1",
+    "kind": "subdials",
+    "description": "Larger subdials at 12, 9 and 6, branding at 3, silver hands and gold seconds.",
+    "preview": "skagen-preview.png",
+    "aodPreview": "skagen-aod-preview.png",
+    "validationFile": "skagen-validation.json",
+    "hasDate": false,
+    "subdialLayout": {
+      "minute": [
+        137,
+        233
+      ],
+      "hour24": [
+        233,
+        137
+      ],
+      "second": [
+        233,
+        329
+      ],
+      "radius": 59,
+      "arrangement": "cardinal"
+    },
+    "shadowCount": 5,
+    "sha256": "69f14324ba37cc419386225ab1005ddcd35307a325e6975483b403c9deed0c20",
+    "revision": 3
+  },
+  {
+    "theme": "bai-clock",
+    "name": "MotyarStudio",
+    "kind": "analog",
+    "description": "Ivory dial with a generous outer margin, four minute strokes between hour numerals and an orange seconds needle.",
+    "revision": 4,
+    "filename": "motyarstudio.bin",
+    "preview": "motyarstudio-preview.png",
+    "aodPreview": "motyarstudio-aod-preview.png",
+    "validationFile": "motyarstudio-validation.json",
+    "supportsSeconds": true,
+    "hasDate": false,
+    "referenceIndex": 1,
+    "minuteTrack": {
+      "divisions": 60,
+      "minorStrokes": 48,
+      "strokesBetweenHours": 4,
+      "innerRadius": 188,
+      "outerRadius": 210,
+      "labelRadius": 199
+    },
+    "seed": "cmf-bai-clock-v1",
+    "expectedSources": [
+      10,
+      14,
+      114
+    ],
+    "sha256": "0d59c5cf15b1fcd3aca4b8a7f711501455a7656111b67f0f8689a2b76fea3226",
+    "shadowCount": 3,
+    "group": "expanded"
+  },
+  {
+    "theme": "xeric-mint",
+    "name": "Xeric Mint",
+    "kind": "analog",
+    "description": "Mint technical dial with larger hour and minute numerals, balanced concentric scales and orange-accented skeleton hands.",
+    "revision": 2,
+    "hasDate": false,
+    "referenceIndex": 5,
+    "scaleLayout": {
+      "boundaries": [
+        54,
+        64,
+        92,
+        120,
+        172,
+        194,
+        216,
+        228
+      ],
+      "labelRadii": {
+        "roman": 78,
+        "innerHour": 106,
+        "hour": 146,
+        "quarterMinute": 183,
+        "minute": 205
+      },
+      "fontSizes": {
+        "roman": 14,
+        "innerHour": 14,
+        "hour": 34,
+        "quarterMinute": 8.5,
+        "minute": 23
+      },
+      "lowerLabelsUpright": true
+    },
+    "filename": "xeric-mint.bin",
+    "seed": "cmf-xeric-mint-v1",
+    "validationFile": "xeric-mint-validation.json",
+    "preview": "xeric-mint-preview.png",
+    "aodPreview": "xeric-mint-aod-preview.png",
+    "supportsSeconds": true,
+    "expectedSources": [
+      10,
+      14,
+      114
+    ],
+    "sha256": "177417188d2505f0c071ec82fa977e2ffe9d215047ea47586e4516ae6a2c8ec3",
+    "shadowCount": 3,
+    "group": "expanded"
+  },
+  {
+    "theme": "zenith-ice",
+    "name": "Zenith Ice",
+    "kind": "analog",
+    "revision": 2,
+    "description": "The supplied Zenith dial image, with its original lettering, metal texture and depth, plus aligned live hands.",
+    "hasDate": false,
+    "supportsSeconds": true,
+    "subdialLayout": {
+      "minute": [
+        132,
+        233
+      ],
+      "minute30": [
+        334,
+        233
+      ],
+      "second": [
+        233,
+        345
+      ],
+      "radius": 76
+    },
+    "mainPivot": [
+      233,
+      233
+    ],
+    "artworkMode": "supplied-image",
+    "referenceCredit": "User-supplied Zenith dial image; details imported directly.",
+    "referenceNote": "Left register: current minute. Right register: minute modulo 30. Bottom register: current second. Clock values, not a stopwatch.",
+    "sourceImageSha256": "51be8cdbfd1912fe07e50e3114a467892b6330dceb0e38c0f1d66d64ac8ef0be",
+    "filename": "zenith-ice.bin",
+    "seed": "cmf-zenith-ice-v1",
+    "validationFile": "zenith-ice-validation.json",
+    "preview": "zenith-ice-preview.png",
+    "aodPreview": "zenith-ice-aod-preview.png",
+    "expectedSources": [
+      10,
+      11,
+      14,
+      114
+    ],
+    "sha256": "e5eb10796cfa2b0dc3afc7f2dc9eef988ca8de824c37f17ed3804c9aaed99b1b",
+    "shadowCount": 5,
+    "group": "expanded"
+  }
+]

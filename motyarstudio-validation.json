@@ -1,0 +1,67 @@
+{
+  "theme": "bai-clock",
+  "name": "MotyarStudio",
+  "kind": "analog",
+  "description": "Ivory dial with a generous outer margin, four minute strokes between hour numerals and an orange seconds needle.",
+  "revision": 4,
+  "filename": "motyarstudio.bin",
+  "preview": "motyarstudio-preview.png",
+  "aodPreview": "motyarstudio-aod-preview.png",
+  "validationFile": "motyarstudio-validation.json",
+  "supportsSeconds": true,
+  "hasDate": false,
+  "referenceIndex": 1,
+  "minuteTrack": {
+    "divisions": 60,
+    "minorStrokes": 48,
+    "strokesBetweenHours": 4,
+    "innerRadius": 188,
+    "outerRadius": 210,
+    "labelRadius": 199
+  },
+  "seed": "cmf-bai-clock-v1",
+  "expectedSources": [
+    10,
+    14,
+    114
+  ],
+  "sha256": "0d59c5cf15b1fcd3aca4b8a7f711501455a7656111b67f0f8689a2b76fea3226",
+  "shadowCount": 3,
+  "group": "expanded",
+  "target": "CMF Watch Pro 2",
+  "resolution": [
+    466,
+    466
+  ],
+  "bytes": 205035,
+  "decodedRgbaBytes": 3035328,
+  "checks": {
+    "byteExactRoundTrip": true,
+    "headerAndResourceCrc": true,
+    "allAssetsDecoded": true,
+    "maxImageSide": 466,
+    "previewsOnBothScreens": true,
+    "nativeSources": [
+      10,
+      14,
+      114
+    ],
+    "artworkSupersampling": 4
+  },
+  "browserRendering": {
+    "nativeFileLoaded": true,
+    "hasDate": false,
+    "dateIsolated": true,
+    "secondsMove": true,
+    "minuteAndHourMove": true,
+    "clockBoundaryValues": true,
+    "metricChecks": [],
+    "aodLitFraction": 0.006571312788962773,
+    "passed": true
+  },
+  "hardware": {
+    "connected": false,
+    "uploaded": false,
+    "verifiedOnWatch": false
+  }
+}

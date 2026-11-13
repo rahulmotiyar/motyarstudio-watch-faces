@@ -1,0 +1,48 @@
+{
+  "name": "Braun Black",
+  "theme": "black",
+  "revision": 5,
+  "filename": "braun-black.bin",
+  "target": "CMF Watch Pro 2",
+  "resolution": [
+    466,
+    466
+  ],
+  "bytes": 244207,
+  "sha256": "ad5a9f8012138d4a4d6078056555be67477749bab2c71ae5e4f50e095c75f6bb",
+  "upstream": {
+    "url": "https://github.com/freethinkel/fmc",
+    "commit": "cfc340c95ddd18adbf1e04a9e3613cad145c2dc3",
+    "license": "AGPL-3.0-only"
+  },
+  "checks": {
+    "nativeMainAndAod": true,
+    "previewsOnBothScreens": true,
+    "liveHands": 3,
+    "liveShadowLayers": 3,
+    "shadowPivotsChecked": true,
+    "liveDayOfMonth": true,
+    "dateValuesChecked": 31,
+    "headerAndResourceCrc": true,
+    "byteExactRoundTrip": true,
+    "allAssetsDecoded": true,
+    "maxImageSide": 466,
+    "upstreamFixturesRoundTripped": 18
+  },
+  "browserRendering": {
+    "nativeFileLoaded": true,
+    "hasDate": true,
+    "dateIsolated": true,
+    "secondsMove": true,
+    "minuteAndHourMove": true,
+    "clockBoundaryValues": true,
+    "metricChecks": [],
+    "aodLitFraction": 0.012801856729724254,
+    "passed": true
+  },
+  "hardware": {
+    "connected": false,
+    "uploaded": false,
+    "verifiedOnWatch": false
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "theme": "xeric-mint",
+  "name": "Xeric Mint",
+  "kind": "analog",
+  "description": "Mint technical dial with larger hour and minute numerals, balanced concentric scales and orange-accented skeleton hands.",
+  "revision": 2,
+  "hasDate": false,
+  "referenceIndex": 5,
+  "scaleLayout": {
+    "boundaries": [
+      54,
+      64,
+      92,
+      120,
+      172,
+      194,
+      216,
+      228
+    ],
+    "labelRadii": {
+      "roman": 78,
+      "innerHour": 106,
+      "hour": 146,
+      "quarterMinute": 183,
+      "minute": 205
+    },
+    "fontSizes": {
+      "roman": 14,
+      "innerHour": 14,
+      "hour": 34,
+      "quarterMinute": 8.5,
+      "minute": 23
+    },
+    "lowerLabelsUpright": true
+  },
+  "filename": "xeric-mint.bin",
+  "seed": "cmf-xeric-mint-v1",
+  "validationFile": "xeric-mint-validation.json",
+  "preview": "xeric-mint-preview.png",
+  "aodPreview": "xeric-mint-aod-preview.png",
+  "supportsSeconds": true,
+  "expectedSources": [
+    10,
+    14,
+    114
+  ],
+  "sha256": "177417188d2505f0c071ec82fa977e2ffe9d215047ea47586e4516ae6a2c8ec3",
+  "shadowCount": 3,
+  "group": "expanded",
+  "target": "CMF Watch Pro 2",
+  "resolution": [
+    466,
+    466
+  ],
+  "bytes": 258608,
+  "decodedRgbaBytes": 3067328,
+  "checks": {
+    "byteExactRoundTrip": true,
+    "headerAndResourceCrc": true,
+    "allAssetsDecoded": true,
+    "maxImageSide": 466,
+    "previewsOnBothScreens": true,
+    "nativeSources": [
+      10,
+      14,
+      114
+    ],
+    "artworkSupersampling": 4
+  },
+  "browserRendering": {
+    "nativeFileLoaded": true,
+    "hasDate": false,
+    "dateIsolated": true,
+    "secondsMove": true,
+    "minuteAndHourMove": true,
+    "clockBoundaryValues": true,
+    "metricChecks": [],
+    "aodLitFraction": 0.006571312788962773,
+    "passed": true
+  },
+  "hardware": {
+    "connected": false,
+    "uploaded": false,
+    "verifiedOnWatch": false
+  }
+}

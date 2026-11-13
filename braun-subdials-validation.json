@@ -1,0 +1,79 @@
+{
+  "theme": "braun-subdials",
+  "name": "Braun Subdials",
+  "filename": "braun-subdials.bin",
+  "seed": "cmf-braun-subdials-v1",
+  "kind": "subdials",
+  "description": "Ivory dial, larger recessed subdials, hollow hands and broad soft shadows.",
+  "preview": "braun-subdials-preview.png",
+  "aodPreview": "braun-subdials-aod-preview.png",
+  "validationFile": "braun-subdials-validation.json",
+  "hasDate": true,
+  "dateBox": {
+    "x": 315,
+    "y": 291,
+    "w": 58,
+    "h": 58
+  },
+  "subdialLayout": {
+    "minute": [
+      154,
+      183
+    ],
+    "hour24": [
+      312,
+      183
+    ],
+    "second": [
+      233,
+      320
+    ],
+    "radius": 60,
+    "arrangement": "triangle"
+  },
+  "shadowCount": 5,
+  "sha256": "438b6004366b1b3eb9f1f29df1356331b43208526fa3d59500646a4a9aad08f8",
+  "revision": 3,
+  "target": "CMF Watch Pro 2",
+  "resolution": [
+    466,
+    466
+  ],
+  "bytes": 262025,
+  "decodedRgbaBytes": 4116416,
+  "checks": {
+    "byteExactRoundTrip": true,
+    "headerAndResourceCrc": true,
+    "allAssetsDecoded": true,
+    "maxImageSide": 466,
+    "previewsOnBothScreens": true,
+    "nativeSources": [
+      4,
+      10,
+      14,
+      23,
+      114
+    ],
+    "live24hImageFrames": 24,
+    "nativeClockSubdials": true,
+    "alignedSubdialGeometry": true,
+    "artworkSupersampling": 4,
+    "mainHandWidgets": 10
+  },
+  "browserRendering": {
+    "nativeFileLoaded": true,
+    "hasDate": true,
+    "dateIsolated": true,
+    "secondsMove": true,
+    "minuteAndHourMove": true,
+    "clockBoundaryValues": true,
+    "metricChecks": [],
+    "aodLitFraction": 0.010190830554992723,
+    "passed": true
+  },
+  "hardware": {
+    "connected": false,
+    "uploaded": false,
+    "verifiedOnWatch": false
+  }
+}
