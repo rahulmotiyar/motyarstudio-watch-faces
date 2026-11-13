@@ -1,15 +1,22 @@
 {
   "name": "Braun Round",
   "theme": "white",
-  "revision": 5,
+  "revision": 7,
   "filename": "braun-round.bin",
+  "dateBox": {
+    "x": 210,
+    "y": 322,
+    "w": 47,
+    "h": 55
+  },
+  "dateFontSize": 29,
   "target": "CMF Watch Pro 2",
   "resolution": [
     466,
     466
   ],
-  "bytes": 200669,
-  "sha256": "2c738c43c41a90db5916d0a10316b7110567b55830cfdefe296b77288b08b4e8",
+  "bytes": 197564,
+  "sha256": "a66273a7c3785a63a78559baceee2b74ab1f4f746e5e8f006ea366db43db40f5",
   "upstream": {
     "url": "https://github.com/freethinkel/fmc",
     "commit": "cfc340c95ddd18adbf1e04a9e3613cad145c2dc3",

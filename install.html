@@ -1,40 +1,108 @@
 <!doctype html>
 <html lang="en">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>MotyarStudio watch faces · CMF Watch Pro 2</title>
-<style>
-*{box-sizing:border-box}body{margin:0;background:#e9e9e4;color:#20211f;font:16px/1.5 -apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif}main{max-width:1140px;margin:auto;min-height:100vh;display:grid;grid-template-columns:1.25fr 1fr;align-items:center;gap:80px;padding:70px 45px}.watch{width:min(100%,490px);aspect-ratio:1;border-radius:50%;padding:0;background:transparent;box-shadow:0 25px 45px #21251e25,0 2px 5px #0004;position:relative}.watch:after{content:"";width:13px;height:36px;border-radius:0 5px 5px 0;background:repeating-linear-gradient(0deg,#6d726e 0 2px,#a8ada8 2px 4px);position:absolute;right:-11px;top:calc(50% - 18px);z-index:-1}canvas{display:block;width:100%;height:100%;border-radius:50%;background:#000;border:0}.eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#63675f}h1{font-size:48px;line-height:1.1;letter-spacing:-.045em;font-weight:500;margin:16px 0 24px}p{color:#64675f;max-width:380px}.description{margin-bottom:30px}.controls{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px}button,.download{font:inherit;line-height:1.2;border:1px solid #bbbfb3;border-radius:6px;background:transparent;color:#20211f;cursor:pointer;padding:12px 17px;text-decoration:none;display:inline-block}button:hover,.download:hover{background:#dcded5}button:focus-visible,a:focus-visible,select:focus-visible{outline:3px solid #bc8e00;outline-offset:3px}button[aria-pressed="true"]{background:#20211f;color:#f7f7f2;border-color:#20211f}.primary{background:#e6b213;border-color:#e6b213;color:#20211f}.primary:hover{background:#d8a406}button:disabled{opacity:.4;cursor:default}.device{border-top:1px solid #c9ccc1;padding-top:25px;margin-top:28px}.device h2{font-size:18px;margin:0 0 8px;font-weight:500}.device p{font-size:14px;margin:0 0 18px}.device-buttons{display:flex;gap:8px;flex-wrap:wrap}#info{font-size:14px;white-space:pre-line;margin:16px 0;color:#50564a}#status{font-size:14px;min-height:24px;color:#555c4d;margin-top:14px;max-width:400px}.footnote{font-size:11px;color:#7a8073;margin-top:32px}#verification{font-size:12px;color:#5a6350}.slot{margin:16px 0;display:grid;gap:8px;font-size:14px}.slot[hidden]{display:none}select{font:inherit;padding:9px;background:#f5f5f0;border:1px solid #aaa;border-radius:4px}a{color:inherit}.actions{display:flex;gap:8px;flex-wrap:wrap}.caption{margin-top:24px;text-align:center;font-size:12px;color:#72786c}.caption i{display:inline-block;width:5px;height:5px;border-radius:50%;background:#d6a114;vertical-align:middle;margin-right:7px}progress{width:100%;accent-color:#c99504;margin-top:12px}#firmware-note{color:#787052;font-size:12px}@media(max-width:800px){main{grid-template-columns:1fr;gap:48px;padding:42px 28px;max-width:530px}h1{font-size:40px}.watch{max-width:410px;margin:auto}.caption{margin-bottom:0}}
-</style>
-<main>
-  <section aria-label="Watch face preview">
-    <div class="watch"><canvas id="face" width="466" height="466" role="img" aria-label="Braun-inspired round analogue watch face"></canvas></div>
-    <div class="caption"><i aria-hidden="true"></i><span id="caption">Native face preview · live local time</span></div>
-  </section>
-  <section>
-    <a href="./" style="display:inline-block;margin-bottom:24px">← All watch faces</a><div class="eyebrow">CMF Watch Pro 2 / 466 × 466</div>
-    <h1 id="face-title">Braun Round</h1>
-    <p class="description" id="description">A softly shaded white dial, floating black hands, yellow seconds and a larger recessed date window.</p>
-    <label class="slot">Watch face<select id="face-choice" aria-label="Watch face"><option value="white">Braun Round</option></select></label>
-    <div class="controls" aria-label="Preview controls">
-      <button id="mode" type="button" aria-pressed="false">Always-on preview</button>
-      <button id="reference" type="button" aria-pressed="false">Reference time</button>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Connect your CMF Watch Pro 2 once, then preview and install watch faces in one place.">
+  <title>MotyarStudio · Watch faces</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-connected="false">
+<div class="shell">
+  <header class="topbar">
+    <div class="wordmark" aria-label="MotyarStudio"><strong>Motyar</strong><span>Studio</span></div>
+    <div class="top-actions">
+      <div class="connection-label" role="status"><span id="connection-label">Not connected</span></div>
+      <button class="quiet" id="disconnect" type="button" hidden>Disconnect</button>
+      <button class="quiet" id="help-open" type="button" aria-haspopup="dialog">Help</button>
     </div>
-    <details style="margin-bottom:24px"><summary>Download files</summary><div class="actions" style="margin-top:12px"><a id="download" class="download" href="braun-round.bin" download>Download native face</a><a id="image-link" class="download" href="preview.png" target="_blank">View image</a></div></details>
-    <aside id="browser-note" hidden style="border:1px solid #b5b8ab;border-radius:8px;padding:14px;margin:20px 0" role="status"></aside><div class="device">
-      <h2>Install on your watch</h2>
-      <p>First, temporarily turn off Bluetooth on your phone. Keep your computer’s Bluetooth on and your watch nearby. Then connect below.</p>
-      <div class="device-buttons"><button class="primary" id="connect">Connect watch</button><button id="disconnect" disabled>Disconnect</button></div>
-      <div id="info" aria-live="polite">No watch connected.</div>
-      <label class="slot" id="slot-label">Choose a face to replace:<select id="slot" disabled aria-describedby="slot-hint"><option value="">Connect watch to load faces</option></select><span id="slot-hint" role="status">Connect your watch to load its faces.</span></label>
-      <button class="primary" id="install" disabled>Install face</button>
-      <div id="firmware-note"></div>
-      <div id="status" role="status">The watch-face file has not been tested on your watch yet.</div>
-      <progress id="progress" max="100" value="0" hidden></progress>
-    </div>
-    <div class="footnote">AI-generated personal watch faces · unofficial reference-inspired designs.<br>Native format, renderer and Bluetooth client: <a href="https://github.com/freethinkel/fmc" target="_blank" rel="noreferrer">FMC</a> · <a href="source/fmc/LICENSE">AGPL-3.0</a> · <a href="downloads/MotyarStudio-Watch-Pro-2-8-Faces.zip">Source & licenses</a> · <a href="help.html">Installation help</a></div>
-    <p id="verification" hidden></p>
-  </section>
-</main>
-<script type="module" src="app.js"></script>
+  </header>
+  <main>
+    <noscript><p class="noscript">Enable JavaScript to preview faces and connect your watch.</p></noscript>
+    <aside id="browser-note" class="browser-note" hidden role="status"></aside>
+    <section class="intro" id="connection-stage" aria-labelledby="connect-title">
+      <div class="intro-copy">
+        <div class="eyebrow">For CMF Watch Pro 2</div>
+        <h1 id="connect-title">Connect your watch.</h1>
+        <p>One connection for every face. Browse, preview and install here.</p>
+        <ol class="setup">
+          <li>Temporarily turn off Bluetooth on the phone paired with your watch.</li>
+          <li>Keep your watch nearby and your computer’s Bluetooth on.</li>
+        </ol>
+        <div class="intro-actions">
+          <button class="primary" id="connect" type="button" disabled>Connect watch</button>
+          <button class="quiet" id="browse" type="button" disabled>Preview faces first</button>
+        </div>
+        <p class="connect-status" id="connect-status" aria-live="polite">Loading the collection…</p>
+      </div>
+      <figure class="intro-art" aria-label="Featured watch face">
+        <img src="preview.png" alt="Braun Round watch face" width="466" height="466">
+        <figcaption>Made for your wrist.</figcaption>
+      </figure>
+    </section>
+    <section class="workspace" id="workspace" hidden aria-label="Choose and assign watch faces">
+      <section class="library" aria-labelledby="workspace-title">
+        <div class="library-head" id="library-top">
+          <div><h1 id="workspace-title" tabindex="-1">Choose a face.</h1><span class="count" id="count" role="status"></span></div>
+          <label class="group-picker"><span>Group</span><select id="group-choice" aria-label="Watch face group"><option value="all">All groups</option></select></label>
+        </div>
+        <nav class="filters" aria-label="Filter faces">
+          <button type="button" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" data-filter="analog" aria-pressed="false">Analogue</button>
+          <button type="button" data-filter="digital" aria-pressed="false">Digital</button>
+          <button type="button" data-filter="photo" aria-pressed="false">Photographic</button>
+        </nav>
+        <div class="collections" id="faces" aria-label="Watch face groups"></div>
+        <div class="empty" id="empty" hidden><p>No faces match these filters.</p><button class="quiet" id="reset-filter" type="button">Show all types in this group</button></div>
+      </section>
+      <aside class="preview-panel" id="preview-panel" aria-labelledby="face-title">
+        <div class="preview-heading"><h2 id="face-title">Braun Round</h2><a class="quiet back-to-faces" href="#library-top">All faces ↑</a></div>
+        <div class="watch">
+          <img id="face-poster" src="preview.png" alt="Selected face preview" width="466" height="466">
+          <canvas id="face" width="466" height="466" role="img" aria-label="Live watch face preview" hidden></canvas>
+        </div>
+        <p class="caption" id="caption">Loading native preview…</p>
+        <div class="preview-controls"><button class="toggle" id="mode" type="button" aria-pressed="false">Always-on</button></div>
+        <div class="assignment">
+          <label class="slot" id="slot-label">Install destination
+            <select id="slot" aria-describedby="slot-hint" disabled><option value="">Connect watch to load faces</option></select>
+            <span class="hint" id="slot-hint" role="status">Connect your watch to load its faces.</span>
+          </label>
+          <button class="primary install" id="install" type="button" disabled>Install face</button>
+          <p class="status" id="status" role="status">Connect your watch to install this face.</p>
+          <button class="quiet" id="retry-face" type="button" hidden>Reload this face</button>
+          <div class="progress-row" id="progress-row" hidden>
+            <div class="progress-meta"><span>Transferring to watch</span><span id="progress-label">0%</span></div>
+            <progress id="progress" max="100" value="0" aria-label="Watch face transfer"></progress>
+          </div>
+        </div>
+        <details class="more">
+          <summary>Details & files</summary>
+          <p id="description"></p>
+          <button class="toggle" id="reference" type="button" aria-pressed="false">Reference time</button>
+          <div class="file-actions"><a id="download" href="braun-round.bin" download>Download face</a><a id="image-link" href="preview.png" target="_blank" rel="noopener">View image ↗</a></div>
+          <div class="device-info" id="info">No watch connected.</div>
+          <p id="verification" hidden></p>
+        </details>
+      </aside>
+    </section>
+  </main>
+  <footer><span>AI-generated personal adaptations · Unofficial watch faces</span><div class="footer-links"><span>CMF Watch Pro 2</span><a href="downloads/MotyarStudio-Single-Page.zip" download>Source & licenses ↓</a></div></footer>
+</div>
+<dialog id="help-dialog" aria-labelledby="help-title">
+  <div class="dialog-head"><h2 id="help-title">A little help.</h2><button class="close" id="help-close" type="button" aria-label="Close help">×</button></div>
+  <p>Use desktop Chrome or Edge on Windows or Mac, with Bluetooth enabled.</p>
+  <ol>
+    <li>Release the watch’s phone connection, then select <strong>Connect watch</strong>. Confirm pairing on the watch if asked.</li>
+    <li>Choose a design and an <strong>Install destination</strong>. Replace an existing face or explicitly add a new one if space is available.</li>
+    <li>Select <strong>Install face</strong> and keep the watch nearby. You can install another design without reconnecting.</li>
+    <li>When finished, disconnect here and turn your phone’s Bluetooth back on.</li>
+  </ol>
+  <h3>Watch or destination missing?</h3><p>Close other watch connections and keep the watch nearby. If its face list has not arrived, disconnect and reconnect. A full watch needs an existing face selected for replacement.</p>
+  <h3>About the previews</h3><p>Installed faces use the watch’s clock and supported sensor readings. Browser weather and activity values are samples; connected battery readings are live. Weather icons are illustrative. Subdials show clock readings. Casio’s AMS marker is fixed to Amsterdam.</p>
+  <h3>Your connection stays here</h3><p>Browsing, filtering, previews and this help keep the same connection. Reloading or closing the tab disconnects the watch. Installation history is stored in your browser.</p>
+  <p style="margin-top:24px">Native format, renderer and Bluetooth client: <a href="https://github.com/freethinkel/fmc" target="_blank" rel="noreferrer">FMC ↗</a> · <a href="LICENSE" target="_blank" rel="noopener">AGPL-3.0 ↗</a></p>
+</dialog>
+<script type="module" src="start.js"></script>
+</body>
 </html>

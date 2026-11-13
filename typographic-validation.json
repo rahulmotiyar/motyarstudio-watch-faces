@@ -1,0 +1,104 @@
+{
+  "theme": "typographic",
+  "name": "Ceramic Type",
+  "kind": "digital",
+  "revision": 3,
+  "description": "Rounded hours and fine minutes share one baseline, with a compact weekday/date strip and a decorative filled cloud and sun.",
+  "hasDate": true,
+  "dateBox": {
+    "x": 223,
+    "y": 307,
+    "w": 132,
+    "h": 50
+  },
+  "supportsSeconds": false,
+  "expectedSources": [
+    1,
+    11,
+    23,
+    24
+  ],
+  "decorativeWeatherIcon": true,
+  "referenceImage": 10,
+  "clockRegions": {
+    "hours": [
+      61,
+      118,
+      200,
+      180
+    ],
+    "minutes": [
+      271,
+      163,
+      122,
+      130
+    ]
+  },
+  "typography": {
+    "hourSize": 160,
+    "minuteSize": 104,
+    "weekdaySize": 29,
+    "daySize": 31,
+    "timeBaseline": 269,
+    "dateBaseline": 344,
+    "weekdayLeft": 225,
+    "dayLeftByWeekday": [
+      291,
+      300,
+      288,
+      298,
+      290,
+      276,
+      287
+    ],
+    "weekdayDayGap": [
+      6,
+      10
+    ]
+  },
+  "filename": "typographic.bin",
+  "seed": "cmf-typographic-v1",
+  "validationFile": "typographic-validation.json",
+  "preview": "typographic-preview.png",
+  "aodPreview": "typographic-aod-preview.png",
+  "sha256": "9e1f1f39b340be1c30f8c0b8aa7ea3fb892c3987bceb338ba0fe02ce55f59729",
+  "shadowCount": 0,
+  "group": "expanded",
+  "target": "CMF Watch Pro 2",
+  "resolution": [
+    466,
+    466
+  ],
+  "bytes": 241375,
+  "decodedRgbaBytes": 3575616,
+  "checks": {
+    "byteExactRoundTrip": true,
+    "headerAndResourceCrc": true,
+    "allAssetsDecoded": true,
+    "maxImageSide": 466,
+    "previewsOnBothScreens": true,
+    "nativeSources": [
+      1,
+      11,
+      23,
+      24
+    ],
+    "artworkSupersampling": 4
+  },
+  "browserRendering": {
+    "nativeFileLoaded": true,
+    "hasDate": true,
+    "dateIsolated": true,
+    "secondsMove": false,
+    "minuteAndHourMove": true,
+    "clockBoundaryValues": true,
+    "metricChecks": [],
+    "aodLitFraction": 0.009431008123192544,
+    "passed": true
+  },
+  "hardware": {
+    "connected": false,
+    "uploaded": false,
+    "verifiedOnWatch": false
+  }
+}

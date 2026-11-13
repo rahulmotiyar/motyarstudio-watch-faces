@@ -1,0 +1,141 @@
+{
+  "theme": "photo-daytona-pearl",
+  "name": "Daytona Pearl Photo",
+  "kind": "analog",
+  "revision": 1,
+  "description": "The supplied dial photograph with live, aligned hands, clock-driven subdials.",
+  "mainPivot": [
+    232,
+    234
+  ],
+  "photoMainSources": [
+    10,
+    14,
+    15
+  ],
+  "photoRegisters": [
+    {
+      "name": "left",
+      "center": [
+        121,
+        234
+      ],
+      "radius": 74.32746614342877,
+      "source": 114,
+      "scale": 60,
+      "kind": "second",
+      "widget": "hand"
+    },
+    {
+      "name": "right",
+      "center": [
+        343,
+        234
+      ],
+      "radius": 74.32746614342877,
+      "source": 11,
+      "scale": 30,
+      "kind": "minute30",
+      "widget": "picker"
+    },
+    {
+      "name": "bottom",
+      "center": [
+        232,
+        345
+      ],
+      "radius": 74.97379193598032,
+      "source": 10,
+      "scale": 12,
+      "kind": "hour12",
+      "widget": "hand"
+    }
+  ],
+  "hasDate": false,
+  "supportsSeconds": true,
+  "artworkMode": "supplied-image",
+  "referenceCredit": "User-supplied dial photograph. Brand marks and any source watermarks retained.",
+  "sourceImageSha256": "496a78e2c22ce9a309dbad5af8c6439e3ee3ca4da537f82ad3b528bf1d89e7fc",
+  "photoSource": {
+    "attachment": 9,
+    "originalFile": "09.png",
+    "dialFile": "09.png",
+    "sourceSize": [
+      736,
+      981
+    ],
+    "crop": [
+      8,
+      132,
+      730,
+      852
+    ],
+    "sourcePivot": [
+      368.5,
+      494
+    ],
+    "sourceSha256": "496a78e2c22ce9a309dbad5af8c6439e3ee3ca4da537f82ad3b528bf1d89e7fc",
+    "processing": "Direct crop, one Lanczos fit to 466 \u00d7 466, circular mask and native RGB565 dithering.",
+    "handRemovalRetouch": false
+  },
+  "referenceNote": "Subdial pointers show clock values, not an interactive stopwatch.",
+  "calendarLayout": {
+    "hasDate": false,
+    "sources": []
+  },
+  "filename": "photo-daytona-pearl.bin",
+  "seed": "cmf-photo-daytona-pearl-v1",
+  "validationFile": "photo-daytona-pearl-validation.json",
+  "preview": "photo-daytona-pearl-preview.png",
+  "aodPreview": "photo-daytona-pearl-aod-preview.png",
+  "expectedSources": [
+    10,
+    11,
+    14,
+    15,
+    114
+  ],
+  "sha256": "bb71518f9261ee488e3cb4072cebd213da158437d96dfd277eb77ad9ec1153ba",
+  "shadowCount": 5,
+  "group": "expanded",
+  "target": "CMF Watch Pro 2",
+  "resolution": [
+    466,
+    466
+  ],
+  "bytes": 445920,
+  "decodedRgbaBytes": 8914000,
+  "checks": {
+    "byteExactRoundTrip": true,
+    "headerAndResourceCrc": true,
+    "allAssetsDecoded": true,
+    "maxImageSide": 466,
+    "previewsOnBothScreens": true,
+    "nativeSources": [
+      10,
+      11,
+      14,
+      15,
+      114
+    ],
+    "artworkSupersampling": 4
+  },
+  "browserRendering": {
+    "nativeFileLoaded": true,
+    "hasDate": false,
+    "dateIsolated": true,
+    "secondsMove": true,
+    "minuteAndHourMove": true,
+    "clockBoundaryValues": true,
+    "metricChecks": [],
+    "photographedPivotsChecked": true,
+    "printedRegisterScalesChecked": true,
+    "aodLitFraction": 0.006571312788962773,
+    "passed": true
+  },
+  "hardware": {
+    "connected": false,
+    "uploaded": false,
+    "verifiedOnWatch": false
+  }
+}

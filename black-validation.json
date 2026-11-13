@@ -1,15 +1,22 @@
 {
   "name": "Braun Black",
   "theme": "black",
-  "revision": 5,
+  "revision": 7,
   "filename": "braun-black.bin",
+  "dateBox": {
+    "x": 210,
+    "y": 322,
+    "w": 47,
+    "h": 55
+  },
+  "dateFontSize": 29,
   "target": "CMF Watch Pro 2",
   "resolution": [
     466,
     466
   ],
-  "bytes": 244207,
-  "sha256": "ad5a9f8012138d4a4d6078056555be67477749bab2c71ae5e4f50e095c75f6bb",
+  "bytes": 240730,
+  "sha256": "c8ca81e739f153bcc6363f5c813e31c70c7ad0676ceea805edea8568bf7893bf",
   "upstream": {
     "url": "https://github.com/freethinkel/fmc",
     "commit": "cfc340c95ddd18adbf1e04a9e3613cad145c2dc3",

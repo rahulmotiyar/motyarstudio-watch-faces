@@ -2,7 +2,9 @@
 export const REGISTRY_KEY='braun_face_installations_v1';
 const FACE_SEEDS={white:'braun-round-pro2-v1',black:'braun-black-pro2-v2',casio:'cmf-casio-world-v1',
   'braun-subdials':'cmf-braun-subdials-v1',skagen:'cmf-skagen-dark-v1'};
-for(const theme of ['bai-clock','xeric-mint','zenith-ice'])FACE_SEEDS[theme]='cmf-'+theme+'-v1';
+for(const theme of ['bai-clock','motyarstudio-dark','motyarstudio-sans','motyarstudio-sans-dark','xeric-mint','seiko-ivory','sternglas','seiko-orange','sliding-light','sliding-dark',
+  'radial-dark','diagonal','typographic','weather-minimal','weather-arc','orbit','zenith-ice'])FACE_SEEDS[theme]='cmf-'+theme+'-v1';
+for(const theme of ["photo-submariner-diamond", "photo-daytona-pearl", "photo-chrono-ivory", "photo-tissot-lelocle"])FACE_SEEDS[theme]='cmf-'+theme+'-v1';
 export const faceSeed=theme=>{
   if(!FACE_SEEDS[theme])throw Error('Unknown watch face');
   return FACE_SEEDS[theme];

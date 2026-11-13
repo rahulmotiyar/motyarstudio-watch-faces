@@ -1,0 +1,90 @@
+{
+  "theme": "sternglas",
+  "name": "Sternglas Chrono",
+  "kind": "analog",
+  "description": "A cool grey instrument dial with larger main scales, enlarged aligned chronograph wells, a distinct red seconds hand and a raised wider live date.",
+  "revision": 3,
+  "hasDate": true,
+  "dateBox": {
+    "x": 215,
+    "y": 341,
+    "w": 37,
+    "h": 39
+  },
+  "referenceIndex": 11,
+  "clockSubdialCenters": {
+    "minute": [
+      143,
+      233
+    ],
+    "hour24": [
+      323,
+      233
+    ]
+  },
+  "chronoDialRadius": 54,
+  "scaleLayout": {
+    "hourLabelRadius": 171,
+    "hourFontSize": 21,
+    "minuteLabelRadius": 222,
+    "minuteFontSize": 14
+  },
+  "mainPivot": [
+    233,
+    233
+  ],
+  "filename": "sternglas.bin",
+  "seed": "cmf-sternglas-v1",
+  "validationFile": "sternglas-validation.json",
+  "preview": "sternglas-preview.png",
+  "aodPreview": "sternglas-aod-preview.png",
+  "supportsSeconds": true,
+  "expectedSources": [
+    4,
+    10,
+    14,
+    23,
+    114
+  ],
+  "sha256": "72569b54cdd7045023264fd8398e1b0c64ba4c014f85103fa9f051f71561f301",
+  "shadowCount": 4,
+  "group": "expanded",
+  "target": "CMF Watch Pro 2",
+  "resolution": [
+    466,
+    466
+  ],
+  "bytes": 265072,
+  "decodedRgbaBytes": 4442304,
+  "checks": {
+    "byteExactRoundTrip": true,
+    "headerAndResourceCrc": true,
+    "allAssetsDecoded": true,
+    "maxImageSide": 466,
+    "previewsOnBothScreens": true,
+    "nativeSources": [
+      4,
+      10,
+      14,
+      23,
+      114
+    ],
+    "artworkSupersampling": 4
+  },
+  "browserRendering": {
+    "nativeFileLoaded": true,
+    "hasDate": true,
+    "dateIsolated": true,
+    "secondsMove": true,
+    "minuteAndHourMove": true,
+    "clockBoundaryValues": true,
+    "metricChecks": [],
+    "aodLitFraction": 0.006571312788962773,
+    "passed": true
+  },
+  "hardware": {
+    "connected": false,
+    "uploaded": false,
+    "verifiedOnWatch": false
+  }
+}

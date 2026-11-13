@@ -4,7 +4,7 @@
   "filename": "skagen-dark.bin",
   "seed": "cmf-skagen-dark-v1",
   "kind": "subdials",
-  "description": "Larger subdials at 12, 9 and 6, branding at 3, silver hands and gold seconds.",
+  "description": "Larger subdials at 12, 9 and 6, original Skagen wordmark, four outer hour numerals and gold seconds.",
   "preview": "skagen-preview.png",
   "aodPreview": "skagen-aod-preview.png",
   "validationFile": "skagen-validation.json",
@@ -26,14 +26,14 @@
     "arrangement": "cardinal"
   },
   "shadowCount": 5,
-  "sha256": "69f14324ba37cc419386225ab1005ddcd35307a325e6975483b403c9deed0c20",
-  "revision": 3,
+  "sha256": "62aaeb8348124c374904563db07bba4d20330e1b0550d673312bc7e7e36a103a",
+  "revision": 4,
   "target": "CMF Watch Pro 2",
   "resolution": [
     466,
     466
   ],
-  "bytes": 208187,
+  "bytes": 212206,
   "decodedRgbaBytes": 3716288,
   "checks": {
     "byteExactRoundTrip": true,

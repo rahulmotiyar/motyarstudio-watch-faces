@@ -36,6 +36,77 @@ export async function verifyNativeRendering(variant,doc,store,{savePreviews=true
     const box=region=>({x:region[0],y:region[1],w:region[2],h:region[3]});
     check(difference(sample('main',0,8),sample('main',1,8),box(variant.clockRegions.hours))>25,'hour picker boundary is static');
     check(difference(sample('main',10,0),sample('main',10,59),box(variant.clockRegions.minutes))>25,'minute picker boundary is static');
+    if(variant.clockRegions.seconds)check(difference(sample('main',10,8,0),sample('main',10,8,59),box(variant.clockRegions.seconds))>25,'seconds picker boundary is static');
+  }
+  let photographicGeometryChecked=false;
+  if(variant.artworkMode==='supplied-image'&&variant.photoMainSources){
+    const mainScreen=doc.screens.find(s=>s.kind==='main');
+    const atPivot=(layer,center)=>layer.kind==='hand'&&layer.x+layer.pivotX===center[0]&&layer.y+layer.pivotY===center[1];
+    for(const source of variant.photoMainSources)
+      check(main.some(l=>atPivot(l,variant.mainPivot)&&l.meta.source===source),'main hand misses the photographed pivot');
+    const isolated=(layer,h=6,m=0,s=0)=>{
+      const sim={...defaultSim(),live:false,time:new Date(2026,0,29,h,m,s).getTime()};
+      renderDoc(ctx,{...doc,screens:[{...mainScreen,layers:[layer]}]},store,'main',sim);
+      return new Uint8ClampedArray(ctx.getImageData(0,0,466,466).data);
+    };
+    for(const register of variant.photoRegisters??[]){
+      let layer;
+      if(register.widget==='hand'){
+        layer=main.find(l=>atPivot(l,register.center)&&l.meta.source===register.source);
+        check(layer,register.name+' pointer misses its photographed pivot');
+      }else{
+        layer=main.find(l=>{
+          if(l.kind!=='image'||l.meta.source!==register.source||l.frames.length!==60)return false;
+          const asset=doc.images.get(l.frames[0]);
+          return l.x+asset.w/2===register.center[0]&&l.y+asset.h/2===register.center[1];
+        });
+        check(layer,register.name+' picker misses its photographed pivot');
+      }
+      const first=isolated(layer);
+      if(register.kind==='minute30'){
+        check(difference(first,isolated(layer,6,30))===0,register.name+' does not repeat on its printed 30-minute scale');
+        check(difference(first,isolated(layer,6,15))>10,register.name+' minute pointer does not move');
+      }else if(register.kind==='hour12'){
+        check(difference(first,isolated(layer,18))===0,register.name+' does not repeat on its printed 12-hour scale');
+        check(difference(first,isolated(layer,9))>10,register.name+' hour pointer does not move');
+      }else{
+        const other=register.kind==='second'?isolated(layer,6,0,30):isolated(layer,6,30,0);
+        check(difference(first,other)>10,register.name+' pointer does not move');
+      }
+    }
+    if(variant.datePointerLayout){
+      check(main.some(l=>l.kind==='image'&&l.meta.source===23&&l.frames.length===32),'date pointer lacks its 31-day native frame set');
+    }
+    photographicGeometryChecked=true;
+  }
+  let discsRotateAnticlockwise=false;
+  if(variant.discLayout){
+    const layout=variant.discLayout,[cx,cy]=layout.center;
+    for(const name of ['hours','minutes','seconds']){
+      const spec=layout[name];if(!spec)continue;
+      const {source,frames:count}=spec;
+      const layer=main.find(l=>l.kind==='image'&&l.meta?.source===source&&l.frames.length===count);
+      check(layer,'rotating '+name+' disc lacks its native '+count+'-state picker');
+      const marker=frame=>{
+        let sx=0,sy=0,count=0;
+        for(let y=0;y<466;y++)for(let x=0;x<466;x++){
+          if(x>=330&&Math.abs(y-cy)<40)continue;
+          if(Math.abs(Math.hypot(x-cx,y-cy)-spec.zeroMarkerRadius)>4)continue;
+          const p=(y*466+x)*4,r=frame[p],g=frame[p+1],b=frame[p+2];
+          // Separate the cyan index from the blue-grey type after RGB4444 quantization.
+          if(r<125&&g>r+45&&b>r+70){sx+=x;sy+=y;count++;}
+        }
+        check(count>3,name+' disc index marker is missing');return [sx/count-cx,cy-sy/count];
+      };
+      const atValue=value=>name==='hours'?sample('main',value,8,35):name==='minutes'?sample('main',6,value,35):sample('main',6,8,value);
+      const a=marker(atValue(10)),b=marker(atValue(11));
+      const turn=Math.atan2(a[0]*b[1]-a[1]*b[0],a[0]*b[0]+a[1]*b[1]);
+      const expected=Math.abs(spec.degreesPerStep??layout.degreesPerStep)*Math.PI/180;
+      check(Math.abs(turn-expected)<.035,name+' disc does not rotate the expected amount anticlockwise');
+      const [x,y,w,h]=spec.readoutROI;
+      check(difference(atValue(0),atValue(count-1),{x,y,w,h})>25,name+' window does not show the wrap boundary');
+    }
+    discsRotateAnticlockwise=true;
   }
   for(const layer of main.filter(l=>l.kind==='image'&&l.frames.length>1)){
     if(layer.meta.source===4)check([12,24].includes(layer.frames.length),'hour picker has an incomplete frame set');
@@ -44,13 +115,22 @@ export async function verifyNativeRendering(variant,doc,store,{savePreviews=true
   if(variant.hourFormat?.startsWith('24')){
     check(doc.screens.find(s=>s.kind==='aod').layers.some(l=>l.meta?.source===4),'always-on hour format differs from the main face');
   }
+  if(variant.hourFormat==='12-hour disc'){
+    const [x,y,w,h]=variant.clockRegions.hours,box={x,y,w,h};
+    for(const hour of [0,1,11]){
+      check(difference(sample('main',hour,8,35),sample('main',hour+12,8,35),box)===0,'hour disc does not repeat after twelve hours');
+      check(difference(sample('main',hour,8,35,29,{is24h:false}),sample('main',hour,8,35,29,{is24h:true}),box)===0,'hour disc depends on watch time preference');
+      check(difference(sample('aod',hour,8,35),sample('aod',hour+12,8,35))===0,'always-on hour format differs from the main face');
+    }
+    check(main.some(l=>l.kind==='image'&&l.meta.source===4&&l.frames.length===12),'12-hour disc lacks its twelve-frame cycle');
+  }
   const metricChecks=[];
-  for(const [source,metric,a,b] of [[25,'steps',1234,9876],[26,'hr',60,120],[36,'battery',10,90],[48,'battery',10,90],[54,'temp',-5,25]]){
+  for(const [source,metric,a,b] of [[25,'steps',1234,9876],[26,'hr',60,120],[36,'battery',10,90],[48,'battery',10,90],[54,'temp',-5,25],[95,'temp',-5,25]]){
     if(!sources.includes(source))continue;
     check(difference(sample('main',10,8,35,29,{[metric]:a}),sample('main',10,8,35,29,{[metric]:b}))>3,metric+' reading is static');
     metricChecks.push(metric);
   }
-  if(sources.includes(54)){
+  if(sources.includes(54)||sources.includes(95)){
     check(difference(sample('main',10,8,35,29,{temp:5}),sample('main',10,8,35,29,{temp:-5}))>2,'negative temperature has no minus sign');
     check(difference(sample('main',10,8,35,29,{temp:-400}),sample('main',10,8,35,29,{temp:1000}))===0,'missing temperature fallbacks differ');
   }
@@ -74,9 +154,11 @@ export async function verifyNativeRendering(variant,doc,store,{savePreviews=true
     check(difference(sample('main',10,8,35,29,{is24h:false}),sample('main',22,8,35,29,{is24h:false}),{x,y,w,h})>5,'AM/PM indicator did not change');
     check(difference(sample('main',22,8,35,29,{is24h:false}),sample('main',22,8,35,29,{is24h:true}),{x:hx,y:hy,w:hw,h:hh})>100,'12/24-hour format ignored');
   }
-  // Hosted checks are browser-only: no images or device records are sent to a server.
   const result={nativeFileLoaded:true,hasDate:variant.hasDate!==false,dateIsolated:true,secondsMove:seconds,
     minuteAndHourMove:true,clockBoundaryValues:true,metricChecks:[...new Set(metricChecks)],
-    ...(sources.includes(54)?{negativeTemperatureSign:true,missingTemperatureFallback:true}:{}),aodLitFraction:lit/(466*466),passed:true};
+    ...(photographicGeometryChecked?{photographedPivotsChecked:true,printedRegisterScalesChecked:true}:{}),
+    ...(discsRotateAnticlockwise?{discsRotateAnticlockwise:true,discWindowWrapChecked:true,hoursDiscRotates:!!variant.discLayout?.hours}:{}),
+    ...(variant.hourFormat==='12-hour disc'?{twelveHourCycle:true,timePreferenceIndependent:true,alwaysOnTwelveHourCycle:true}:{}),
+    ...((sources.includes(54)||sources.includes(95))?{negativeTemperatureSign:true,missingTemperatureFallback:true}:{}),aodLitFraction:lit/(466*466),passed:true};
   return result;
 }

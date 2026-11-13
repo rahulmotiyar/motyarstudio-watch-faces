@@ -4,14 +4,14 @@
   "filename": "braun-subdials.bin",
   "seed": "cmf-braun-subdials-v1",
   "kind": "subdials",
-  "description": "Ivory dial, larger recessed subdials, hollow hands and broad soft shadows.",
+  "description": "Ivory dial, aligned subdial spindles, a lower seconds well and a centered four-o\u2019clock date.",
   "preview": "braun-subdials-preview.png",
   "aodPreview": "braun-subdials-aod-preview.png",
   "validationFile": "braun-subdials-validation.json",
   "hasDate": true,
   "dateBox": {
-    "x": 315,
-    "y": 291,
+    "x": 304,
+    "y": 262,
     "w": 58,
     "h": 58
   },
@@ -26,21 +26,21 @@
     ],
     "second": [
       233,
-      320
+      336
     ],
     "radius": 60,
     "arrangement": "triangle"
   },
   "shadowCount": 5,
-  "sha256": "438b6004366b1b3eb9f1f29df1356331b43208526fa3d59500646a4a9aad08f8",
-  "revision": 3,
+  "sha256": "22816a8c19bff19f03eee4aa614203508dba28164769001fc8ee4584b505da67",
+  "revision": 4,
   "target": "CMF Watch Pro 2",
   "resolution": [
     466,
     466
   ],
-  "bytes": 262025,
-  "decodedRgbaBytes": 4116416,
+  "bytes": 263140,
+  "decodedRgbaBytes": 4118976,
   "checks": {
     "byteExactRoundTrip": true,
     "headerAndResourceCrc": true,

@@ -1,0 +1,131 @@
+{
+  "theme": "photo-submariner-diamond",
+  "name": "Submariner Diamond",
+  "kind": "analog",
+  "revision": 1,
+  "description": "The supplied dial photograph with live, aligned hands and calendar.",
+  "mainPivot": [
+    231,
+    232
+  ],
+  "photoMainSources": [
+    10,
+    14,
+    15
+  ],
+  "photoRegisters": [],
+  "hasDate": true,
+  "supportsSeconds": true,
+  "artworkMode": "supplied-image",
+  "referenceCredit": "User-supplied dial photograph. Brand marks and any source watermarks retained.",
+  "sourceImageSha256": "d5ad32d824a21bac8464a452fb0b0c1fde327e65c4f1653296874f29e1c8b86c",
+  "photoSource": {
+    "attachment": 1,
+    "originalFile": "01.png",
+    "dialFile": "01.png",
+    "sourceSize": [
+      1024,
+      1024
+    ],
+    "crop": [
+      39,
+      37,
+      987,
+      984
+    ],
+    "sourcePivot": [
+      509.5,
+      509
+    ],
+    "sourceSha256": "d5ad32d824a21bac8464a452fb0b0c1fde327e65c4f1653296874f29e1c8b86c",
+    "processing": "Direct crop, one Lanczos fit to 466 \u00d7 466, circular mask and native RGB565 dithering.",
+    "handRemovalRetouch": false
+  },
+  "referenceNote": "Live analogue clock.",
+  "calendarLayout": {
+    "hasDate": true,
+    "sources": [
+      23
+    ],
+    "dateFrameCount": 32,
+    "paperTreatment": "Photographic aperture pixels retained unless a calendar-wheel paper fill is configured; metal bevels remain outside the masks.",
+    "dateBoxes": [
+      {
+        "x": 368,
+        "y": 222,
+        "w": 41,
+        "h": 23
+      }
+    ],
+    "dateFontNative": [
+      23.62
+    ],
+    "dateSource": 23,
+    "dateMode": "day-of-month",
+    "unionBox": {
+      "x": 368,
+      "y": 222,
+      "w": 41,
+      "h": 23
+    }
+  },
+  "dateBox": {
+    "x": 368,
+    "y": 222,
+    "w": 41,
+    "h": 23
+  },
+  "filename": "photo-submariner-diamond.bin",
+  "seed": "cmf-photo-submariner-diamond-v1",
+  "validationFile": "photo-submariner-diamond-validation.json",
+  "preview": "photo-submariner-diamond-preview.png",
+  "aodPreview": "photo-submariner-diamond-aod-preview.png",
+  "expectedSources": [
+    10,
+    14,
+    15,
+    23
+  ],
+  "sha256": "a9c27b821cb09b220663d9d0d49f0edde43f25a25cdc5e725b36043723b5cd62",
+  "shadowCount": 3,
+  "group": "expanded",
+  "target": "CMF Watch Pro 2",
+  "resolution": [
+    466,
+    466
+  ],
+  "bytes": 185640,
+  "decodedRgbaBytes": 2951184,
+  "checks": {
+    "byteExactRoundTrip": true,
+    "headerAndResourceCrc": true,
+    "allAssetsDecoded": true,
+    "maxImageSide": 466,
+    "previewsOnBothScreens": true,
+    "nativeSources": [
+      10,
+      14,
+      15,
+      23
+    ],
+    "artworkSupersampling": 4
+  },
+  "browserRendering": {
+    "nativeFileLoaded": true,
+    "hasDate": true,
+    "dateIsolated": true,
+    "secondsMove": true,
+    "minuteAndHourMove": true,
+    "clockBoundaryValues": true,
+    "metricChecks": [],
+    "photographedPivotsChecked": true,
+    "printedRegisterScalesChecked": true,
+    "aodLitFraction": 0.006571312788962773,
+    "passed": true
+  },
+  "hardware": {
+    "connected": false,
+    "uploaded": false,
+    "verifiedOnWatch": false
+  }
+}

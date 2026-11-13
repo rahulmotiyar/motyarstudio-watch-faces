@@ -2,8 +2,8 @@
   "theme": "zenith-ice",
   "name": "Zenith Ice",
   "kind": "analog",
-  "revision": 2,
-  "description": "The supplied Zenith dial image, with its original lettering, metal texture and depth, plus aligned live hands.",
+  "revision": 3,
+  "description": "The supplied Zenith dial image with broader polished dark hands, luminous centers and soft moving depth, aligned to its original pivots.",
   "hasDate": false,
   "supportsSeconds": true,
   "subdialLayout": {
@@ -40,7 +40,7 @@
     14,
     114
   ],
-  "sha256": "e5eb10796cfa2b0dc3afc7f2dc9eef988ca8de824c37f17ed3804c9aaed99b1b",
+  "sha256": "2ac6bc2bc22e51325c16efc895472b0e36aa144c274cda2c8e2580e3d1efc9bb",
   "shadowCount": 5,
   "group": "expanded",
   "target": "CMF Watch Pro 2",
@@ -48,8 +48,8 @@
     466,
     466
   ],
-  "bytes": 401686,
-  "decodedRgbaBytes": 4619712,
+  "bytes": 408868,
+  "decodedRgbaBytes": 4737728,
   "checks": {
     "byteExactRoundTrip": true,
     "headerAndResourceCrc": true,

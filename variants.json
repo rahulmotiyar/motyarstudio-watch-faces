@@ -8,17 +8,21 @@
     "validationFile": "validation.json",
     "hasDate": true,
     "dateBox": {
-      "x": 220,
-      "y": 342,
-      "w": 26,
-      "h": 28
+      "x": 210,
+      "y": 322,
+      "w": 47,
+      "h": 55
     },
     "shadowCount": 3,
     "theme": "white",
     "name": "Braun Round",
     "filename": "braun-round.bin",
-    "sha256": "2c738c43c41a90db5916d0a10316b7110567b55830cfdefe296b77288b08b4e8",
-    "revision": 5
+    "sha256": "a66273a7c3785a63a78559baceee2b74ab1f4f746e5e8f006ea366db43db40f5",
+    "revision": 7,
+    "dateFontSize": 29,
+    "hourFontSize": 31.5,
+    "dateStyle": "Braun Subdials aperture with thin walls and soft inner shading",
+    "shadowTreatment": "lighter penumbra and shallower offset"
   },
   {
     "seed": "braun-black-pro2-v2",
@@ -29,17 +33,21 @@
     "validationFile": "black-validation.json",
     "hasDate": true,
     "dateBox": {
-      "x": 220,
-      "y": 342,
-      "w": 26,
-      "h": 28
+      "x": 210,
+      "y": 322,
+      "w": 47,
+      "h": 55
     },
     "shadowCount": 3,
     "theme": "black",
     "name": "Braun Black",
     "filename": "braun-black.bin",
-    "sha256": "ad5a9f8012138d4a4d6078056555be67477749bab2c71ae5e4f50e095c75f6bb",
-    "revision": 5
+    "sha256": "c8ca81e739f153bcc6363f5c813e31c70c7ad0676ceea805edea8568bf7893bf",
+    "revision": 7,
+    "dateFontSize": 29,
+    "hourFontSize": 31.5,
+    "dateStyle": "Braun Subdials aperture with thin walls and soft inner shading",
+    "shadowTreatment": "lighter penumbra and shallower offset"
   },
   {
     "theme": "casio",
@@ -102,14 +110,14 @@
     "filename": "braun-subdials.bin",
     "seed": "cmf-braun-subdials-v1",
     "kind": "subdials",
-    "description": "Ivory dial, larger recessed subdials, hollow hands and broad soft shadows.",
+    "description": "Ivory dial, aligned subdial spindles, a lower seconds well and a centered four-o\u2019clock date.",
     "preview": "braun-subdials-preview.png",
     "aodPreview": "braun-subdials-aod-preview.png",
     "validationFile": "braun-subdials-validation.json",
     "hasDate": true,
     "dateBox": {
-      "x": 315,
-      "y": 291,
+      "x": 304,
+      "y": 262,
       "w": 58,
       "h": 58
     },
@@ -124,14 +132,14 @@
       ],
       "second": [
         233,
-        320
+        336
       ],
       "radius": 60,
       "arrangement": "triangle"
     },
     "shadowCount": 5,
-    "sha256": "438b6004366b1b3eb9f1f29df1356331b43208526fa3d59500646a4a9aad08f8",
-    "revision": 3
+    "sha256": "22816a8c19bff19f03eee4aa614203508dba28164769001fc8ee4584b505da67",
+    "revision": 4
   },
   {
     "theme": "skagen",
@@ -139,7 +147,7 @@
     "filename": "skagen-dark.bin",
     "seed": "cmf-skagen-dark-v1",
     "kind": "subdials",
-    "description": "Larger subdials at 12, 9 and 6, branding at 3, silver hands and gold seconds.",
+    "description": "Larger subdials at 12, 9 and 6, original Skagen wordmark, four outer hour numerals and gold seconds.",
     "preview": "skagen-preview.png",
     "aodPreview": "skagen-aod-preview.png",
     "validationFile": "skagen-validation.json",
@@ -161,21 +169,67 @@
       "arrangement": "cardinal"
     },
     "shadowCount": 5,
-    "sha256": "69f14324ba37cc419386225ab1005ddcd35307a325e6975483b403c9deed0c20",
-    "revision": 3
+    "sha256": "62aaeb8348124c374904563db07bba4d20330e1b0550d673312bc7e7e36a103a",
+    "revision": 4
   },
   {
     "theme": "bai-clock",
     "name": "MotyarStudio",
     "kind": "analog",
-    "description": "Ivory dial with a generous outer margin, four minute strokes between hour numerals and an orange seconds needle.",
-    "revision": 4,
+    "description": "Ivory dial with larger mixed-weight branding, white weekday text on a red disc, a gray calendar split and dial-tone geometric date numerals.",
+    "revision": 8,
     "filename": "motyarstudio.bin",
     "preview": "motyarstudio-preview.png",
     "aodPreview": "motyarstudio-aod-preview.png",
     "validationFile": "motyarstudio-validation.json",
     "supportsSeconds": true,
-    "hasDate": false,
+    "hasDate": true,
+    "dateBox": {
+      "x": 206,
+      "y": 292,
+      "w": 55,
+      "h": 75
+    },
+    "dayBox": {
+      "x": 208,
+      "y": 294,
+      "w": 50,
+      "h": 26
+    },
+    "dateNumberBox": {
+      "x": 208,
+      "y": 320,
+      "w": 50,
+      "h": 44
+    },
+    "calendarStyle": {
+      "placementCenter": [
+        233,
+        329
+      ],
+      "shadow": "inner-only",
+      "dateFont": "same geometric paths as hour numerals",
+      "dateFontScale": 0.84,
+      "datePaper": "dial-tone",
+      "weekdayPaper": "#b92f34",
+      "weekdayInk": "#ffffff",
+      "arcSag": 1.6,
+      "separatorWidth": 1,
+      "separatorColor": "#7d827c",
+      "orange": "#ff951d"
+    },
+    "branding": {
+      "text": "MotyarStudio",
+      "fontFamily": "Helvetica Neue",
+      "motyarWeight": "Bold",
+      "studioWeight": "Light",
+      "size": 22,
+      "center": [
+        233,
+        128
+      ]
+    },
+    "secondHandTail": 32,
     "referenceIndex": 1,
     "minuteTrack": {
       "divisions": 60,
@@ -189,9 +243,274 @@
     "expectedSources": [
       10,
       14,
+      23,
+      24,
       114
     ],
-    "sha256": "0d59c5cf15b1fcd3aca4b8a7f711501455a7656111b67f0f8689a2b76fea3226",
+    "sha256": "7f0c8940052c5216964de934b6031df19a4ba056ba5e1567cc04bc2f695c4d15",
+    "shadowCount": 3,
+    "group": "expanded"
+  },
+  {
+    "theme": "motyarstudio-dark",
+    "name": "MotyarStudio Dark",
+    "kind": "analog",
+    "description": "Charcoal dial with larger mixed-weight branding, white weekday text on a red disc, a gray calendar split and dial-tone geometric date numerals.",
+    "revision": 4,
+    "filename": "motyarstudio-dark.bin",
+    "preview": "motyarstudio-dark-preview.png",
+    "aodPreview": "motyarstudio-dark-aod-preview.png",
+    "validationFile": "motyarstudio-dark-validation.json",
+    "supportsSeconds": true,
+    "hasDate": true,
+    "dateBox": {
+      "x": 206,
+      "y": 292,
+      "w": 55,
+      "h": 75
+    },
+    "dayBox": {
+      "x": 208,
+      "y": 294,
+      "w": 50,
+      "h": 26
+    },
+    "dateNumberBox": {
+      "x": 208,
+      "y": 320,
+      "w": 50,
+      "h": 44
+    },
+    "calendarStyle": {
+      "placementCenter": [
+        233,
+        329
+      ],
+      "shadow": "inner-only",
+      "dateFont": "same geometric paths as hour numerals",
+      "dateFontScale": 0.84,
+      "datePaper": "dial-tone",
+      "weekdayPaper": "#b92f34",
+      "weekdayInk": "#ffffff",
+      "arcSag": 1.6,
+      "separatorWidth": 1,
+      "separatorColor": "#7d827c",
+      "orange": "#ff951d"
+    },
+    "branding": {
+      "text": "MotyarStudio",
+      "fontFamily": "Helvetica Neue",
+      "motyarWeight": "Bold",
+      "studioWeight": "Light",
+      "size": 22,
+      "center": [
+        233,
+        128
+      ]
+    },
+    "secondHandTail": 32,
+    "referenceIndex": 1,
+    "minuteTrack": {
+      "divisions": 60,
+      "minorStrokes": 48,
+      "strokesBetweenHours": 4,
+      "innerRadius": 188,
+      "outerRadius": 210,
+      "labelRadius": 199
+    },
+    "seed": "cmf-motyarstudio-dark-v1",
+    "expectedSources": [
+      10,
+      14,
+      23,
+      24,
+      114
+    ],
+    "sha256": "38a9f6195357a7e8b9c170bc7b0c7b3c07473e7851e01d9ffddc01983612c34d",
+    "shadowCount": 3,
+    "group": "expanded"
+  },
+  {
+    "theme": "motyarstudio-sans",
+    "name": "MotyarStudio Sans",
+    "kind": "analog",
+    "description": "Ivory dial with a dotted minute track, Helvetica Neue Bold hour and date numerals, mixed-weight branding, white weekdays on red and a gray calendar split.",
+    "revision": 2,
+    "filename": "motyarstudio-sans.bin",
+    "preview": "motyarstudio-sans-preview.png",
+    "aodPreview": "motyarstudio-sans-aod-preview.png",
+    "validationFile": "motyarstudio-sans-validation.json",
+    "supportsSeconds": true,
+    "hasDate": true,
+    "dateBox": {
+      "x": 206,
+      "y": 292,
+      "w": 55,
+      "h": 75
+    },
+    "dayBox": {
+      "x": 208,
+      "y": 294,
+      "w": 50,
+      "h": 26
+    },
+    "dateNumberBox": {
+      "x": 208,
+      "y": 320,
+      "w": 50,
+      "h": 44
+    },
+    "calendarStyle": {
+      "placementCenter": [
+        233,
+        329
+      ],
+      "shadow": "inner-only",
+      "dateFont": "Helvetica Neue",
+      "datePaper": "dial-tone",
+      "weekdayPaper": "#b92f34",
+      "weekdayInk": "#ffffff",
+      "arcSag": 1.6,
+      "separatorWidth": 1,
+      "separatorColor": "#7d827c",
+      "orange": "#ff951d",
+      "dateFontWeight": "Bold",
+      "dateFontSize": 30
+    },
+    "branding": {
+      "text": "MotyarStudio",
+      "fontFamily": "Helvetica Neue",
+      "motyarWeight": "Bold",
+      "studioWeight": "Light",
+      "size": 22,
+      "center": [
+        233,
+        128
+      ]
+    },
+    "secondHandTail": 32,
+    "referenceIndex": 1,
+    "minuteTrack": {
+      "divisions": 60,
+      "markerStyle": "dots",
+      "minorDots": 48,
+      "dotsBetweenHours": 4,
+      "dotRadius": 1.65,
+      "radius": 199,
+      "labelRadius": 199
+    },
+    "copyOf": "bai-clock",
+    "typography": {
+      "hourFont": "Helvetica Neue",
+      "hourWeight": "Bold",
+      "hourSize": 35,
+      "dateFont": "Helvetica Neue",
+      "dateWeight": "Bold",
+      "dateSize": 30,
+      "weekdayFont": "Helvetica Neue",
+      "weekdayWeight": "Bold"
+    },
+    "seed": "cmf-motyarstudio-sans-v1",
+    "expectedSources": [
+      10,
+      14,
+      23,
+      24,
+      114
+    ],
+    "sha256": "a41b4e587a7d65f43f67a12e260c48677379872777950b1e642038511284ae6f",
+    "shadowCount": 3,
+    "group": "expanded"
+  },
+  {
+    "theme": "motyarstudio-sans-dark",
+    "name": "MotyarStudio Sans Dark",
+    "kind": "analog",
+    "description": "Charcoal dial with a dotted minute track, Helvetica Neue Bold hour and date numerals, mixed-weight branding, white weekdays on red and a gray calendar split.",
+    "revision": 2,
+    "filename": "motyarstudio-sans-dark.bin",
+    "preview": "motyarstudio-sans-dark-preview.png",
+    "aodPreview": "motyarstudio-sans-dark-aod-preview.png",
+    "validationFile": "motyarstudio-sans-dark-validation.json",
+    "supportsSeconds": true,
+    "hasDate": true,
+    "dateBox": {
+      "x": 206,
+      "y": 292,
+      "w": 55,
+      "h": 75
+    },
+    "dayBox": {
+      "x": 208,
+      "y": 294,
+      "w": 50,
+      "h": 26
+    },
+    "dateNumberBox": {
+      "x": 208,
+      "y": 320,
+      "w": 50,
+      "h": 44
+    },
+    "calendarStyle": {
+      "placementCenter": [
+        233,
+        329
+      ],
+      "shadow": "inner-only",
+      "dateFont": "Helvetica Neue",
+      "datePaper": "dial-tone",
+      "weekdayPaper": "#b92f34",
+      "weekdayInk": "#ffffff",
+      "arcSag": 1.6,
+      "separatorWidth": 1,
+      "separatorColor": "#7d827c",
+      "orange": "#ff951d",
+      "dateFontWeight": "Bold",
+      "dateFontSize": 30
+    },
+    "branding": {
+      "text": "MotyarStudio",
+      "fontFamily": "Helvetica Neue",
+      "motyarWeight": "Bold",
+      "studioWeight": "Light",
+      "size": 22,
+      "center": [
+        233,
+        128
+      ]
+    },
+    "secondHandTail": 32,
+    "referenceIndex": 1,
+    "minuteTrack": {
+      "divisions": 60,
+      "markerStyle": "dots",
+      "minorDots": 48,
+      "dotsBetweenHours": 4,
+      "dotRadius": 1.65,
+      "radius": 199,
+      "labelRadius": 199
+    },
+    "copyOf": "motyarstudio-dark",
+    "typography": {
+      "hourFont": "Helvetica Neue",
+      "hourWeight": "Bold",
+      "hourSize": 35,
+      "dateFont": "Helvetica Neue",
+      "dateWeight": "Bold",
+      "dateSize": 30,
+      "weekdayFont": "Helvetica Neue",
+      "weekdayWeight": "Bold"
+    },
+    "seed": "cmf-motyarstudio-sans-dark-v1",
+    "expectedSources": [
+      10,
+      14,
+      23,
+      24,
+      114
+    ],
+    "sha256": "a0ada2ad6bc595536026a3294b9238b98f09f5801385b54e16e054ec4b916fd1",
     "shadowCount": 3,
     "group": "expanded"
   },
@@ -249,8 +568,8 @@
     "theme": "zenith-ice",
     "name": "Zenith Ice",
     "kind": "analog",
-    "revision": 2,
-    "description": "The supplied Zenith dial image, with its original lettering, metal texture and depth, plus aligned live hands.",
+    "revision": 3,
+    "description": "The supplied Zenith dial image with broader polished dark hands, luminous centers and soft moving depth, aligned to its original pivots.",
     "hasDate": false,
     "supportsSeconds": true,
     "subdialLayout": {
@@ -287,8 +606,879 @@
       14,
       114
     ],
-    "sha256": "e5eb10796cfa2b0dc3afc7f2dc9eef988ca8de824c37f17ed3804c9aaed99b1b",
+    "sha256": "2ac6bc2bc22e51325c16efc895472b0e36aa144c274cda2c8e2580e3d1efc9bb",
     "shadowCount": 5,
+    "group": "expanded"
+  },
+  {
+    "theme": "sternglas",
+    "name": "Sternglas Chrono",
+    "kind": "analog",
+    "description": "A cool grey instrument dial with larger main scales, enlarged aligned chronograph wells, a distinct red seconds hand and a raised wider live date.",
+    "revision": 3,
+    "hasDate": true,
+    "dateBox": {
+      "x": 215,
+      "y": 341,
+      "w": 37,
+      "h": 39
+    },
+    "referenceIndex": 11,
+    "clockSubdialCenters": {
+      "minute": [
+        143,
+        233
+      ],
+      "hour24": [
+        323,
+        233
+      ]
+    },
+    "chronoDialRadius": 54,
+    "scaleLayout": {
+      "hourLabelRadius": 171,
+      "hourFontSize": 21,
+      "minuteLabelRadius": 222,
+      "minuteFontSize": 14
+    },
+    "mainPivot": [
+      233,
+      233
+    ],
+    "filename": "sternglas.bin",
+    "seed": "cmf-sternglas-v1",
+    "validationFile": "sternglas-validation.json",
+    "preview": "sternglas-preview.png",
+    "aodPreview": "sternglas-aod-preview.png",
+    "supportsSeconds": true,
+    "expectedSources": [
+      4,
+      10,
+      14,
+      23,
+      114
+    ],
+    "sha256": "72569b54cdd7045023264fd8398e1b0c64ba4c014f85103fa9f051f71561f301",
+    "shadowCount": 4,
+    "group": "expanded"
+  },
+  {
+    "theme": "radial-dark",
+    "name": "Radial Instruments",
+    "kind": "digital",
+    "revision": 7,
+    "description": "Three anticlockwise discs show 12-hour time through a clear reading lens with optically enlarged numerals, refracted disc boundaries and centered motyar / studios branding.",
+    "hasDate": false,
+    "supportsSeconds": true,
+    "expectedSources": [
+      4,
+      11,
+      15
+    ],
+    "referenceImage": 3,
+    "hourFormat": "12-hour disc",
+    "branding": {
+      "lines": [
+        "motyar",
+        "studios"
+      ],
+      "weights": [
+        "Bold",
+        "Light"
+      ],
+      "center": [
+        233,
+        233
+      ],
+      "lineCenters": [
+        [
+          233,
+          222
+        ],
+        [
+          233,
+          244
+        ]
+      ]
+    },
+    "readingLens": {
+      "style": "clear lens with surface-normal lighting",
+      "sourceNumeralSize": 25,
+      "visualMagnification": 1.24,
+      "liveValues": true,
+      "runtimeRefraction": false,
+      "precomputedRefraction": true,
+      "backgroundRefraction": true,
+      "ovalReflections": false,
+      "bounds": [
+        288,
+        209,
+        172,
+        48
+      ]
+    },
+    "clockRegions": {
+      "hours": [
+        301,
+        217,
+        40,
+        34
+      ],
+      "minutes": [
+        356,
+        217,
+        40,
+        34
+      ],
+      "seconds": [
+        412,
+        217,
+        40,
+        34
+      ]
+    },
+    "discLayout": {
+      "center": [
+        233,
+        233
+      ],
+      "hourRadius": 113,
+      "direction": "anticlockwise",
+      "degreesPerStep": -6,
+      "zeroAngleDegrees": 0,
+      "uprightLabels": true,
+      "hours": {
+        "source": 4,
+        "frames": 12,
+        "degreesPerStep": -30,
+        "placement": [
+          119,
+          119,
+          228,
+          228
+        ],
+        "numeralRadius": 88,
+        "outerRadius": 113,
+        "selectedCenter": [
+          321,
+          233
+        ],
+        "readoutROI": [
+          301,
+          217,
+          40,
+          34
+        ],
+        "zeroMarkerRadius": 104,
+        "labels": [
+          "12",
+          "01",
+          "02",
+          "03",
+          "04",
+          "05",
+          "06",
+          "07",
+          "08",
+          "09",
+          "10",
+          "11"
+        ]
+      },
+      "minutes": {
+        "source": 11,
+        "frames": 60,
+        "degreesPerStep": -6,
+        "placement": [
+          53,
+          53,
+          360,
+          360
+        ],
+        "numeralRadius": 143,
+        "outerRadius": 178,
+        "selectedCenter": [
+          376,
+          233
+        ],
+        "readoutROI": [
+          356,
+          217,
+          40,
+          34
+        ],
+        "zeroMarkerRadius": 173
+      },
+      "seconds": {
+        "source": 15,
+        "frames": 60,
+        "degreesPerStep": -6,
+        "placement": [
+          0,
+          0,
+          466,
+          466
+        ],
+        "numeralRadius": 199,
+        "outerRadius": 228,
+        "selectedCenter": [
+          432,
+          233
+        ],
+        "readoutROI": [
+          412,
+          217,
+          40,
+          34
+        ],
+        "zeroMarkerRadius": 222
+      },
+      "fixedWindowROI": [
+        288,
+        209,
+        172,
+        48
+      ],
+      "zeroMarkerColor": "#6ca9c8",
+      "zeroMarkerSize": 2,
+      "cadence": "One native image state per hour, minute or second; no verified subsecond disc animation."
+    },
+    "filename": "radial-dark.bin",
+    "seed": "cmf-radial-dark-v1",
+    "validationFile": "radial-dark-validation.json",
+    "preview": "radial-dark-preview.png",
+    "aodPreview": "radial-dark-aod-preview.png",
+    "sha256": "7a0fa07e362ba17be92e4737fa4fa9cffe56f415a264ca2bf14715be493202a5",
+    "shadowCount": 0,
+    "group": "expanded"
+  },
+  {
+    "theme": "typographic",
+    "name": "Ceramic Type",
+    "kind": "digital",
+    "revision": 3,
+    "description": "Rounded hours and fine minutes share one baseline, with a compact weekday/date strip and a decorative filled cloud and sun.",
+    "hasDate": true,
+    "dateBox": {
+      "x": 223,
+      "y": 307,
+      "w": 132,
+      "h": 50
+    },
+    "supportsSeconds": false,
+    "expectedSources": [
+      1,
+      11,
+      23,
+      24
+    ],
+    "decorativeWeatherIcon": true,
+    "referenceImage": 10,
+    "clockRegions": {
+      "hours": [
+        61,
+        118,
+        200,
+        180
+      ],
+      "minutes": [
+        271,
+        163,
+        122,
+        130
+      ]
+    },
+    "typography": {
+      "hourSize": 160,
+      "minuteSize": 104,
+      "weekdaySize": 29,
+      "daySize": 31,
+      "timeBaseline": 269,
+      "dateBaseline": 344,
+      "weekdayLeft": 225,
+      "dayLeftByWeekday": [
+        291,
+        300,
+        288,
+        298,
+        290,
+        276,
+        287
+      ],
+      "weekdayDayGap": [
+        6,
+        10
+      ]
+    },
+    "filename": "typographic.bin",
+    "seed": "cmf-typographic-v1",
+    "validationFile": "typographic-validation.json",
+    "preview": "typographic-preview.png",
+    "aodPreview": "typographic-aod-preview.png",
+    "sha256": "9e1f1f39b340be1c30f8c0b8aa7ea3fb892c3987bceb338ba0fe02ce55f59729",
+    "shadowCount": 0,
+    "group": "expanded"
+  },
+  {
+    "theme": "weather-minimal",
+    "name": "Weather Minimal",
+    "kind": "digital",
+    "revision": 2,
+    "description": "Larger thin time, a compact sentence-case date and clearer live temperature and battery indicators on a softly recessed pale dial.",
+    "weatherNote": "The improved weather pictogram is a decorative motif. Native current temperature uses stock-exercised source0x5f; no weather-condition source is verified.",
+    "temperatureSourceEvidence": "Pinned FMC sources.ts labels0x36/0x5f as temperature; available Function and Elaborate_2 stock fixtures use0x5f with number sub6/max1000. Function has noData marker1000.",
+    "metrics": [
+      95,
+      36
+    ],
+    "hasDate": true,
+    "dateBox": {
+      "x": 115,
+      "y": 277,
+      "w": 236,
+      "h": 38
+    },
+    "supportsSeconds": true,
+    "filename": "weather-minimal.bin",
+    "seed": "cmf-weather-minimal-v1",
+    "validationFile": "weather-minimal-validation.json",
+    "preview": "weather-minimal-preview.png",
+    "aodPreview": "weather-minimal-aod-preview.png",
+    "expectedSources": [
+      1,
+      11,
+      21,
+      23,
+      24,
+      36,
+      95,
+      114
+    ],
+    "sha256": "9e22c3b408b694d6bb976d11145c6db703d72c8f20a7b29f6cda975796e2e273",
+    "shadowCount": 0,
+    "group": "expanded"
+  },
+  {
+    "theme": "weather-arc",
+    "name": "Weather Arc",
+    "kind": "digital",
+    "revision": 3,
+    "description": "Filled cloud-and-sun artwork beside live temperature, aligned steps and pulse on the right, and a centered live battery indicator below.",
+    "weatherNote": "The improved weather pictogram is a decorative motif. Native current temperature uses stock-exercised source0x5f; no weather-condition source is verified.",
+    "temperatureSourceEvidence": "Pinned FMC sources.ts labels0x36/0x5f as temperature; available Function and Elaborate_2 stock fixtures use0x5f with number sub6/max1000. Function has noData marker1000.",
+    "metrics": [
+      95,
+      36,
+      25,
+      26
+    ],
+    "hasDate": true,
+    "dateBox": {
+      "x": 102,
+      "y": 186,
+      "w": 262,
+      "h": 79
+    },
+    "supportsSeconds": false,
+    "lowerPanelLayout": {
+      "weatherIconCenter": [
+        135,
+        335
+      ],
+      "temperature": [
+        105,
+        353,
+        50,
+        54
+      ],
+      "steps": [
+        285,
+        305
+      ],
+      "pulse": [
+        285,
+        349
+      ],
+      "statusIconX": 263,
+      "batteryBox": [
+        169,
+        402,
+        128,
+        36
+      ],
+      "batteryCenter": [
+        233,
+        420
+      ]
+    },
+    "filename": "weather-arc.bin",
+    "seed": "cmf-weather-arc-v1",
+    "validationFile": "weather-arc-validation.json",
+    "preview": "weather-arc-preview.png",
+    "aodPreview": "weather-arc-aod-preview.png",
+    "expectedSources": [
+      1,
+      11,
+      21,
+      23,
+      24,
+      25,
+      26,
+      36,
+      95
+    ],
+    "sha256": "813d9ced56435a6d18f5a48d9602c8f25638bb5b046a63d5b964b4956ebf5119",
+    "shadowCount": 0,
+    "group": "expanded"
+  },
+  {
+    "theme": "orbit",
+    "name": "Orbit Minimal",
+    "kind": "digital",
+    "revision": 2,
+    "description": "Casual handwritten-style numerals, an enlarged rain-cloud motif and aligned live temperature, seconds, calendar, steps and battery.",
+    "weatherNote": "The improved weather pictogram is a decorative motif. Native current temperature uses stock-exercised source0x5f; no weather-condition source is verified.",
+    "temperatureSourceEvidence": "Pinned FMC sources.ts labels0x36/0x5f as temperature; available Function and Elaborate_2 stock fixtures use0x5f with number sub6/max1000. Function has noData marker1000.",
+    "metrics": [
+      95,
+      36,
+      25
+    ],
+    "hasDate": true,
+    "dateBox": {
+      "x": 153,
+      "y": 268,
+      "w": 156,
+      "h": 36
+    },
+    "supportsSeconds": true,
+    "typeface": "Comic Sans MS, matching the casual rounded character of the supplied reference.",
+    "filename": "orbit.bin",
+    "seed": "cmf-orbit-v1",
+    "validationFile": "orbit-validation.json",
+    "preview": "orbit-preview.png",
+    "aodPreview": "orbit-aod-preview.png",
+    "expectedSources": [
+      1,
+      11,
+      15,
+      19,
+      21,
+      23,
+      24,
+      25,
+      36,
+      95
+    ],
+    "sha256": "7e694d7b8db827e7040f033ab7b6ee823c859b2e513935f78fddd2d073d7b3da",
+    "shadowCount": 0,
+    "group": "expanded"
+  },
+  {
+    "theme": "photo-submariner-diamond",
+    "name": "Submariner Diamond",
+    "kind": "analog",
+    "revision": 1,
+    "description": "The supplied dial photograph with live, aligned hands and calendar.",
+    "mainPivot": [
+      231,
+      232
+    ],
+    "photoMainSources": [
+      10,
+      14,
+      15
+    ],
+    "photoRegisters": [],
+    "hasDate": true,
+    "supportsSeconds": true,
+    "artworkMode": "supplied-image",
+    "referenceCredit": "User-supplied dial photograph. Brand marks and any source watermarks retained.",
+    "sourceImageSha256": "d5ad32d824a21bac8464a452fb0b0c1fde327e65c4f1653296874f29e1c8b86c",
+    "photoSource": {
+      "attachment": 1,
+      "originalFile": "01.png",
+      "dialFile": "01.png",
+      "sourceSize": [
+        1024,
+        1024
+      ],
+      "crop": [
+        39,
+        37,
+        987,
+        984
+      ],
+      "sourcePivot": [
+        509.5,
+        509
+      ],
+      "sourceSha256": "d5ad32d824a21bac8464a452fb0b0c1fde327e65c4f1653296874f29e1c8b86c",
+      "processing": "Direct crop, one Lanczos fit to 466 \u00d7 466, circular mask and native RGB565 dithering.",
+      "handRemovalRetouch": false
+    },
+    "referenceNote": "Live analogue clock.",
+    "calendarLayout": {
+      "hasDate": true,
+      "sources": [
+        23
+      ],
+      "dateFrameCount": 32,
+      "paperTreatment": "Photographic aperture pixels retained unless a calendar-wheel paper fill is configured; metal bevels remain outside the masks.",
+      "dateBoxes": [
+        {
+          "x": 368,
+          "y": 222,
+          "w": 41,
+          "h": 23
+        }
+      ],
+      "dateFontNative": [
+        23.62
+      ],
+      "dateSource": 23,
+      "dateMode": "day-of-month",
+      "unionBox": {
+        "x": 368,
+        "y": 222,
+        "w": 41,
+        "h": 23
+      }
+    },
+    "dateBox": {
+      "x": 368,
+      "y": 222,
+      "w": 41,
+      "h": 23
+    },
+    "filename": "photo-submariner-diamond.bin",
+    "seed": "cmf-photo-submariner-diamond-v1",
+    "validationFile": "photo-submariner-diamond-validation.json",
+    "preview": "photo-submariner-diamond-preview.png",
+    "aodPreview": "photo-submariner-diamond-aod-preview.png",
+    "expectedSources": [
+      10,
+      14,
+      15,
+      23
+    ],
+    "sha256": "a9c27b821cb09b220663d9d0d49f0edde43f25a25cdc5e725b36043723b5cd62",
+    "shadowCount": 3,
+    "group": "expanded"
+  },
+  {
+    "theme": "photo-daytona-pearl",
+    "name": "Daytona Pearl Photo",
+    "kind": "analog",
+    "revision": 1,
+    "description": "The supplied dial photograph with live, aligned hands, clock-driven subdials.",
+    "mainPivot": [
+      232,
+      234
+    ],
+    "photoMainSources": [
+      10,
+      14,
+      15
+    ],
+    "photoRegisters": [
+      {
+        "name": "left",
+        "center": [
+          121,
+          234
+        ],
+        "radius": 74.32746614342877,
+        "source": 114,
+        "scale": 60,
+        "kind": "second",
+        "widget": "hand"
+      },
+      {
+        "name": "right",
+        "center": [
+          343,
+          234
+        ],
+        "radius": 74.32746614342877,
+        "source": 11,
+        "scale": 30,
+        "kind": "minute30",
+        "widget": "picker"
+      },
+      {
+        "name": "bottom",
+        "center": [
+          232,
+          345
+        ],
+        "radius": 74.97379193598032,
+        "source": 10,
+        "scale": 12,
+        "kind": "hour12",
+        "widget": "hand"
+      }
+    ],
+    "hasDate": false,
+    "supportsSeconds": true,
+    "artworkMode": "supplied-image",
+    "referenceCredit": "User-supplied dial photograph. Brand marks and any source watermarks retained.",
+    "sourceImageSha256": "496a78e2c22ce9a309dbad5af8c6439e3ee3ca4da537f82ad3b528bf1d89e7fc",
+    "photoSource": {
+      "attachment": 9,
+      "originalFile": "09.png",
+      "dialFile": "09.png",
+      "sourceSize": [
+        736,
+        981
+      ],
+      "crop": [
+        8,
+        132,
+        730,
+        852
+      ],
+      "sourcePivot": [
+        368.5,
+        494
+      ],
+      "sourceSha256": "496a78e2c22ce9a309dbad5af8c6439e3ee3ca4da537f82ad3b528bf1d89e7fc",
+      "processing": "Direct crop, one Lanczos fit to 466 \u00d7 466, circular mask and native RGB565 dithering.",
+      "handRemovalRetouch": false
+    },
+    "referenceNote": "Subdial pointers show clock values, not an interactive stopwatch.",
+    "calendarLayout": {
+      "hasDate": false,
+      "sources": []
+    },
+    "filename": "photo-daytona-pearl.bin",
+    "seed": "cmf-photo-daytona-pearl-v1",
+    "validationFile": "photo-daytona-pearl-validation.json",
+    "preview": "photo-daytona-pearl-preview.png",
+    "aodPreview": "photo-daytona-pearl-aod-preview.png",
+    "expectedSources": [
+      10,
+      11,
+      14,
+      15,
+      114
+    ],
+    "sha256": "bb71518f9261ee488e3cb4072cebd213da158437d96dfd277eb77ad9ec1153ba",
+    "shadowCount": 5,
+    "group": "expanded"
+  },
+  {
+    "theme": "photo-chrono-ivory",
+    "name": "Chronograph Ivory Photo",
+    "kind": "analog",
+    "revision": 1,
+    "description": "The supplied dial photograph with live, aligned hands, clock-driven subdials and calendar.",
+    "mainPivot": [
+      232,
+      231
+    ],
+    "photoMainSources": [
+      10,
+      14,
+      15
+    ],
+    "photoRegisters": [
+      {
+        "name": "top-minute30",
+        "center": [
+          232,
+          127
+        ],
+        "radius": 60.16221366735617,
+        "source": 11,
+        "scale": 30,
+        "kind": "minute30",
+        "widget": "picker"
+      },
+      {
+        "name": "left-second",
+        "center": [
+          125,
+          231
+        ],
+        "radius": 57.10311805715162,
+        "source": 114,
+        "scale": 60,
+        "kind": "second",
+        "widget": "hand"
+      },
+      {
+        "name": "bottom-hour12",
+        "center": [
+          232,
+          336
+        ],
+        "radius": 60.16221366735617,
+        "source": 10,
+        "scale": 12,
+        "kind": "hour12",
+        "widget": "hand"
+      }
+    ],
+    "hasDate": true,
+    "supportsSeconds": true,
+    "artworkMode": "supplied-image",
+    "referenceCredit": "User-supplied dial photograph. Brand marks and any source watermarks retained.",
+    "sourceImageSha256": "0b9f5c119c3a8047cfed34d38ffde02fdd2891cdc95a4e4b1f05610265d9b7b5",
+    "photoSource": {
+      "attachment": 13,
+      "originalFile": "13.png",
+      "dialFile": "13.png",
+      "sourceSize": [
+        500,
+        500
+      ],
+      "crop": [
+        22,
+        22,
+        478,
+        480
+      ],
+      "sourcePivot": [
+        249.5,
+        249.5
+      ],
+      "sourceSha256": "0b9f5c119c3a8047cfed34d38ffde02fdd2891cdc95a4e4b1f05610265d9b7b5",
+      "processing": "Direct crop, one Lanczos fit to 466 \u00d7 466, circular mask and native RGB565 dithering.",
+      "handRemovalRetouch": false
+    },
+    "referenceNote": "Subdial pointers show clock values, not an interactive stopwatch.",
+    "calendarLayout": {
+      "hasDate": true,
+      "sources": [
+        23,
+        24
+      ],
+      "dateFrameCount": 32,
+      "paperTreatment": "Photographic aperture pixels retained unless a calendar-wheel paper fill is configured; metal bevels remain outside the masks.",
+      "dateBoxes": [
+        {
+          "x": 355,
+          "y": 218,
+          "w": 35,
+          "h": 26
+        }
+      ],
+      "dateFontNative": [
+        21
+      ],
+      "dateSource": 23,
+      "dateMode": "day-of-month",
+      "weekdayLabels": [
+        "SUN",
+        "MON",
+        "TUE",
+        "WED",
+        "THU",
+        "FRI",
+        "SAT"
+      ],
+      "weekdayLayout": "flat abbreviated weekday",
+      "weekdayBox": {
+        "x": 296,
+        "y": 218,
+        "w": 50,
+        "h": 26
+      },
+      "weekdayFontNative": 16,
+      "weekdayFrameCount": 7,
+      "weekdaySource": 24,
+      "unionBox": {
+        "x": 296,
+        "y": 218,
+        "w": 94,
+        "h": 26
+      }
+    },
+    "dateBox": {
+      "x": 296,
+      "y": 218,
+      "w": 94,
+      "h": 26
+    },
+    "filename": "photo-chrono-ivory.bin",
+    "seed": "cmf-photo-chrono-ivory-v1",
+    "validationFile": "photo-chrono-ivory-validation.json",
+    "preview": "photo-chrono-ivory-preview.png",
+    "aodPreview": "photo-chrono-ivory-aod-preview.png",
+    "expectedSources": [
+      10,
+      11,
+      14,
+      15,
+      23,
+      24,
+      114
+    ],
+    "sha256": "a11ff682d7276a3ed93f9978fb84fbee140d1882061f943af9fa893455704ec2",
+    "shadowCount": 5,
+    "group": "expanded"
+  },
+  {
+    "theme": "photo-tissot-lelocle",
+    "name": "Tissot Le Locle",
+    "kind": "analog",
+    "revision": 1,
+    "description": "The supplied dial photograph with live, aligned hands.",
+    "mainPivot": [
+      232,
+      233
+    ],
+    "photoMainSources": [
+      10,
+      14,
+      15
+    ],
+    "photoRegisters": [],
+    "hasDate": false,
+    "supportsSeconds": true,
+    "artworkMode": "supplied-image",
+    "referenceCredit": "User-supplied dial photograph. Brand marks and any source watermarks retained.",
+    "sourceImageSha256": "4caacd5f3604579e6a3dc10bdd66c02673e84150e9c6a608e06fcb137fd73806",
+    "photoSource": {
+      "attachment": 15,
+      "originalFile": "15.png",
+      "dialFile": "15.png",
+      "sourceSize": [
+        1051,
+        1040
+      ],
+      "crop": [
+        8,
+        5,
+        1044,
+        1035
+      ],
+      "sourcePivot": [
+        524,
+        520
+      ],
+      "sourceSha256": "4caacd5f3604579e6a3dc10bdd66c02673e84150e9c6a608e06fcb137fd73806",
+      "processing": "Direct crop, one Lanczos fit to 466 \u00d7 466, circular mask and native RGB565 dithering.",
+      "handRemovalRetouch": false
+    },
+    "referenceNote": "Live analogue clock.",
+    "calendarLayout": {
+      "hasDate": false,
+      "sources": []
+    },
+    "filename": "photo-tissot-lelocle.bin",
+    "seed": "cmf-photo-tissot-lelocle-v1",
+    "validationFile": "photo-tissot-lelocle-validation.json",
+    "preview": "photo-tissot-lelocle-preview.png",
+    "aodPreview": "photo-tissot-lelocle-aod-preview.png",
+    "expectedSources": [
+      10,
+      14,
+      15
+    ],
+    "sha256": "1a49dceafecfdd344332840fa026c062c9e47f2839d3aa786de876cbc8f9bb43",
+    "shadowCount": 3,
     "group": "expanded"
   }
 ]

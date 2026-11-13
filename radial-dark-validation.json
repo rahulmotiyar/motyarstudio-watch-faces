@@ -1,0 +1,232 @@
+{
+  "theme": "radial-dark",
+  "name": "Radial Instruments",
+  "kind": "digital",
+  "revision": 7,
+  "description": "Three anticlockwise discs show 12-hour time through a clear reading lens with optically enlarged numerals, refracted disc boundaries and centered motyar / studios branding.",
+  "hasDate": false,
+  "supportsSeconds": true,
+  "expectedSources": [
+    4,
+    11,
+    15
+  ],
+  "referenceImage": 3,
+  "hourFormat": "12-hour disc",
+  "branding": {
+    "lines": [
+      "motyar",
+      "studios"
+    ],
+    "weights": [
+      "Bold",
+      "Light"
+    ],
+    "center": [
+      233,
+      233
+    ],
+    "lineCenters": [
+      [
+        233,
+        222
+      ],
+      [
+        233,
+        244
+      ]
+    ]
+  },
+  "readingLens": {
+    "style": "clear lens with surface-normal lighting",
+    "sourceNumeralSize": 25,
+    "visualMagnification": 1.24,
+    "liveValues": true,
+    "runtimeRefraction": false,
+    "precomputedRefraction": true,
+    "backgroundRefraction": true,
+    "ovalReflections": false,
+    "bounds": [
+      288,
+      209,
+      172,
+      48
+    ]
+  },
+  "clockRegions": {
+    "hours": [
+      301,
+      217,
+      40,
+      34
+    ],
+    "minutes": [
+      356,
+      217,
+      40,
+      34
+    ],
+    "seconds": [
+      412,
+      217,
+      40,
+      34
+    ]
+  },
+  "discLayout": {
+    "center": [
+      233,
+      233
+    ],
+    "hourRadius": 113,
+    "direction": "anticlockwise",
+    "degreesPerStep": -6,
+    "zeroAngleDegrees": 0,
+    "uprightLabels": true,
+    "hours": {
+      "source": 4,
+      "frames": 12,
+      "degreesPerStep": -30,
+      "placement": [
+        119,
+        119,
+        228,
+        228
+      ],
+      "numeralRadius": 88,
+      "outerRadius": 113,
+      "selectedCenter": [
+        321,
+        233
+      ],
+      "readoutROI": [
+        301,
+        217,
+        40,
+        34
+      ],
+      "zeroMarkerRadius": 104,
+      "labels": [
+        "12",
+        "01",
+        "02",
+        "03",
+        "04",
+        "05",
+        "06",
+        "07",
+        "08",
+        "09",
+        "10",
+        "11"
+      ]
+    },
+    "minutes": {
+      "source": 11,
+      "frames": 60,
+      "degreesPerStep": -6,
+      "placement": [
+        53,
+        53,
+        360,
+        360
+      ],
+      "numeralRadius": 143,
+      "outerRadius": 178,
+      "selectedCenter": [
+        376,
+        233
+      ],
+      "readoutROI": [
+        356,
+        217,
+        40,
+        34
+      ],
+      "zeroMarkerRadius": 173
+    },
+    "seconds": {
+      "source": 15,
+      "frames": 60,
+      "degreesPerStep": -6,
+      "placement": [
+        0,
+        0,
+        466,
+        466
+      ],
+      "numeralRadius": 199,
+      "outerRadius": 228,
+      "selectedCenter": [
+        432,
+        233
+      ],
+      "readoutROI": [
+        412,
+        217,
+        40,
+        34
+      ],
+      "zeroMarkerRadius": 222
+    },
+    "fixedWindowROI": [
+      288,
+      209,
+      172,
+      48
+    ],
+    "zeroMarkerColor": "#6ca9c8",
+    "zeroMarkerSize": 2,
+    "cadence": "One native image state per hour, minute or second; no verified subsecond disc animation."
+  },
+  "filename": "radial-dark.bin",
+  "seed": "cmf-radial-dark-v1",
+  "validationFile": "radial-dark-validation.json",
+  "preview": "radial-dark-preview.png",
+  "aodPreview": "radial-dark-aod-preview.png",
+  "sha256": "7a0fa07e362ba17be92e4737fa4fa9cffe56f415a264ca2bf14715be493202a5",
+  "shadowCount": 0,
+  "group": "expanded",
+  "target": "CMF Watch Pro 2",
+  "resolution": [
+    466,
+    466
+  ],
+  "bytes": 2486767,
+  "decodedRgbaBytes": 88316960,
+  "checks": {
+    "byteExactRoundTrip": true,
+    "headerAndResourceCrc": true,
+    "allAssetsDecoded": true,
+    "maxImageSide": 466,
+    "previewsOnBothScreens": true,
+    "nativeSources": [
+      4,
+      11,
+      15
+    ],
+    "artworkSupersampling": 4
+  },
+  "browserRendering": {
+    "nativeFileLoaded": true,
+    "hasDate": false,
+    "dateIsolated": true,
+    "secondsMove": true,
+    "minuteAndHourMove": true,
+    "clockBoundaryValues": true,
+    "metricChecks": [],
+    "discsRotateAnticlockwise": true,
+    "discWindowWrapChecked": true,
+    "hoursDiscRotates": true,
+    "twelveHourCycle": true,
+    "timePreferenceIndependent": true,
+    "alwaysOnTwelveHourCycle": true,
+    "aodLitFraction": 0.009431008123192544,
+    "passed": true
+  },
+  "hardware": {
+    "connected": false,
+    "uploaded": false,
+    "verifiedOnWatch": false
+  }
+}

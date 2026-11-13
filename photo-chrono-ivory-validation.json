@@ -1,0 +1,194 @@
+{
+  "theme": "photo-chrono-ivory",
+  "name": "Chronograph Ivory Photo",
+  "kind": "analog",
+  "revision": 1,
+  "description": "The supplied dial photograph with live, aligned hands, clock-driven subdials and calendar.",
+  "mainPivot": [
+    232,
+    231
+  ],
+  "photoMainSources": [
+    10,
+    14,
+    15
+  ],
+  "photoRegisters": [
+    {
+      "name": "top-minute30",
+      "center": [
+        232,
+        127
+      ],
+      "radius": 60.16221366735617,
+      "source": 11,
+      "scale": 30,
+      "kind": "minute30",
+      "widget": "picker"
+    },
+    {
+      "name": "left-second",
+      "center": [
+        125,
+        231
+      ],
+      "radius": 57.10311805715162,
+      "source": 114,
+      "scale": 60,
+      "kind": "second",
+      "widget": "hand"
+    },
+    {
+      "name": "bottom-hour12",
+      "center": [
+        232,
+        336
+      ],
+      "radius": 60.16221366735617,
+      "source": 10,
+      "scale": 12,
+      "kind": "hour12",
+      "widget": "hand"
+    }
+  ],
+  "hasDate": true,
+  "supportsSeconds": true,
+  "artworkMode": "supplied-image",
+  "referenceCredit": "User-supplied dial photograph. Brand marks and any source watermarks retained.",
+  "sourceImageSha256": "0b9f5c119c3a8047cfed34d38ffde02fdd2891cdc95a4e4b1f05610265d9b7b5",
+  "photoSource": {
+    "attachment": 13,
+    "originalFile": "13.png",
+    "dialFile": "13.png",
+    "sourceSize": [
+      500,
+      500
+    ],
+    "crop": [
+      22,
+      22,
+      478,
+      480
+    ],
+    "sourcePivot": [
+      249.5,
+      249.5
+    ],
+    "sourceSha256": "0b9f5c119c3a8047cfed34d38ffde02fdd2891cdc95a4e4b1f05610265d9b7b5",
+    "processing": "Direct crop, one Lanczos fit to 466 \u00d7 466, circular mask and native RGB565 dithering.",
+    "handRemovalRetouch": false
+  },
+  "referenceNote": "Subdial pointers show clock values, not an interactive stopwatch.",
+  "calendarLayout": {
+    "hasDate": true,
+    "sources": [
+      23,
+      24
+    ],
+    "dateFrameCount": 32,
+    "paperTreatment": "Photographic aperture pixels retained unless a calendar-wheel paper fill is configured; metal bevels remain outside the masks.",
+    "dateBoxes": [
+      {
+        "x": 355,
+        "y": 218,
+        "w": 35,
+        "h": 26
+      }
+    ],
+    "dateFontNative": [
+      21
+    ],
+    "dateSource": 23,
+    "dateMode": "day-of-month",
+    "weekdayLabels": [
+      "SUN",
+      "MON",
+      "TUE",
+      "WED",
+      "THU",
+      "FRI",
+      "SAT"
+    ],
+    "weekdayLayout": "flat abbreviated weekday",
+    "weekdayBox": {
+      "x": 296,
+      "y": 218,
+      "w": 50,
+      "h": 26
+    },
+    "weekdayFontNative": 16,
+    "weekdayFrameCount": 7,
+    "weekdaySource": 24,
+    "unionBox": {
+      "x": 296,
+      "y": 218,
+      "w": 94,
+      "h": 26
+    }
+  },
+  "dateBox": {
+    "x": 296,
+    "y": 218,
+    "w": 94,
+    "h": 26
+  },
+  "filename": "photo-chrono-ivory.bin",
+  "seed": "cmf-photo-chrono-ivory-v1",
+  "validationFile": "photo-chrono-ivory-validation.json",
+  "preview": "photo-chrono-ivory-preview.png",
+  "aodPreview": "photo-chrono-ivory-aod-preview.png",
+  "expectedSources": [
+    10,
+    11,
+    14,
+    15,
+    23,
+    24,
+    114
+  ],
+  "sha256": "a11ff682d7276a3ed93f9978fb84fbee140d1882061f943af9fa893455704ec2",
+  "shadowCount": 5,
+  "group": "expanded",
+  "target": "CMF Watch Pro 2",
+  "resolution": [
+    466,
+    466
+  ],
+  "bytes": 433206,
+  "decodedRgbaBytes": 7103440,
+  "checks": {
+    "byteExactRoundTrip": true,
+    "headerAndResourceCrc": true,
+    "allAssetsDecoded": true,
+    "maxImageSide": 466,
+    "previewsOnBothScreens": true,
+    "nativeSources": [
+      10,
+      11,
+      14,
+      15,
+      23,
+      24,
+      114
+    ],
+    "artworkSupersampling": 4
+  },
+  "browserRendering": {
+    "nativeFileLoaded": true,
+    "hasDate": true,
+    "dateIsolated": true,
+    "secondsMove": true,
+    "minuteAndHourMove": true,
+    "clockBoundaryValues": true,
+    "metricChecks": [],
+    "photographedPivotsChecked": true,
+    "printedRegisterScalesChecked": true,
+    "aodLitFraction": 0.006571312788962773,
+    "passed": true
+  },
+  "hardware": {
+    "connected": false,
+    "uploaded": false,
+    "verifiedOnWatch": false
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "theme": "photo-tissot-lelocle",
+  "name": "Tissot Le Locle",
+  "kind": "analog",
+  "revision": 1,
+  "description": "The supplied dial photograph with live, aligned hands.",
+  "mainPivot": [
+    232,
+    233
+  ],
+  "photoMainSources": [
+    10,
+    14,
+    15
+  ],
+  "photoRegisters": [],
+  "hasDate": false,
+  "supportsSeconds": true,
+  "artworkMode": "supplied-image",
+  "referenceCredit": "User-supplied dial photograph. Brand marks and any source watermarks retained.",
+  "sourceImageSha256": "4caacd5f3604579e6a3dc10bdd66c02673e84150e9c6a608e06fcb137fd73806",
+  "photoSource": {
+    "attachment": 15,
+    "originalFile": "15.png",
+    "dialFile": "15.png",
+    "sourceSize": [
+      1051,
+      1040
+    ],
+    "crop": [
+      8,
+      5,
+      1044,
+      1035
+    ],
+    "sourcePivot": [
+      524,
+      520
+    ],
+    "sourceSha256": "4caacd5f3604579e6a3dc10bdd66c02673e84150e9c6a608e06fcb137fd73806",
+    "processing": "Direct crop, one Lanczos fit to 466 \u00d7 466, circular mask and native RGB565 dithering.",
+    "handRemovalRetouch": false
+  },
+  "referenceNote": "Live analogue clock.",
+  "calendarLayout": {
+    "hasDate": false,
+    "sources": []
+  },
+  "filename": "photo-tissot-lelocle.bin",
+  "seed": "cmf-photo-tissot-lelocle-v1",
+  "validationFile": "photo-tissot-lelocle-validation.json",
+  "preview": "photo-tissot-lelocle-preview.png",
+  "aodPreview": "photo-tissot-lelocle-aod-preview.png",
+  "expectedSources": [
+    10,
+    14,
+    15
+  ],
+  "sha256": "1a49dceafecfdd344332840fa026c062c9e47f2839d3aa786de876cbc8f9bb43",
+  "shadowCount": 3,
+  "group": "expanded",
+  "target": "CMF Watch Pro 2",
+  "resolution": [
+    466,
+    466
+  ],
+  "bytes": 362653,
+  "decodedRgbaBytes": 2830768,
+  "checks": {
+    "byteExactRoundTrip": true,
+    "headerAndResourceCrc": true,
+    "allAssetsDecoded": true,
+    "maxImageSide": 466,
+    "previewsOnBothScreens": true,
+    "nativeSources": [
+      10,
+      14,
+      15
+    ],
+    "artworkSupersampling": 4
+  },
+  "browserRendering": {
+    "nativeFileLoaded": true,
+    "hasDate": false,
+    "dateIsolated": true,
+    "secondsMove": true,
+    "minuteAndHourMove": true,
+    "clockBoundaryValues": true,
+    "metricChecks": [],
+    "photographedPivotsChecked": true,
+    "printedRegisterScalesChecked": true,
+    "aodLitFraction": 0.006571312788962773,
+    "passed": true
+  },
+  "hardware": {
+    "connected": false,
+    "uploaded": false,
+    "verifiedOnWatch": false
+  }
+}

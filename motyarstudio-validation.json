@@ -2,14 +2,60 @@
   "theme": "bai-clock",
   "name": "MotyarStudio",
   "kind": "analog",
-  "description": "Ivory dial with a generous outer margin, four minute strokes between hour numerals and an orange seconds needle.",
-  "revision": 4,
+  "description": "Ivory dial with larger mixed-weight branding, white weekday text on a red disc, a gray calendar split and dial-tone geometric date numerals.",
+  "revision": 8,
   "filename": "motyarstudio.bin",
   "preview": "motyarstudio-preview.png",
   "aodPreview": "motyarstudio-aod-preview.png",
   "validationFile": "motyarstudio-validation.json",
   "supportsSeconds": true,
-  "hasDate": false,
+  "hasDate": true,
+  "dateBox": {
+    "x": 206,
+    "y": 292,
+    "w": 55,
+    "h": 75
+  },
+  "dayBox": {
+    "x": 208,
+    "y": 294,
+    "w": 50,
+    "h": 26
+  },
+  "dateNumberBox": {
+    "x": 208,
+    "y": 320,
+    "w": 50,
+    "h": 44
+  },
+  "calendarStyle": {
+    "placementCenter": [
+      233,
+      329
+    ],
+    "shadow": "inner-only",
+    "dateFont": "same geometric paths as hour numerals",
+    "dateFontScale": 0.84,
+    "datePaper": "dial-tone",
+    "weekdayPaper": "#b92f34",
+    "weekdayInk": "#ffffff",
+    "arcSag": 1.6,
+    "separatorWidth": 1,
+    "separatorColor": "#7d827c",
+    "orange": "#ff951d"
+  },
+  "branding": {
+    "text": "MotyarStudio",
+    "fontFamily": "Helvetica Neue",
+    "motyarWeight": "Bold",
+    "studioWeight": "Light",
+    "size": 22,
+    "center": [
+      233,
+      128
+    ]
+  },
+  "secondHandTail": 32,
   "referenceIndex": 1,
   "minuteTrack": {
     "divisions": 60,
@@ -23,9 +69,11 @@
   "expectedSources": [
     10,
     14,
+    23,
+    24,
     114
   ],
-  "sha256": "0d59c5cf15b1fcd3aca4b8a7f711501455a7656111b67f0f8689a2b76fea3226",
+  "sha256": "7f0c8940052c5216964de934b6031df19a4ba056ba5e1567cc04bc2f695c4d15",
   "shadowCount": 3,
   "group": "expanded",
   "target": "CMF Watch Pro 2",
@@ -33,8 +81,8 @@
     466,
     466
   ],
-  "bytes": 205035,
-  "decodedRgbaBytes": 3035328,
+  "bytes": 241823,
+  "decodedRgbaBytes": 3353328,
   "checks": {
     "byteExactRoundTrip": true,
     "headerAndResourceCrc": true,
@@ -44,13 +92,15 @@
     "nativeSources": [
       10,
       14,
+      23,
+      24,
       114
     ],
     "artworkSupersampling": 4
   },
   "browserRendering": {
     "nativeFileLoaded": true,
-    "hasDate": false,
+    "hasDate": true,
     "dateIsolated": true,
     "secondsMove": true,
     "minuteAndHourMove": true,

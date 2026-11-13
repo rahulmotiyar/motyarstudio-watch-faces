@@ -1,19 +1,27 @@
 {
-  "name": "MotyarStudio Watch Pro 2 \u2014 8 Faces",
-  "releaseDate": "2026-11-13",
+  "name": "MotyarStudio \u00b7 21 Watch Pro 2 Faces",
+  "releaseDate": "2026-11-14",
+  "siteUrl": "https://rahulmotiyar.github.io/motyarstudio-watch-faces/",
   "target": "CMF Watch Pro 2",
   "resolution": [
     466,
     466
   ],
-  "faceCount": 8,
+  "faceCount": 21,
+  "groups": {
+    "Braun": 3,
+    "MotyarStudio": 4,
+    "Chronographs & Instruments": 5,
+    "Digital & Weather": 5,
+    "Photographic Dials": 4
+  },
   "faces": [
     {
       "name": "Braun Round",
       "theme": "white",
       "filename": "braun-round.bin",
-      "revision": 5,
-      "sha256": "2c738c43c41a90db5916d0a10316b7110567b55830cfdefe296b77288b08b4e8",
+      "revision": 7,
+      "sha256": "a66273a7c3785a63a78559baceee2b74ab1f4f746e5e8f006ea366db43db40f5",
       "preview": "preview.png",
       "aodPreview": "aod-preview.png"
     },
@@ -21,8 +29,8 @@
       "name": "Braun Black",
       "theme": "black",
       "filename": "braun-black.bin",
-      "revision": 5,
-      "sha256": "ad5a9f8012138d4a4d6078056555be67477749bab2c71ae5e4f50e095c75f6bb",
+      "revision": 7,
+      "sha256": "c8ca81e739f153bcc6363f5c813e31c70c7ad0676ceea805edea8568bf7893bf",
       "preview": "black-preview.png",
       "aodPreview": "aod-preview.png"
     },
@@ -39,8 +47,8 @@
       "name": "Braun Subdials",
       "theme": "braun-subdials",
       "filename": "braun-subdials.bin",
-      "revision": 3,
-      "sha256": "438b6004366b1b3eb9f1f29df1356331b43208526fa3d59500646a4a9aad08f8",
+      "revision": 4,
+      "sha256": "22816a8c19bff19f03eee4aa614203508dba28164769001fc8ee4584b505da67",
       "preview": "braun-subdials-preview.png",
       "aodPreview": "braun-subdials-aod-preview.png"
     },
@@ -48,8 +56,8 @@
       "name": "Skagen Dark",
       "theme": "skagen",
       "filename": "skagen-dark.bin",
-      "revision": 3,
-      "sha256": "69f14324ba37cc419386225ab1005ddcd35307a325e6975483b403c9deed0c20",
+      "revision": 4,
+      "sha256": "62aaeb8348124c374904563db07bba4d20330e1b0550d673312bc7e7e36a103a",
       "preview": "skagen-preview.png",
       "aodPreview": "skagen-aod-preview.png"
     },
@@ -57,10 +65,37 @@
       "name": "MotyarStudio",
       "theme": "bai-clock",
       "filename": "motyarstudio.bin",
-      "revision": 4,
-      "sha256": "0d59c5cf15b1fcd3aca4b8a7f711501455a7656111b67f0f8689a2b76fea3226",
+      "revision": 8,
+      "sha256": "7f0c8940052c5216964de934b6031df19a4ba056ba5e1567cc04bc2f695c4d15",
       "preview": "motyarstudio-preview.png",
       "aodPreview": "motyarstudio-aod-preview.png"
+    },
+    {
+      "name": "MotyarStudio Dark",
+      "theme": "motyarstudio-dark",
+      "filename": "motyarstudio-dark.bin",
+      "revision": 4,
+      "sha256": "38a9f6195357a7e8b9c170bc7b0c7b3c07473e7851e01d9ffddc01983612c34d",
+      "preview": "motyarstudio-dark-preview.png",
+      "aodPreview": "motyarstudio-dark-aod-preview.png"
+    },
+    {
+      "name": "MotyarStudio Sans",
+      "theme": "motyarstudio-sans",
+      "filename": "motyarstudio-sans.bin",
+      "revision": 2,
+      "sha256": "a41b4e587a7d65f43f67a12e260c48677379872777950b1e642038511284ae6f",
+      "preview": "motyarstudio-sans-preview.png",
+      "aodPreview": "motyarstudio-sans-aod-preview.png"
+    },
+    {
+      "name": "MotyarStudio Sans Dark",
+      "theme": "motyarstudio-sans-dark",
+      "filename": "motyarstudio-sans-dark.bin",
+      "revision": 2,
+      "sha256": "a0ada2ad6bc595536026a3294b9238b98f09f5801385b54e16e054ec4b916fd1",
+      "preview": "motyarstudio-sans-dark-preview.png",
+      "aodPreview": "motyarstudio-sans-dark-aod-preview.png"
     },
     {
       "name": "Xeric Mint",
@@ -75,11 +110,101 @@
       "name": "Zenith Ice",
       "theme": "zenith-ice",
       "filename": "zenith-ice.bin",
-      "revision": 2,
-      "sha256": "e5eb10796cfa2b0dc3afc7f2dc9eef988ca8de824c37f17ed3804c9aaed99b1b",
+      "revision": 3,
+      "sha256": "2ac6bc2bc22e51325c16efc895472b0e36aa144c274cda2c8e2580e3d1efc9bb",
       "preview": "zenith-ice-preview.png",
       "aodPreview": "zenith-ice-aod-preview.png"
+    },
+    {
+      "name": "Sternglas Chrono",
+      "theme": "sternglas",
+      "filename": "sternglas.bin",
+      "revision": 3,
+      "sha256": "72569b54cdd7045023264fd8398e1b0c64ba4c014f85103fa9f051f71561f301",
+      "preview": "sternglas-preview.png",
+      "aodPreview": "sternglas-aod-preview.png"
+    },
+    {
+      "name": "Radial Instruments",
+      "theme": "radial-dark",
+      "filename": "radial-dark.bin",
+      "revision": 7,
+      "sha256": "7a0fa07e362ba17be92e4737fa4fa9cffe56f415a264ca2bf14715be493202a5",
+      "preview": "radial-dark-preview.png",
+      "aodPreview": "radial-dark-aod-preview.png"
+    },
+    {
+      "name": "Ceramic Type",
+      "theme": "typographic",
+      "filename": "typographic.bin",
+      "revision": 3,
+      "sha256": "9e1f1f39b340be1c30f8c0b8aa7ea3fb892c3987bceb338ba0fe02ce55f59729",
+      "preview": "typographic-preview.png",
+      "aodPreview": "typographic-aod-preview.png"
+    },
+    {
+      "name": "Weather Minimal",
+      "theme": "weather-minimal",
+      "filename": "weather-minimal.bin",
+      "revision": 2,
+      "sha256": "9e22c3b408b694d6bb976d11145c6db703d72c8f20a7b29f6cda975796e2e273",
+      "preview": "weather-minimal-preview.png",
+      "aodPreview": "weather-minimal-aod-preview.png"
+    },
+    {
+      "name": "Weather Arc",
+      "theme": "weather-arc",
+      "filename": "weather-arc.bin",
+      "revision": 3,
+      "sha256": "813d9ced56435a6d18f5a48d9602c8f25638bb5b046a63d5b964b4956ebf5119",
+      "preview": "weather-arc-preview.png",
+      "aodPreview": "weather-arc-aod-preview.png"
+    },
+    {
+      "name": "Orbit Minimal",
+      "theme": "orbit",
+      "filename": "orbit.bin",
+      "revision": 2,
+      "sha256": "7e694d7b8db827e7040f033ab7b6ee823c859b2e513935f78fddd2d073d7b3da",
+      "preview": "orbit-preview.png",
+      "aodPreview": "orbit-aod-preview.png"
+    },
+    {
+      "name": "Submariner Diamond",
+      "theme": "photo-submariner-diamond",
+      "filename": "photo-submariner-diamond.bin",
+      "revision": 1,
+      "sha256": "a9c27b821cb09b220663d9d0d49f0edde43f25a25cdc5e725b36043723b5cd62",
+      "preview": "photo-submariner-diamond-preview.png",
+      "aodPreview": "photo-submariner-diamond-aod-preview.png"
+    },
+    {
+      "name": "Daytona Pearl Photo",
+      "theme": "photo-daytona-pearl",
+      "filename": "photo-daytona-pearl.bin",
+      "revision": 1,
+      "sha256": "bb71518f9261ee488e3cb4072cebd213da158437d96dfd277eb77ad9ec1153ba",
+      "preview": "photo-daytona-pearl-preview.png",
+      "aodPreview": "photo-daytona-pearl-aod-preview.png"
+    },
+    {
+      "name": "Chronograph Ivory Photo",
+      "theme": "photo-chrono-ivory",
+      "filename": "photo-chrono-ivory.bin",
+      "revision": 1,
+      "sha256": "a11ff682d7276a3ed93f9978fb84fbee140d1882061f943af9fa893455704ec2",
+      "preview": "photo-chrono-ivory-preview.png",
+      "aodPreview": "photo-chrono-ivory-aod-preview.png"
+    },
+    {
+      "name": "Tissot Le Locle",
+      "theme": "photo-tissot-lelocle",
+      "filename": "photo-tissot-lelocle.bin",
+      "revision": 1,
+      "sha256": "1a49dceafecfdd344332840fa026c062c9e47f2839d3aa786de876cbc8f9bb43",
+      "preview": "photo-tissot-lelocle-preview.png",
+      "aodPreview": "photo-tissot-lelocle-aod-preview.png"
     }
   ],
-  "hardwareVerification": "Recipient must verify on their physical watch; no creator device history is included."
+  "hardwareVerification": "Recipient must verify on the physical watch. No physical watch was flashed during website validation."
 }

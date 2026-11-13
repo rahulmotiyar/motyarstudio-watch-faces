@@ -1,0 +1,96 @@
+import {mountInstaller} from '../app.js';
+import {NoFreeSlotError} from '../engine/device/lib/ble.js';
+import {dialId} from '../engine/device/lib/ble-protocol.js';
+import {faceSeed,readRegistry} from '../face-slots.js';
+const iframe=document.querySelector('#fixture'),rows=document.querySelector('#results');
+let count=0,app;
+const check=(value,message)=>{if(!value)throw Error(message);const li=document.createElement('li');li.textContent='Passed: '+message;rows.append(li);count++;};
+const until=async predicate=>{for(let i=0;i<200;i++){if(predicate())return;await new Promise(r=>setTimeout(r,25));}throw Error('Timed out waiting for the UI');};
+const waitLoad=new Promise(resolve=>iframe.addEventListener('load',resolve,{once:true}));iframe.src='flow-frame.html';
+try{
+  await waitLoad;
+  const root=iframe.contentDocument,$=id=>root.getElementById(id),win=iframe.contentWindow;
+  const memory=new Map(),storage={getItem:key=>memory.get(key)??null,setItem:(key,value)=>memory.set(key,value)};
+  const all=await(await fetch('../variants.json')).json(),byTheme=t=>all.find(v=>v.theme===t);
+  let callback,fake,failFile='',calls=0,uploadError=null,releaseUpload,blockStorage=false;
+  const save=storage.setItem;storage.setItem=(key,value)=>{if(blockStorage)throw Error('Storage unavailable');save(key,value);};
+  const device={id:'isolated-test-watch',gatt:{connected:false,disconnect(){this.connected=false;callback('disconnected');}}};
+  const watchFactory=onStatus=>{
+    callback=onStatus;
+    fake={reportedWf:[],installedWf:[],capacity:6,battery:84,serial:null,firmware:null,model:'CMF Watch Pro 2 · Test',cancel:false,readFirmware:true,transfers:[],
+      async connect(){calls++;onStatus('Connecting…');if(this.cancel)throw new DOMException('Cancelled','NotFoundError');device.gatt.connected=true;
+        this.reportedWf=[280,281];this.installedWf=[280,281];this.firmware=this.readFirmware?'1.0.0':null;this.serial='isolated-test-serial';this.onDials?.();return{name:this.model,battery:84,firmware:this.firmware,serial:this.serial};},
+      mergeDials(){this.installedWf=[...this.reportedWf];this.onDials?.();},
+      async uploadWatchface(bytes,slot,seed,onProgress){this.transfers.push({bytes,slot,seed});onProgress(25);await new Promise(resolve=>releaseUpload=resolve);if(uploadError)throw uploadError;onProgress(100);
+        this.reportedWf=this.reportedWf.filter(id=>id!==slot);this.reportedWf.push(dialId(seed));},
+    };return fake;
+  };
+  const fetchFile=(url,options)=>failFile===url?Promise.resolve(new Response('Missing',{status:404})):fetch(new URL(url,root.baseURI),options);
+  app=await mountInstaller({root,watchFactory,getDevice:()=>device,bluetoothAvailable:true,standalone:true,storage,fetchFile,saveDial:()=>{}});
+  const selectTarget=value=>{$('slot').value=String(value);$('slot').dispatchEvent(new Event('change'));};
+  const selectGroup=value=>{$('group-choice').value=value;$('group-choice').dispatchEvent(new Event('change'));};
+  const visibleFaces=()=>[...root.querySelectorAll('.face-card')].filter(tile=>!tile.hidden);
+  const choose=async theme=>{root.querySelector(`[data-theme="${theme}"]`).click();await until(()=>$('face-title').textContent===byTheme(theme).name&&!root.querySelector(`[data-theme="${theme}"]`).disabled);};
+  check($('workspace').hidden&&!$('connection-stage').hidden,'Connection step appears first');
+  check($('install').disabled&&$('slot').disabled,'Disconnected installation is blocked');
+  $('browse').click();check(!$('workspace').hidden&&$('install').disabled,'Optional previews work before connecting');
+  check(root.querySelectorAll('.face-card').length===all.length,'The library shows the exact current collection');
+  check([...root.querySelectorAll('.face-group')].map(group=>group.dataset.group).join(',')==='braun,motyarstudio,instruments,digital-weather,photographic'&&new Set([...root.querySelectorAll('.face-card')].map(tile=>tile.dataset.theme)).size===all.length,'All five collections contain every face exactly once');
+  root.querySelector('[data-filter="photo"]').click();check([...root.querySelectorAll('.face-card')].filter(t=>!t.hidden).length===4,'Photographic filter contains only the four retained dials');
+  root.querySelector('[data-filter="all"]').click();
+  const origin=win.performance.timeOrigin;
+  $('connect').click();await until(()=>!$('disconnect').hidden&&!$('disconnect').disabled);
+  check(calls===1&&device.gatt.connected&&$('connection-stage').hidden&&!$('workspace').hidden,'One connection reveals assignment in the same document');
+  check($('slot').options.length>=3&&$('slot').value===''&&$('install').disabled,'Destinations load before Install and require an explicit choice');
+  selectTarget(280);check(!$('install').disabled,'Choosing a destination enables installation');
+  selectGroup('motyarstudio');
+  check(visibleFaces().length===4&&[...root.querySelectorAll('.face-group')].filter(group=>!group.hidden).length===1,'The group picker shows only the four MotyarStudio variants');
+  check($('face-title').textContent===byTheme('white').name&&$('slot').value==='280'&&device.gatt.connected&&calls===1,'Changing groups preserves the preview, destination and connection');
+  root.querySelector('[data-filter="digital"]').click();
+  check(!$('empty').hidden&&root.querySelectorAll('.face-group:not([hidden])').length===0,'Group and type filters combine and explain an empty result');
+  $('reset-filter').click();
+  check($('empty').hidden&&visibleFaces().length===4&&$('group-choice').value==='motyarstudio','Clearing the type filter restores the selected group');
+  selectGroup('all');
+  check(visibleFaces().length===all.length&&$('slot').value==='280'&&win.performance.timeOrigin===origin,'All groups restores the full library without navigation or losing the destination');
+  for(const theme of ['black','bai-clock','photo-daytona-pearl'])await choose(theme);
+  check(calls===1&&device.gatt.connected&&win.performance.timeOrigin===origin,'Switching three faces preserves the connection and document');
+  check($('slot').value==='280'&&!$('install').disabled,'Face switching preserves the selected destination');
+  fake.reportedWf.push(282);fake.mergeDials();check($('slot').value==='280','A late face list preserves the selected destination');
+  $('mode').click();$('reference').click();$('help-open').click();
+  check($('help-dialog').open&&device.gatt.connected&&calls===1,'Always-on, reference time and inline help keep the connection');$('help-close').click();
+  $('install').click();await until(()=>Boolean(releaseUpload));
+  check($('install').disabled&&$('disconnect').disabled&&root.querySelector('.face-card').disabled&&$('group-choice').disabled,'Transfer locks face changes, groups, duplicate installs and disconnect');
+  check($('progress').value===25&&$('progress-label').textContent==='25%','Transfer progress is visible');
+  const transfer=fake.transfers.at(-1),wanted=byTheme('photo-daytona-pearl');
+  const hash=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',transfer.bytes)),x=>x.toString(16).padStart(2,'0')).join('');
+  check(transfer.slot===280&&transfer.seed===faceSeed(wanted.theme)&&hash===wanted.sha256,'The chosen face bytes, identity and replacement reach the adapter together');
+  releaseUpload();releaseUpload=null;await until(()=>!$('disconnect').disabled);
+  check($('status').textContent.includes('transferred')&&device.gatt.connected&&calls===1,'Successful transfer leaves the watch connected for another assignment');
+  check(readRegistry(storage,device.id).faces.some(f=>f.id===dialId(transfer.seed)),'Accepted installation is recorded for this watch');
+  await choose('photo-tissot-lelocle');selectTarget(281);$('install').click();await until(()=>Boolean(releaseUpload));releaseUpload();releaseUpload=null;await until(()=>!$('disconnect').disabled);
+  check(fake.transfers.length===2&&calls===1,'A second face installs without reconnecting or changing pages');
+  await choose('white');selectTarget(282);
+  failFile=byTheme('black').filename;await choose('black');
+  check($('install').disabled&&!$('retry-face').hidden&&!$('face-poster').hidden,'A missing face file cannot upload the previous face');
+  failFile='';$('retry-face').click();await until(()=>$('retry-face').hidden&&!$('face').hidden&&!root.querySelector('.face-card').disabled);
+  check(!$('install').disabled,'Retry restores the requested face and explicit destination');
+  selectTarget('new');uploadError=new NoFreeSlotError('Full test watch');$('install').click();await until(()=>Boolean(releaseUpload));releaseUpload();releaseUpload=null;await until(()=>!$('disconnect').disabled);
+  check($('slot').value===''&&$('install').disabled&&![...$('slot').options].some(o=>o.value==='new'),'A full-watch response requires a replacement instead of silently appending');uploadError=null;
+  $('disconnect').click();
+  check(!device.gatt.connected&&$('slot').value===''&&$('install').disabled&&!$('connection-stage').hidden,'Disconnect clears the destination and shows reconnect without leaving the page');
+  fake.cancel=true;$('connect').click();await until(()=>!$('connect').disabled);
+  check($('connect-status').textContent.includes('No watch selected')&&!$('workspace').hidden,'Cancelling the chooser keeps the library usable and allows retry');
+  fake.cancel=false;fake.model='Different Watch';$('connect').click();await until(()=>!$('disconnect').hidden&&!$('disconnect').disabled);selectTarget(280);
+  check($('install').disabled&&$('status').textContent.includes('unavailable for this model'),'An unsupported model cannot install a Watch Pro 2 face');
+  $('disconnect').click();
+  fake.model='CMF Watch Pro 2 · Test';fake.readFirmware=false;$('connect').click();await until(()=>!$('disconnect').hidden&&!$('disconnect').disabled);selectTarget(280);
+  check($('install').disabled&&$('status').textContent.includes('Firmware could not be read'),'Missing firmware blocks installation with a recovery message');
+  $('disconnect').click();fake.readFirmware=true;$('connect').click();await until(()=>!$('disconnect').hidden&&!$('disconnect').disabled);selectTarget(280);
+  blockStorage=true;$('install').click();await until(()=>Boolean(releaseUpload));releaseUpload();releaseUpload=null;await until(()=>!$('disconnect').disabled);
+  check($('status').textContent.includes('transferred')&&$('status').textContent.includes('could not save'),'Unavailable browser storage does not misreport an accepted transfer as failed');blockStorage=false;
+  selectTarget(281);$('install').click();await until(()=>Boolean(releaseUpload));device.gatt.disconnect();releaseUpload();releaseUpload=null;await until(()=>!$('connect').disabled);
+  check($('install').disabled&&$('slot').value===''&&$('status').dataset.error==='true','A dropped connection during transfer clears the destination and prevents a success claim');
+  check(win.performance.timeOrigin===origin,'The complete flow never navigates to another document');
+  document.querySelector('#outcome').textContent=`All ${count} single-page checks passed.`;
+}catch(error){document.querySelector('#outcome').textContent='FAILED: '+error.message;throw error;}
+finally{app?.destroy();}

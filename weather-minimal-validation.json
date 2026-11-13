@@ -1,0 +1,85 @@
+{
+  "theme": "weather-minimal",
+  "name": "Weather Minimal",
+  "kind": "digital",
+  "revision": 2,
+  "description": "Larger thin time, a compact sentence-case date and clearer live temperature and battery indicators on a softly recessed pale dial.",
+  "weatherNote": "The improved weather pictogram is a decorative motif. Native current temperature uses stock-exercised source0x5f; no weather-condition source is verified.",
+  "temperatureSourceEvidence": "Pinned FMC sources.ts labels0x36/0x5f as temperature; available Function and Elaborate_2 stock fixtures use0x5f with number sub6/max1000. Function has noData marker1000.",
+  "metrics": [
+    95,
+    36
+  ],
+  "hasDate": true,
+  "dateBox": {
+    "x": 115,
+    "y": 277,
+    "w": 236,
+    "h": 38
+  },
+  "supportsSeconds": true,
+  "filename": "weather-minimal.bin",
+  "seed": "cmf-weather-minimal-v1",
+  "validationFile": "weather-minimal-validation.json",
+  "preview": "weather-minimal-preview.png",
+  "aodPreview": "weather-minimal-aod-preview.png",
+  "expectedSources": [
+    1,
+    11,
+    21,
+    23,
+    24,
+    36,
+    95,
+    114
+  ],
+  "sha256": "9e22c3b408b694d6bb976d11145c6db703d72c8f20a7b29f6cda975796e2e273",
+  "shadowCount": 0,
+  "group": "expanded",
+  "target": "CMF Watch Pro 2",
+  "resolution": [
+    466,
+    466
+  ],
+  "bytes": 560420,
+  "decodedRgbaBytes": 5214504,
+  "checks": {
+    "byteExactRoundTrip": true,
+    "headerAndResourceCrc": true,
+    "allAssetsDecoded": true,
+    "maxImageSide": 466,
+    "previewsOnBothScreens": true,
+    "nativeSources": [
+      1,
+      11,
+      21,
+      23,
+      24,
+      36,
+      95,
+      114
+    ],
+    "artworkSupersampling": 4
+  },
+  "browserRendering": {
+    "nativeFileLoaded": true,
+    "hasDate": true,
+    "dateIsolated": true,
+    "secondsMove": true,
+    "minuteAndHourMove": true,
+    "clockBoundaryValues": true,
+    "metricChecks": [
+      "battery",
+      "temp"
+    ],
+    "negativeTemperatureSign": true,
+    "missingTemperatureFallback": true,
+    "aodLitFraction": 0.009431008123192544,
+    "passed": true
+  },
+  "hardware": {
+    "connected": false,
+    "uploaded": false,
+    "verifiedOnWatch": false
+  }
+}

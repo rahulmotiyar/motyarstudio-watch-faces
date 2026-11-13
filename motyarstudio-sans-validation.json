@@ -1,0 +1,130 @@
+{
+  "theme": "motyarstudio-sans",
+  "name": "MotyarStudio Sans",
+  "kind": "analog",
+  "description": "Ivory dial with a dotted minute track, Helvetica Neue Bold hour and date numerals, mixed-weight branding, white weekdays on red and a gray calendar split.",
+  "revision": 2,
+  "filename": "motyarstudio-sans.bin",
+  "preview": "motyarstudio-sans-preview.png",
+  "aodPreview": "motyarstudio-sans-aod-preview.png",
+  "validationFile": "motyarstudio-sans-validation.json",
+  "supportsSeconds": true,
+  "hasDate": true,
+  "dateBox": {
+    "x": 206,
+    "y": 292,
+    "w": 55,
+    "h": 75
+  },
+  "dayBox": {
+    "x": 208,
+    "y": 294,
+    "w": 50,
+    "h": 26
+  },
+  "dateNumberBox": {
+    "x": 208,
+    "y": 320,
+    "w": 50,
+    "h": 44
+  },
+  "calendarStyle": {
+    "placementCenter": [
+      233,
+      329
+    ],
+    "shadow": "inner-only",
+    "dateFont": "Helvetica Neue",
+    "datePaper": "dial-tone",
+    "weekdayPaper": "#b92f34",
+    "weekdayInk": "#ffffff",
+    "arcSag": 1.6,
+    "separatorWidth": 1,
+    "separatorColor": "#7d827c",
+    "orange": "#ff951d",
+    "dateFontWeight": "Bold",
+    "dateFontSize": 30
+  },
+  "branding": {
+    "text": "MotyarStudio",
+    "fontFamily": "Helvetica Neue",
+    "motyarWeight": "Bold",
+    "studioWeight": "Light",
+    "size": 22,
+    "center": [
+      233,
+      128
+    ]
+  },
+  "secondHandTail": 32,
+  "referenceIndex": 1,
+  "minuteTrack": {
+    "divisions": 60,
+    "markerStyle": "dots",
+    "minorDots": 48,
+    "dotsBetweenHours": 4,
+    "dotRadius": 1.65,
+    "radius": 199,
+    "labelRadius": 199
+  },
+  "copyOf": "bai-clock",
+  "typography": {
+    "hourFont": "Helvetica Neue",
+    "hourWeight": "Bold",
+    "hourSize": 35,
+    "dateFont": "Helvetica Neue",
+    "dateWeight": "Bold",
+    "dateSize": 30,
+    "weekdayFont": "Helvetica Neue",
+    "weekdayWeight": "Bold"
+  },
+  "seed": "cmf-motyarstudio-sans-v1",
+  "expectedSources": [
+    10,
+    14,
+    23,
+    24,
+    114
+  ],
+  "sha256": "a41b4e587a7d65f43f67a12e260c48677379872777950b1e642038511284ae6f",
+  "shadowCount": 3,
+  "group": "expanded",
+  "target": "CMF Watch Pro 2",
+  "resolution": [
+    466,
+    466
+  ],
+  "bytes": 253921,
+  "decodedRgbaBytes": 3353328,
+  "checks": {
+    "byteExactRoundTrip": true,
+    "headerAndResourceCrc": true,
+    "allAssetsDecoded": true,
+    "maxImageSide": 466,
+    "previewsOnBothScreens": true,
+    "nativeSources": [
+      10,
+      14,
+      23,
+      24,
+      114
+    ],
+    "artworkSupersampling": 4
+  },
+  "browserRendering": {
+    "nativeFileLoaded": true,
+    "hasDate": true,
+    "dateIsolated": true,
+    "secondsMove": true,
+    "minuteAndHourMove": true,
+    "clockBoundaryValues": true,
+    "metricChecks": [],
+    "aodLitFraction": 0.006571312788962773,
+    "passed": true
+  },
+  "hardware": {
+    "connected": false,
+    "uploaded": false,
+    "verifiedOnWatch": false
+  }
+}
