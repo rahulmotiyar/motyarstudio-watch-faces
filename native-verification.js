@@ -83,6 +83,42 @@ export async function verifyNativeRendering(variant,doc,store,{savePreviews=true
     }
     photographicGeometryChecked=true;
   }
+  let nativeRotatingDiscsChecked=false;
+  if(variant.nativeRotatingDiscs){
+    const layout=variant.nativeRotatingDiscs,mainScreen=doc.screens.find(s=>s.kind==='main');
+    const isolated=(layer,h=0,m=0,s=0)=>{
+      const sim={...defaultSim(),live:false,time:new Date(2026,0,29,h,m,0).getTime()+s*1000};
+      renderDoc(ctx,{...doc,screens:[{...mainScreen,layers:[layer]}]},store,'main',sim);
+      return new Uint8ClampedArray(ctx.getImageData(0,0,466,466).data);
+    };
+    for(const name of ['hours','minutes','seconds']){
+      const spec=layout[name],layer=main.find(l=>l.kind==='hand'&&l.meta.source===spec.source);
+      check(layer&&layer.frames.length===1,name+' disc is not a single native rotating image');
+      check(layer.meta.w===0&&layer.meta.h===0&&layer.meta.max===60,'full-size rotor has background rather than stock hand metadata');
+      check(layer.x+layer.pivotX===233&&layer.y+layer.pivotY===233,name+' rotor pivot is off-center');
+      if(name==='hours')check(difference(isolated(layer),isolated(layer,0,30))>25,'hour rotor did not move within an hour');
+      if(name==='minutes')check(difference(isolated(layer),isolated(layer,0,0,30))>25,'minute rotor did not move within a minute');
+      if(name==='seconds'){
+        check(layer.meta.source===0x12,'seconds rotor does not use the stock smooth-hand source');
+        check(difference(isolated(layer),isolated(layer,0,0,.5))>25,'seconds rotor has no fractional-second preview motion');
+        const marker=s=>{
+          const frame=isolated(layer,0,0,s);let sx=0,sy=0,n=0;
+          for(let y=0;y<466;y++)for(let x=0;x<466;x++){
+            if(Math.abs(Math.hypot(x-233,y-233)-spec.zeroMarkerRadius)>4)continue;
+            const p=(y*466+x)*4,r=frame[p],g=frame[p+1],b=frame[p+2];
+            if(frame[p+3]>160&&r<130&&g>r+40&&b>r+70){sx+=x;sy+=y;n++;}
+          }
+          check(n>3,'native rotor zero marker is missing');return [sx/n-233,sy/n-233];
+        };
+        for(const [start,end] of [[0,.5],[59.5,.5]]){
+          const a=marker(start),b=marker(end),angle=Math.atan2(a[0]*b[1]-a[1]*b[0],a[0]*b[0]+a[1]*b[1]);
+          const expected=(end<start?60+end-start:end-start)*Math.PI/30;
+          check(Math.abs(angle-expected)<.015,`native rotor angle ${angle.toFixed(4)} differs from ${expected.toFixed(4)} at ${start}→${end}; markers ${a.map(n=>n.toFixed(1))} / ${b.map(n=>n.toFixed(1))}`);
+        }
+      }
+    }
+    nativeRotatingDiscsChecked=true;
+  }
   let discsRotateAnticlockwise=false;
   if(variant.discLayout){
     const layout=variant.discLayout,[cx,cy]=layout.center;
@@ -161,6 +197,7 @@ export async function verifyNativeRendering(variant,doc,store,{savePreviews=true
   const result={nativeFileLoaded:true,hasDate:variant.hasDate!==false,dateIsolated:true,secondsMove:seconds,
     minuteAndHourMove:true,clockBoundaryValues:true,metricChecks:[...new Set(metricChecks)],
     ...(photographicGeometryChecked?{photographedPivotsChecked:true,printedRegisterScalesChecked:true}:{}),
+    ...(nativeRotatingDiscsChecked?{nativeRotatingDiscsChecked:true,nativeSecondsSubsecondPreview:true,nativeClockwiseRotation:true,hardwareMotionVerified:false}:{}),
     ...(discsRotateAnticlockwise?{discsRotateAnticlockwise:true,discWindowWrapChecked:true,hoursDiscRotates:!!variant.discLayout?.hours}:{}),
     ...(variant.hourFormat==='12-hour disc'?{twelveHourCycle:true,timePreferenceIndependent:true,alwaysOnTwelveHourCycle:true}:{}),
     ...((sources.includes(54)||sources.includes(95))?{negativeTemperatureSign:true,missingTemperatureFallback:true}:{}),aodLitFraction:lit/(466*466),passed:true};

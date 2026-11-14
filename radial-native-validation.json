@@ -1,0 +1,133 @@
+{
+  "theme": "radial-native",
+  "name": "MotyarStudio Radial Motion (Test)",
+  "kind": "digital",
+  "revision": 1,
+  "description": "Experimental native rotating rings with a fixed upright 12-hour time window. Rings turn clockwise. Seconds use the stock smooth-hand source; on-watch motion is not yet verified. The original anticlockwise Radial Instruments remains available.",
+  "hasDate": false,
+  "supportsSeconds": true,
+  "expectedSources": [
+    4,
+    10,
+    11,
+    14,
+    15,
+    18
+  ],
+  "hourFormat": "12-hour disc",
+  "experimental": true,
+  "clockRegions": {
+    "hours": [
+      301,
+      217,
+      40,
+      34
+    ],
+    "minutes": [
+      356,
+      217,
+      40,
+      34
+    ],
+    "seconds": [
+      412,
+      217,
+      40,
+      34
+    ]
+  },
+  "nativeRotatingDiscs": {
+    "direction": "clockwise",
+    "center": [
+      233,
+      233
+    ],
+    "hours": {
+      "source": 10,
+      "size": 228,
+      "zeroMarkerRadius": 104,
+      "periodHours": 12
+    },
+    "minutes": {
+      "source": 14,
+      "size": 360,
+      "zeroMarkerRadius": 173,
+      "periodMinutes": 60
+    },
+    "seconds": {
+      "source": 18,
+      "size": 466,
+      "zeroMarkerRadius": 222,
+      "periodSeconds": 60
+    },
+    "readout": "fixed upright native values",
+    "reverseRotationVerified": false,
+    "hardwareVerified": false,
+    "cadence": "native hand scheduling; continuous seconds requested with stock source 0x12; hour/minute cadence requires watch verification"
+  },
+  "readingLens": {
+    "style": "fixed readout with decorative glass highlights",
+    "runtimeRefraction": false,
+    "precomputedRefraction": false,
+    "bounds": [
+      288,
+      209,
+      172,
+      48
+    ]
+  },
+  "filename": "radial-native.bin",
+  "seed": "cmf-radial-native-v1",
+  "validationFile": "radial-native-validation.json",
+  "preview": "radial-native-preview.png",
+  "aodPreview": "radial-native-aod-preview.png",
+  "sha256": "7936930f6c665f4497a93878b682682926b0eec44612da09dae009bfd8c0793d",
+  "shadowCount": 0,
+  "group": "expanded",
+  "target": "CMF Watch Pro 2",
+  "resolution": [
+    466,
+    466
+  ],
+  "bytes": 415881,
+  "decodedRgbaBytes": 5817264,
+  "checks": {
+    "byteExactRoundTrip": true,
+    "headerAndResourceCrc": true,
+    "allAssetsDecoded": true,
+    "maxImageSide": 466,
+    "previewsOnBothScreens": true,
+    "nativeSources": [
+      4,
+      10,
+      11,
+      14,
+      15,
+      18
+    ],
+    "artworkSupersampling": 4
+  },
+  "browserRendering": {
+    "nativeFileLoaded": true,
+    "hasDate": false,
+    "dateIsolated": true,
+    "secondsMove": true,
+    "minuteAndHourMove": true,
+    "clockBoundaryValues": true,
+    "metricChecks": [],
+    "nativeRotatingDiscsChecked": true,
+    "nativeSecondsSubsecondPreview": true,
+    "nativeClockwiseRotation": true,
+    "hardwareMotionVerified": false,
+    "twelveHourCycle": true,
+    "timePreferenceIndependent": true,
+    "alwaysOnTwelveHourCycle": true,
+    "aodLitFraction": 0.009431008123192544,
+    "passed": true
+  },
+  "hardware": {
+    "connected": false,
+    "uploaded": false,
+    "verifiedOnWatch": false
+  }
+}

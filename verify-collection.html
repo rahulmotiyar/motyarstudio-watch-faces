@@ -1,14 +1,17 @@
 <!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Native collection checks</title>
 <style>body{font:15px/1.6 system-ui;max-width:850px;margin:45px auto;padding:24px;background:#f1f2ea;color:#253020}button{font:inherit;padding:10px 20px}li{padding:5px 0}.pass{color:#296223}.fail{color:#b02525}a{color:inherit}</style>
-<h1>Native collection checks</h1><p>Renders compiled native files. Checks time boundaries, calendar isolation, live metrics, and always-on screens. No Bluetooth connection or transfer.</p><button id="run">Verify all faces</button><p id="status" role="status">Ready.</p><ol id="results"></ol><p><a href="./">Open watch faces</a></p>
+<h1>Native collection checks</h1><p>Renders compiled native files. Checks time boundaries, calendar isolation, live metrics, and always-on screens. No Bluetooth connection or transfer.</p><button id="run" disabled>Verify all faces</button><p id="status" role="status">Ready.</p><ol id="results"></ol><p><a href="collection.html">Open collection</a></p>
 <script type="module">
 import {parseBin,assertFlashable} from './engine/editor/core/format/bin.js';
 import {decodePixels} from './engine/editor/core/format/pixels-codec.js';
 import {fromLegacy} from './engine/editor/core/document/doc.js';
 import {verifyNativeRendering} from './native-verification.js';
-document.querySelector('#run').addEventListener('click',async()=>{
+async function runVerification(){
   const button=document.querySelector('#run'),status=document.querySelector('#status'),results=document.querySelector('#results');button.disabled=true;results.replaceChildren();let passed=0,failed=0;
-  const variants=await(await fetch('variants.json',{cache:'no-store'})).json();
+  const allVariants=await(await fetch('variants.json',{cache:'no-store'})).json();
+  const family=new URLSearchParams(location.search).get('family');
+  const motyarThemes=new Set(['bai-clock','motyarstudio-dark','motyarstudio-sans','motyarstudio-sans-dark','radial-dark']);
+  const variants=allVariants.filter(v=>family==='photos'?v.theme.startsWith('photo-'):family==='native-radial'?v.theme==='radial-native':family==='motyar'?motyarThemes.has(v.theme)||v.theme==='radial-native':family==='sliding'?v.theme.startsWith('sliding-'):true);
   for(const variant of variants){
     status.textContent=`Checking ${variant.name}…`;const row=document.createElement('li');results.append(row);const cache=new Map();
     try{
@@ -20,5 +23,8 @@ document.querySelector('#run').addEventListener('click',async()=>{
     finally{for(const item of cache.values())item.bitmap.close();}
   }
   status.textContent=`Completed: ${passed} passed, ${failed} failed.`;button.disabled=false;
-});
+}
+document.querySelector('#run').addEventListener('click',runVerification);
+document.querySelector('#run').disabled=false;
+if(new URLSearchParams(location.search).has('autorun'))runVerification();
 </script></html>

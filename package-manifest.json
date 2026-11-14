@@ -7,10 +7,10 @@
     466,
     466
   ],
-  "faceCount": 25,
+  "faceCount": 26,
   "groups": {
     "Braun": 3,
-    "MotyarStudio": 5,
+    "MotyarStudio": 6,
     "Chronographs & Instruments": 6,
     "Digital & Weather": 7,
     "Photographic Dials": 4
@@ -240,6 +240,15 @@
       "sha256": "902dfbb04dfd6921747071592bc34ef86116d66e8bff8ab62aa6b1734ac4b91b",
       "preview": "photo-tissot-lelocle-preview.png",
       "aodPreview": "photo-tissot-lelocle-aod-preview.png"
+    },
+    {
+      "name": "MotyarStudio Radial Motion (Test)",
+      "theme": "radial-native",
+      "filename": "radial-native.bin",
+      "revision": 1,
+      "sha256": "7936930f6c665f4497a93878b682682926b0eec44612da09dae009bfd8c0793d",
+      "preview": "radial-native-preview.png",
+      "aodPreview": "radial-native-aod-preview.png"
     }
   ],
   "hardwareVerification": "Recipient must verify on the physical watch. No physical watch was flashed during website validation."
