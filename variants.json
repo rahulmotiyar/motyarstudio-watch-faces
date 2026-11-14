@@ -1320,7 +1320,7 @@
     "theme": "photo-submariner-diamond",
     "name": "Submariner Diamond",
     "kind": "analog",
-    "revision": 1,
+    "revision": 2,
     "description": "The supplied dial photograph with live, aligned hands and calendar.",
     "mainPivot": [
       231,
@@ -1329,9 +1329,15 @@
     "photoMainSources": [
       10,
       14,
-      15
+      18
     ],
     "photoRegisters": [],
+    "secondsHand": {
+      "source": 18,
+      "motion": "native smooth hand",
+      "stockEvidence": "Analog__287__Simple_Dial.bin, source 0x12, sub 0, max 60",
+      "hardwareVerified": false
+    },
     "hasDate": true,
     "supportsSeconds": true,
     "artworkMode": "supplied-image",
@@ -1401,10 +1407,10 @@
     "expectedSources": [
       10,
       14,
-      15,
+      18,
       23
     ],
-    "sha256": "a9c27b821cb09b220663d9d0d49f0edde43f25a25cdc5e725b36043723b5cd62",
+    "sha256": "c3d75c57c05d0368c280994ff99fe5753811d5c256a9e9d76144c2d0b17710b3",
     "shadowCount": 3,
     "group": "expanded"
   },
@@ -1412,7 +1418,7 @@
     "theme": "photo-daytona-pearl",
     "name": "Daytona Pearl Photo",
     "kind": "analog",
-    "revision": 1,
+    "revision": 2,
     "description": "The supplied dial photograph with live, aligned hands, clock-driven subdials.",
     "mainPivot": [
       232,
@@ -1421,7 +1427,7 @@
     "photoMainSources": [
       10,
       14,
-      15
+      18
     ],
     "photoRegisters": [
       {
@@ -1461,6 +1467,12 @@
         "widget": "hand"
       }
     ],
+    "secondsHand": {
+      "source": 18,
+      "motion": "native smooth hand",
+      "stockEvidence": "Analog__287__Simple_Dial.bin, source 0x12, sub 0, max 60",
+      "hardwareVerified": false
+    },
     "hasDate": false,
     "supportsSeconds": true,
     "artworkMode": "supplied-image",
@@ -1502,10 +1514,10 @@
       10,
       11,
       14,
-      15,
+      18,
       114
     ],
-    "sha256": "bb71518f9261ee488e3cb4072cebd213da158437d96dfd277eb77ad9ec1153ba",
+    "sha256": "cbf6e41110e0eb1b5bc6168d97b943783cf7156c7c5d04e86ab1f8333778452a",
     "shadowCount": 5,
     "group": "expanded"
   },
@@ -1513,7 +1525,7 @@
     "theme": "photo-chrono-ivory",
     "name": "Chronograph Ivory Photo",
     "kind": "analog",
-    "revision": 1,
+    "revision": 2,
     "description": "The supplied dial photograph with live, aligned hands, clock-driven subdials and calendar.",
     "mainPivot": [
       232,
@@ -1522,7 +1534,7 @@
     "photoMainSources": [
       10,
       14,
-      15
+      18
     ],
     "photoRegisters": [
       {
@@ -1562,6 +1574,12 @@
         "widget": "hand"
       }
     ],
+    "secondsHand": {
+      "source": 18,
+      "motion": "native smooth hand",
+      "stockEvidence": "Analog__287__Simple_Dial.bin, source 0x12, sub 0, max 60",
+      "hardwareVerified": false
+    },
     "hasDate": true,
     "supportsSeconds": true,
     "artworkMode": "supplied-image",
@@ -1652,12 +1670,12 @@
       10,
       11,
       14,
-      15,
+      18,
       23,
       24,
       114
     ],
-    "sha256": "a11ff682d7276a3ed93f9978fb84fbee140d1882061f943af9fa893455704ec2",
+    "sha256": "b7f0d54d776754f543d860b328d8ad7c43106ae2d2b089097e697cddfebdf52b",
     "shadowCount": 5,
     "group": "expanded"
   },
@@ -1665,7 +1683,7 @@
     "theme": "photo-tissot-lelocle",
     "name": "Tissot Le Locle",
     "kind": "analog",
-    "revision": 1,
+    "revision": 2,
     "description": "The supplied dial photograph with live, aligned hands.",
     "mainPivot": [
       232,
@@ -1674,9 +1692,15 @@
     "photoMainSources": [
       10,
       14,
-      15
+      18
     ],
     "photoRegisters": [],
+    "secondsHand": {
+      "source": 18,
+      "motion": "native smooth hand",
+      "stockEvidence": "Analog__287__Simple_Dial.bin, source 0x12, sub 0, max 60",
+      "hardwareVerified": false
+    },
     "hasDate": false,
     "supportsSeconds": true,
     "artworkMode": "supplied-image",
@@ -1717,9 +1741,9 @@
     "expectedSources": [
       10,
       14,
-      15
+      18
     ],
-    "sha256": "1a49dceafecfdd344332840fa026c062c9e47f2839d3aa786de876cbc8f9bb43",
+    "sha256": "902dfbb04dfd6921747071592bc34ef86116d66e8bff8ab62aa6b1734ac4b91b",
     "shadowCount": 3,
     "group": "expanded"
   }

@@ -209,8 +209,8 @@
       "name": "Submariner Diamond",
       "theme": "photo-submariner-diamond",
       "filename": "photo-submariner-diamond.bin",
-      "revision": 1,
-      "sha256": "a9c27b821cb09b220663d9d0d49f0edde43f25a25cdc5e725b36043723b5cd62",
+      "revision": 2,
+      "sha256": "c3d75c57c05d0368c280994ff99fe5753811d5c256a9e9d76144c2d0b17710b3",
       "preview": "photo-submariner-diamond-preview.png",
       "aodPreview": "photo-submariner-diamond-aod-preview.png"
     },
@@ -218,8 +218,8 @@
       "name": "Daytona Pearl Photo",
       "theme": "photo-daytona-pearl",
       "filename": "photo-daytona-pearl.bin",
-      "revision": 1,
-      "sha256": "bb71518f9261ee488e3cb4072cebd213da158437d96dfd277eb77ad9ec1153ba",
+      "revision": 2,
+      "sha256": "cbf6e41110e0eb1b5bc6168d97b943783cf7156c7c5d04e86ab1f8333778452a",
       "preview": "photo-daytona-pearl-preview.png",
       "aodPreview": "photo-daytona-pearl-aod-preview.png"
     },
@@ -227,8 +227,8 @@
       "name": "Chronograph Ivory Photo",
       "theme": "photo-chrono-ivory",
       "filename": "photo-chrono-ivory.bin",
-      "revision": 1,
-      "sha256": "a11ff682d7276a3ed93f9978fb84fbee140d1882061f943af9fa893455704ec2",
+      "revision": 2,
+      "sha256": "b7f0d54d776754f543d860b328d8ad7c43106ae2d2b089097e697cddfebdf52b",
       "preview": "photo-chrono-ivory-preview.png",
       "aodPreview": "photo-chrono-ivory-aod-preview.png"
     },
@@ -236,8 +236,8 @@
       "name": "Tissot Le Locle",
       "theme": "photo-tissot-lelocle",
       "filename": "photo-tissot-lelocle.bin",
-      "revision": 1,
-      "sha256": "1a49dceafecfdd344332840fa026c062c9e47f2839d3aa786de876cbc8f9bb43",
+      "revision": 2,
+      "sha256": "902dfbb04dfd6921747071592bc34ef86116d66e8bff8ab62aa6b1734ac4b91b",
       "preview": "photo-tissot-lelocle-preview.png",
       "aodPreview": "photo-tissot-lelocle-aod-preview.png"
     }

@@ -2,7 +2,7 @@
   "theme": "photo-chrono-ivory",
   "name": "Chronograph Ivory Photo",
   "kind": "analog",
-  "revision": 1,
+  "revision": 2,
   "description": "The supplied dial photograph with live, aligned hands, clock-driven subdials and calendar.",
   "mainPivot": [
     232,
@@ -11,7 +11,7 @@
   "photoMainSources": [
     10,
     14,
-    15
+    18
   ],
   "photoRegisters": [
     {
@@ -51,6 +51,12 @@
       "widget": "hand"
     }
   ],
+  "secondsHand": {
+    "source": 18,
+    "motion": "native smooth hand",
+    "stockEvidence": "Analog__287__Simple_Dial.bin, source 0x12, sub 0, max 60",
+    "hardwareVerified": false
+  },
   "hasDate": true,
   "supportsSeconds": true,
   "artworkMode": "supplied-image",
@@ -141,12 +147,12 @@
     10,
     11,
     14,
-    15,
+    18,
     23,
     24,
     114
   ],
-  "sha256": "a11ff682d7276a3ed93f9978fb84fbee140d1882061f943af9fa893455704ec2",
+  "sha256": "b7f0d54d776754f543d860b328d8ad7c43106ae2d2b089097e697cddfebdf52b",
   "shadowCount": 5,
   "group": "expanded",
   "target": "CMF Watch Pro 2",
@@ -166,7 +172,7 @@
       10,
       11,
       14,
-      15,
+      18,
       23,
       24,
       114

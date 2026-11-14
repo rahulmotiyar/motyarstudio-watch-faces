@@ -2,7 +2,7 @@
   "theme": "photo-tissot-lelocle",
   "name": "Tissot Le Locle",
   "kind": "analog",
-  "revision": 1,
+  "revision": 2,
   "description": "The supplied dial photograph with live, aligned hands.",
   "mainPivot": [
     232,
@@ -11,9 +11,15 @@
   "photoMainSources": [
     10,
     14,
-    15
+    18
   ],
   "photoRegisters": [],
+  "secondsHand": {
+    "source": 18,
+    "motion": "native smooth hand",
+    "stockEvidence": "Analog__287__Simple_Dial.bin, source 0x12, sub 0, max 60",
+    "hardwareVerified": false
+  },
   "hasDate": false,
   "supportsSeconds": true,
   "artworkMode": "supplied-image",
@@ -54,9 +60,9 @@
   "expectedSources": [
     10,
     14,
-    15
+    18
   ],
-  "sha256": "1a49dceafecfdd344332840fa026c062c9e47f2839d3aa786de876cbc8f9bb43",
+  "sha256": "902dfbb04dfd6921747071592bc34ef86116d66e8bff8ab62aa6b1734ac4b91b",
   "shadowCount": 3,
   "group": "expanded",
   "target": "CMF Watch Pro 2",
@@ -75,7 +81,7 @@
     "nativeSources": [
       10,
       14,
-      15
+      18
     ],
     "artworkSupersampling": 4
   },

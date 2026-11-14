@@ -2,7 +2,7 @@
   "theme": "photo-submariner-diamond",
   "name": "Submariner Diamond",
   "kind": "analog",
-  "revision": 1,
+  "revision": 2,
   "description": "The supplied dial photograph with live, aligned hands and calendar.",
   "mainPivot": [
     231,
@@ -11,9 +11,15 @@
   "photoMainSources": [
     10,
     14,
-    15
+    18
   ],
   "photoRegisters": [],
+  "secondsHand": {
+    "source": 18,
+    "motion": "native smooth hand",
+    "stockEvidence": "Analog__287__Simple_Dial.bin, source 0x12, sub 0, max 60",
+    "hardwareVerified": false
+  },
   "hasDate": true,
   "supportsSeconds": true,
   "artworkMode": "supplied-image",
@@ -83,10 +89,10 @@
   "expectedSources": [
     10,
     14,
-    15,
+    18,
     23
   ],
-  "sha256": "a9c27b821cb09b220663d9d0d49f0edde43f25a25cdc5e725b36043723b5cd62",
+  "sha256": "c3d75c57c05d0368c280994ff99fe5753811d5c256a9e9d76144c2d0b17710b3",
   "shadowCount": 3,
   "group": "expanded",
   "target": "CMF Watch Pro 2",
@@ -105,7 +111,7 @@
     "nativeSources": [
       10,
       14,
-      15,
+      18,
       23
     ],
     "artworkSupersampling": 4

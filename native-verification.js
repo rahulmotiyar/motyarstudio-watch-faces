@@ -42,6 +42,10 @@ export async function verifyNativeRendering(variant,doc,store,{savePreviews=true
   if(variant.artworkMode==='supplied-image'&&variant.photoMainSources){
     const mainScreen=doc.screens.find(s=>s.kind==='main');
     const atPivot=(layer,center)=>layer.kind==='hand'&&layer.x+layer.pivotX===center[0]&&layer.y+layer.pivotY===center[1];
+    const secondHands=main.filter(l=>l.kind==='hand'&&l.meta.source===0x12);
+    check(secondHands.length===2,'main seconds hand and shadow must use stock rotating-hand source 0x12');
+    check(secondHands.every(l=>l.meta.max===60&&l.meta.sub===0),'main seconds hand does not match stock rotation metadata');
+    check(!main.some(l=>l.kind==='hand'&&l.meta.source===0x0f),'unverified raw-seconds rotation could freeze on the watch');
     for(const source of variant.photoMainSources)
       check(main.some(l=>atPivot(l,variant.mainPivot)&&l.meta.source===source),'main hand misses the photographed pivot');
     const isolated=(layer,h=6,m=0,s=0)=>{

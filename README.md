@@ -29,13 +29,14 @@ This archive contains 25 native 466 × 466 faces, previews, always-on screens, t
 | Skagen Dark | 4 | `skagen-dark.bin` |
 | MotyarStudio Sans | 3 | `motyarstudio-sans.bin` |
 | MotyarStudio Sans Dark | 3 | `motyarstudio-sans-dark.bin` |
-| Submariner Diamond | 1 | `photo-submariner-diamond.bin` |
-| Daytona Pearl Photo | 1 | `photo-daytona-pearl.bin` |
-| Chronograph Ivory Photo | 1 | `photo-chrono-ivory.bin` |
-| Tissot Le Locle | 1 | `photo-tissot-lelocle.bin` |
+| Submariner Diamond | 2 | `photo-submariner-diamond.bin` |
+| Daytona Pearl Photo | 2 | `photo-daytona-pearl.bin` |
+| Chronograph Ivory Photo | 2 | `photo-chrono-ivory.bin` |
+| Tissot Le Locle | 2 | `photo-tissot-lelocle.bin` |
 
 ## This revision
 
+- The four photographic faces are revision 2. Their main seconds hand and its shadow now use stock rotating-hand source 0x12 (max 60, sub 0), replacing source 0x0f, which was reported to freeze on the physical watch despite moving in the Mac preview. Only these source bytes and the required checksums change in the native files; images, geometry, calendars, subdials and install identities are preserved. Reload the website and reinstall the affected face to apply the correction. The encoding matches stock files and passes five compiled-file regression checks plus four browser-rendering checks; movement on the recipient's physical watch still needs confirmation.
 - A minimal single-page installer starts with connection, then reveals the face library beside a live preview and assignment panel. Five groups organize the selection: Braun, MotyarStudio, Chronographs & Instruments, Digital & Weather, and Photographic Dials. Each group has its own section and count. The group dropdown was removed; old group URLs open the complete collection. MotiyarStudios Radial Instruments is in the MotyarStudio group. Optional face-type filters work without changing the selected preview, install destination or watch connection. The destination stays above Install. Always-on preview, reference time and help work inline. Optional preview browsing works without a watch. Earlier install.html and help.html entry links open this same application. The application has simulated-watch flow checks, including grouping, complete inventory, two consecutive uploads on one connection, late destination lists, empty storage, missing files, model/firmware checks, chooser cancellation and connection loss during transfer. These checks do not send files to a physical watch.
 - The photographic selection contains 4 faces: Submariner Diamond, Daytona Pearl Photo, Chronograph Ivory Photo, Tissot Le Locle. These backgrounds use the supplied photographs directly. Source images, crop boxes, original pivots and native register geometry are included in source/photo-dials/. Printed chronograph registers show clock readings on their original scales, rather than an interactive stopwatch. Calendar apertures use native watch values. The other photographic designs were removed from the local gallery, native collection, artwork selection and this package.
 
