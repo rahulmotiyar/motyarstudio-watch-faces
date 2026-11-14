@@ -7,7 +7,7 @@
   <title>MotyarStudio Watch Faces</title>
   <meta property="og:title" content="MotyarStudio Watch Faces">
   <meta property="og:description" content="Browse grouped CMF Watch Pro 2 faces and install them through Bluetooth in one page.">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=library-20261114">
 </head>
 <body data-connected="false">
 <div class="shell">
@@ -33,7 +33,7 @@
         </ol>
         <div class="intro-actions">
           <button class="primary" id="connect" type="button" disabled>Connect watch</button>
-          <button class="quiet" id="browse" type="button" disabled>Preview faces first</button>
+          <button class="secondary" id="browse" type="button" disabled>Preview faces first</button>
         </div>
         <p class="connect-status" id="connect-status" aria-live="polite">Loading the collection…</p>
       </div>
@@ -46,7 +46,6 @@
       <section class="library" aria-labelledby="workspace-title">
         <div class="library-head" id="library-top">
           <div><h1 id="workspace-title" tabindex="-1">Choose a face.</h1><span class="count" id="count" role="status"></span></div>
-          <label class="group-picker"><span>Group</span><select id="group-choice" aria-label="Watch face group"><option value="all">All groups</option></select></label>
         </div>
         <nav class="filters" aria-label="Filter faces">
           <button type="button" data-filter="all" aria-pressed="true">All</button>
@@ -55,7 +54,7 @@
           <button type="button" data-filter="photo" aria-pressed="false">Photographic</button>
         </nav>
         <div class="collections" id="faces" aria-label="Watch face groups"></div>
-        <div class="empty" id="empty" hidden><p>No faces match these filters.</p><button class="quiet" id="reset-filter" type="button">Show all types in this group</button></div>
+        <div class="empty" id="empty" hidden><p>No faces match these filters.</p><button class="quiet" id="reset-filter" type="button">Show all faces</button></div>
       </section>
       <aside class="preview-panel" id="preview-panel" aria-labelledby="face-title">
         <div class="preview-heading"><h2 id="face-title">Braun Round</h2><a class="quiet back-to-faces" href="#library-top">All faces ↑</a></div>
@@ -105,6 +104,6 @@
   <h3>Your connection stays here</h3><p>Browsing, filtering, previews and this help keep the same connection. Reloading or closing the tab disconnects the watch. Installation history is stored in your browser.</p>
   <p style="margin-top:24px">Native format, renderer and Bluetooth client: <a href="https://github.com/freethinkel/fmc" target="_blank" rel="noreferrer">FMC ↗</a> · <a href="LICENSE" target="_blank" rel="noopener">AGPL-3.0 ↗</a></p>
 </dialog>
-<script type="module" src="start.js"></script>
+<script type="module" src="start.js?v=library-20261114"></script>
 </body>
 </html>

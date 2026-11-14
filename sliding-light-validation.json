@@ -1,0 +1,101 @@
+{
+  "theme": "sliding-light",
+  "name": "Sliding Numbers Light",
+  "kind": "digital",
+  "revision": 2,
+  "description": "A quiet ivory hour drum, fixed vertical index and live minute indicator.",
+  "hasDate": false,
+  "supportsSeconds": false,
+  "expectedSources": [
+    4,
+    11
+  ],
+  "hourFormat": "24-hour drum",
+  "referenceImage": 2,
+  "typography": {
+    "hourSize": 116,
+    "neighborHourSize": 100,
+    "minuteSize": 39
+  },
+  "minuteScale": {
+    "values": [
+      0,
+      10,
+      20,
+      30,
+      40,
+      50,
+      60
+    ],
+    "radii": [
+      3.1,
+      1.15,
+      1.15,
+      2.2,
+      1.15,
+      1.15,
+      3.1
+    ],
+    "xStart": 47,
+    "xEnd": 419,
+    "y": 316,
+    "indicatorStep": 6.2
+  },
+  "clockRegions": {
+    "hours": [
+      0,
+      137,
+      466,
+      152
+    ],
+    "minutes": [
+      33,
+      309,
+      400,
+      81
+    ]
+  },
+  "filename": "sliding-light.bin",
+  "seed": "cmf-sliding-light-v1",
+  "validationFile": "sliding-light-validation.json",
+  "preview": "sliding-light-preview.png",
+  "aodPreview": "sliding-light-aod-preview.png",
+  "sha256": "15aa5da34bf6c162b08c32cdc2fa49098bc773712cfa17dc0d3f12da8797ee32",
+  "shadowCount": 0,
+  "group": "expanded",
+  "target": "CMF Watch Pro 2",
+  "resolution": [
+    466,
+    466
+  ],
+  "bytes": 474377,
+  "decodedRgbaBytes": 10578080,
+  "checks": {
+    "byteExactRoundTrip": true,
+    "headerAndResourceCrc": true,
+    "allAssetsDecoded": true,
+    "maxImageSide": 466,
+    "previewsOnBothScreens": true,
+    "nativeSources": [
+      4,
+      11
+    ],
+    "artworkSupersampling": 4
+  },
+  "browserRendering": {
+    "nativeFileLoaded": true,
+    "hasDate": false,
+    "dateIsolated": true,
+    "secondsMove": false,
+    "minuteAndHourMove": true,
+    "clockBoundaryValues": true,
+    "metricChecks": [],
+    "aodLitFraction": 0.009431008123192544,
+    "passed": true
+  },
+  "hardware": {
+    "connected": false,
+    "uploaded": false,
+    "verifiedOnWatch": false
+  }
+}

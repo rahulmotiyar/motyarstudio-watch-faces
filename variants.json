@@ -50,129 +50,6 @@
     "shadowTreatment": "lighter penumbra and shallower offset"
   },
   {
-    "theme": "casio",
-    "name": "Casio World",
-    "filename": "casio-world.bin",
-    "seed": "cmf-casio-world-v1",
-    "kind": "digital",
-    "description": "Circular LCD time and calendar, a live analogue clock and AMS map target for Amsterdam.",
-    "preview": "casio-preview.png",
-    "aodPreview": "casio-aod-preview.png",
-    "validationFile": "casio-validation.json",
-    "hasDate": true,
-    "dateBox": {
-      "x": 100,
-      "y": 281,
-      "w": 271,
-      "h": 24
-    },
-    "digitalLayout": {
-      "ampm": [
-        357,
-        333,
-        27,
-        14
-      ],
-      "hours": [
-        92,
-        326,
-        84,
-        77
-      ],
-      "lcdCircle": [
-        233,
-        233,
-        218
-      ],
-      "lcdBand": [
-        319,
-        411
-      ]
-    },
-    "mapTarget": {
-      "label": "AMS",
-      "name": "Amsterdam",
-      "longitude": 4.9041,
-      "latitude": 52.3676,
-      "pixel": [
-        318.07062,
-        179.77903172413792
-      ],
-      "fixed": true
-    },
-    "shadowCount": 0,
-    "sha256": "30987ad67a10df77e4a987814e18b929483d3dcf798086002983bc6282689e84",
-    "revision": 2
-  },
-  {
-    "theme": "braun-subdials",
-    "name": "Braun Subdials",
-    "filename": "braun-subdials.bin",
-    "seed": "cmf-braun-subdials-v1",
-    "kind": "subdials",
-    "description": "Ivory dial, aligned subdial spindles, a lower seconds well and a centered four-o\u2019clock date.",
-    "preview": "braun-subdials-preview.png",
-    "aodPreview": "braun-subdials-aod-preview.png",
-    "validationFile": "braun-subdials-validation.json",
-    "hasDate": true,
-    "dateBox": {
-      "x": 304,
-      "y": 262,
-      "w": 58,
-      "h": 58
-    },
-    "subdialLayout": {
-      "minute": [
-        154,
-        183
-      ],
-      "hour24": [
-        312,
-        183
-      ],
-      "second": [
-        233,
-        336
-      ],
-      "radius": 60,
-      "arrangement": "triangle"
-    },
-    "shadowCount": 5,
-    "sha256": "22816a8c19bff19f03eee4aa614203508dba28164769001fc8ee4584b505da67",
-    "revision": 4
-  },
-  {
-    "theme": "skagen",
-    "name": "Skagen Dark",
-    "filename": "skagen-dark.bin",
-    "seed": "cmf-skagen-dark-v1",
-    "kind": "subdials",
-    "description": "Larger subdials at 12, 9 and 6, original Skagen wordmark, four outer hour numerals and gold seconds.",
-    "preview": "skagen-preview.png",
-    "aodPreview": "skagen-aod-preview.png",
-    "validationFile": "skagen-validation.json",
-    "hasDate": false,
-    "subdialLayout": {
-      "minute": [
-        137,
-        233
-      ],
-      "hour24": [
-        233,
-        137
-      ],
-      "second": [
-        233,
-        329
-      ],
-      "radius": 59,
-      "arrangement": "cardinal"
-    },
-    "shadowCount": 5,
-    "sha256": "62aaeb8348124c374904563db07bba4d20330e1b0550d673312bc7e7e36a103a",
-    "revision": 4
-  },
-  {
     "theme": "bai-clock",
     "name": "MotyarStudio",
     "kind": "analog",
@@ -253,272 +130,6 @@
     "group": "expanded"
   },
   {
-    "theme": "motyarstudio-dark",
-    "name": "MotyarStudio Dark",
-    "kind": "analog",
-    "description": "Charcoal dial with mixed-weight branding, white weekdays on red and geometric date numerals on a darker recessed disc.",
-    "revision": 5,
-    "filename": "motyarstudio-dark.bin",
-    "preview": "motyarstudio-dark-preview.png",
-    "aodPreview": "motyarstudio-dark-aod-preview.png",
-    "validationFile": "motyarstudio-dark-validation.json",
-    "supportsSeconds": true,
-    "hasDate": true,
-    "dateBox": {
-      "x": 206,
-      "y": 292,
-      "w": 55,
-      "h": 75
-    },
-    "dayBox": {
-      "x": 208,
-      "y": 294,
-      "w": 50,
-      "h": 26
-    },
-    "dateNumberBox": {
-      "x": 208,
-      "y": 320,
-      "w": 50,
-      "h": 44
-    },
-    "calendarStyle": {
-      "placementCenter": [
-        233,
-        329
-      ],
-      "shadow": "inner-only",
-      "dateFont": "same geometric paths as hour numerals",
-      "dateFontScale": 0.84,
-      "datePaper": "darker recessed dial-tone",
-      "datePaperGain": 0.82,
-      "weekdayPaper": "#b92f34",
-      "weekdayInk": "#ffffff",
-      "arcSag": 1.6,
-      "separatorWidth": 1,
-      "separatorColor": "#7d827c",
-      "orange": "#ff951d"
-    },
-    "branding": {
-      "text": "MotyarStudio",
-      "fontFamily": "Helvetica Neue",
-      "motyarWeight": "Bold",
-      "studioWeight": "Light",
-      "size": 22,
-      "center": [
-        233,
-        128
-      ]
-    },
-    "secondHandTail": 32,
-    "referenceIndex": 1,
-    "minuteTrack": {
-      "divisions": 60,
-      "minorStrokes": 48,
-      "strokesBetweenHours": 4,
-      "innerRadius": 188,
-      "outerRadius": 210,
-      "labelRadius": 199
-    },
-    "seed": "cmf-motyarstudio-dark-v1",
-    "expectedSources": [
-      10,
-      14,
-      23,
-      24,
-      114
-    ],
-    "sha256": "ca8149d3a32d2c0f548539502c729fe0dcd82abb60e068ab70e00d2609de7b39",
-    "shadowCount": 3,
-    "group": "expanded"
-  },
-  {
-    "theme": "motyarstudio-sans",
-    "name": "MotyarStudio Sans",
-    "kind": "analog",
-    "description": "Ivory dial with a dotted minute track, Helvetica Neue Bold hour and date numerals, mixed-weight branding, white weekdays on red and a darker recessed date disc.",
-    "revision": 3,
-    "filename": "motyarstudio-sans.bin",
-    "preview": "motyarstudio-sans-preview.png",
-    "aodPreview": "motyarstudio-sans-aod-preview.png",
-    "validationFile": "motyarstudio-sans-validation.json",
-    "supportsSeconds": true,
-    "hasDate": true,
-    "dateBox": {
-      "x": 206,
-      "y": 292,
-      "w": 55,
-      "h": 75
-    },
-    "dayBox": {
-      "x": 208,
-      "y": 294,
-      "w": 50,
-      "h": 26
-    },
-    "dateNumberBox": {
-      "x": 208,
-      "y": 320,
-      "w": 50,
-      "h": 44
-    },
-    "calendarStyle": {
-      "placementCenter": [
-        233,
-        329
-      ],
-      "shadow": "inner-only",
-      "dateFont": "Helvetica Neue",
-      "datePaper": "darker recessed dial-tone",
-      "datePaperGain": 0.93,
-      "weekdayPaper": "#b92f34",
-      "weekdayInk": "#ffffff",
-      "arcSag": 1.6,
-      "separatorWidth": 1,
-      "separatorColor": "#7d827c",
-      "orange": "#ff951d",
-      "dateFontWeight": "Bold",
-      "dateFontSize": 30
-    },
-    "branding": {
-      "text": "MotyarStudio",
-      "fontFamily": "Helvetica Neue",
-      "motyarWeight": "Bold",
-      "studioWeight": "Light",
-      "size": 22,
-      "center": [
-        233,
-        128
-      ]
-    },
-    "secondHandTail": 32,
-    "referenceIndex": 1,
-    "minuteTrack": {
-      "divisions": 60,
-      "markerStyle": "dots",
-      "minorDots": 48,
-      "dotsBetweenHours": 4,
-      "dotRadius": 1.65,
-      "radius": 199,
-      "labelRadius": 199
-    },
-    "copyOf": "bai-clock",
-    "typography": {
-      "hourFont": "Helvetica Neue",
-      "hourWeight": "Bold",
-      "hourSize": 35,
-      "dateFont": "Helvetica Neue",
-      "dateWeight": "Bold",
-      "dateSize": 30,
-      "weekdayFont": "Helvetica Neue",
-      "weekdayWeight": "Bold"
-    },
-    "seed": "cmf-motyarstudio-sans-v1",
-    "expectedSources": [
-      10,
-      14,
-      23,
-      24,
-      114
-    ],
-    "sha256": "ceb25c49c94277d0850768dd2c2c60316d4d95d25639b7e91c9c8b41e6beef24",
-    "shadowCount": 3,
-    "group": "expanded"
-  },
-  {
-    "theme": "motyarstudio-sans-dark",
-    "name": "MotyarStudio Sans Dark",
-    "kind": "analog",
-    "description": "Charcoal dial with a dotted minute track, Helvetica Neue Bold hour and date numerals, mixed-weight branding, white weekdays on red and a darker recessed date disc.",
-    "revision": 3,
-    "filename": "motyarstudio-sans-dark.bin",
-    "preview": "motyarstudio-sans-dark-preview.png",
-    "aodPreview": "motyarstudio-sans-dark-aod-preview.png",
-    "validationFile": "motyarstudio-sans-dark-validation.json",
-    "supportsSeconds": true,
-    "hasDate": true,
-    "dateBox": {
-      "x": 206,
-      "y": 292,
-      "w": 55,
-      "h": 75
-    },
-    "dayBox": {
-      "x": 208,
-      "y": 294,
-      "w": 50,
-      "h": 26
-    },
-    "dateNumberBox": {
-      "x": 208,
-      "y": 320,
-      "w": 50,
-      "h": 44
-    },
-    "calendarStyle": {
-      "placementCenter": [
-        233,
-        329
-      ],
-      "shadow": "inner-only",
-      "dateFont": "Helvetica Neue",
-      "datePaper": "darker recessed dial-tone",
-      "datePaperGain": 0.82,
-      "weekdayPaper": "#b92f34",
-      "weekdayInk": "#ffffff",
-      "arcSag": 1.6,
-      "separatorWidth": 1,
-      "separatorColor": "#7d827c",
-      "orange": "#ff951d",
-      "dateFontWeight": "Bold",
-      "dateFontSize": 30
-    },
-    "branding": {
-      "text": "MotyarStudio",
-      "fontFamily": "Helvetica Neue",
-      "motyarWeight": "Bold",
-      "studioWeight": "Light",
-      "size": 22,
-      "center": [
-        233,
-        128
-      ]
-    },
-    "secondHandTail": 32,
-    "referenceIndex": 1,
-    "minuteTrack": {
-      "divisions": 60,
-      "markerStyle": "dots",
-      "minorDots": 48,
-      "dotsBetweenHours": 4,
-      "dotRadius": 1.65,
-      "radius": 199,
-      "labelRadius": 199
-    },
-    "copyOf": "motyarstudio-dark",
-    "typography": {
-      "hourFont": "Helvetica Neue",
-      "hourWeight": "Bold",
-      "hourSize": 35,
-      "dateFont": "Helvetica Neue",
-      "dateWeight": "Bold",
-      "dateSize": 30,
-      "weekdayFont": "Helvetica Neue",
-      "weekdayWeight": "Bold"
-    },
-    "seed": "cmf-motyarstudio-sans-dark-v1",
-    "expectedSources": [
-      10,
-      14,
-      23,
-      24,
-      114
-    ],
-    "sha256": "4a7432344307aad5a1312129003300bb1af21f45c358d8cb3c0aed0e97527e9d",
-    "shadowCount": 3,
-    "group": "expanded"
-  },
-  {
     "theme": "xeric-mint",
     "name": "Xeric Mint",
     "kind": "analog",
@@ -569,48 +180,47 @@
     "group": "expanded"
   },
   {
-    "theme": "zenith-ice",
-    "name": "Zenith Ice",
+    "theme": "seiko-ivory",
+    "name": "Seiko Ivory",
     "kind": "analog",
-    "revision": 3,
-    "description": "The supplied Zenith dial image with broader polished dark hands, luminous centers and soft moving depth, aligned to its original pivots.",
-    "hasDate": false,
-    "supportsSeconds": true,
-    "subdialLayout": {
+    "description": "Cream vintage dial, blue steel hands, serif numerals, three recessed clock subdials and a live date.",
+    "hasDate": true,
+    "dateBox": {
+      "x": 333,
+      "y": 331,
+      "w": 29,
+      "h": 31
+    },
+    "referenceIndex": 6,
+    "clockSubdialCenters": {
       "minute": [
-        132,
-        233
-      ],
-      "minute30": [
-        334,
-        233
+        143,
+        216
       ],
       "second": [
-        233,
-        345
+        323,
+        216
       ],
-      "radius": 76
+      "hour24": [
+        233,
+        330
+      ]
     },
-    "mainPivot": [
-      233,
-      233
-    ],
-    "artworkMode": "supplied-image",
-    "referenceCredit": "User-supplied Zenith dial image; details imported directly.",
-    "referenceNote": "Left register: current minute. Right register: minute modulo 30. Bottom register: current second. Clock values, not a stopwatch.",
-    "sourceImageSha256": "51be8cdbfd1912fe07e50e3114a467892b6330dceb0e38c0f1d66d64ac8ef0be",
-    "filename": "zenith-ice.bin",
-    "seed": "cmf-zenith-ice-v1",
-    "validationFile": "zenith-ice-validation.json",
-    "preview": "zenith-ice-preview.png",
-    "aodPreview": "zenith-ice-aod-preview.png",
+    "filename": "seiko-ivory.bin",
+    "seed": "cmf-seiko-ivory-v1",
+    "revision": 1,
+    "validationFile": "seiko-ivory-validation.json",
+    "preview": "seiko-ivory-preview.png",
+    "aodPreview": "seiko-ivory-aod-preview.png",
+    "supportsSeconds": true,
     "expectedSources": [
+      4,
       10,
-      11,
       14,
+      23,
       114
     ],
-    "sha256": "2ac6bc2bc22e51325c16efc895472b0e36aa144c274cda2c8e2580e3d1efc9bb",
+    "sha256": "9b2a70c2c51100a1040481a97a6b8e25b3d4e57d7eeedd99cd3d6b206b7c385f",
     "shadowCount": 5,
     "group": "expanded"
   },
@@ -664,6 +274,183 @@
     ],
     "sha256": "72569b54cdd7045023264fd8398e1b0c64ba4c014f85103fa9f051f71561f301",
     "shadowCount": 4,
+    "group": "expanded"
+  },
+  {
+    "theme": "seiko-orange",
+    "name": "Seiko Orange",
+    "kind": "analog",
+    "description": "Blue and grey sports dial, orange hands and bezel markings, three live clock subdials and a date window.",
+    "hasDate": true,
+    "dateBox": {
+      "x": 350,
+      "y": 209,
+      "w": 28,
+      "h": 31
+    },
+    "referenceIndex": 13,
+    "clockSubdialCenters": {
+      "minute": [
+        233,
+        323
+      ],
+      "second": [
+        146,
+        222
+      ],
+      "hour24": [
+        320,
+        222
+      ]
+    },
+    "filename": "seiko-orange.bin",
+    "seed": "cmf-seiko-orange-v1",
+    "revision": 1,
+    "validationFile": "seiko-orange-validation.json",
+    "preview": "seiko-orange-preview.png",
+    "aodPreview": "seiko-orange-aod-preview.png",
+    "supportsSeconds": true,
+    "expectedSources": [
+      4,
+      10,
+      14,
+      23,
+      114
+    ],
+    "sha256": "a20b56beb99e2e8997eb3f680e5e016cd316805ac6e7a99aef472faba1bc89a8",
+    "shadowCount": 5,
+    "group": "expanded"
+  },
+  {
+    "theme": "sliding-light",
+    "name": "Sliding Numbers Light",
+    "kind": "digital",
+    "revision": 2,
+    "description": "A quiet ivory hour drum, fixed vertical index and live minute indicator.",
+    "hasDate": false,
+    "supportsSeconds": false,
+    "expectedSources": [
+      4,
+      11
+    ],
+    "hourFormat": "24-hour drum",
+    "referenceImage": 2,
+    "typography": {
+      "hourSize": 116,
+      "neighborHourSize": 100,
+      "minuteSize": 39
+    },
+    "minuteScale": {
+      "values": [
+        0,
+        10,
+        20,
+        30,
+        40,
+        50,
+        60
+      ],
+      "radii": [
+        3.1,
+        1.15,
+        1.15,
+        2.2,
+        1.15,
+        1.15,
+        3.1
+      ],
+      "xStart": 47,
+      "xEnd": 419,
+      "y": 316,
+      "indicatorStep": 6.2
+    },
+    "clockRegions": {
+      "hours": [
+        0,
+        137,
+        466,
+        152
+      ],
+      "minutes": [
+        33,
+        309,
+        400,
+        81
+      ]
+    },
+    "filename": "sliding-light.bin",
+    "seed": "cmf-sliding-light-v1",
+    "validationFile": "sliding-light-validation.json",
+    "preview": "sliding-light-preview.png",
+    "aodPreview": "sliding-light-aod-preview.png",
+    "sha256": "15aa5da34bf6c162b08c32cdc2fa49098bc773712cfa17dc0d3f12da8797ee32",
+    "shadowCount": 0,
+    "group": "expanded"
+  },
+  {
+    "theme": "sliding-dark",
+    "name": "Sliding Numbers Dark",
+    "kind": "digital",
+    "revision": 2,
+    "description": "A quiet charcoal hour drum, fixed vertical index and live minute indicator.",
+    "hasDate": false,
+    "supportsSeconds": false,
+    "expectedSources": [
+      4,
+      11
+    ],
+    "hourFormat": "24-hour drum",
+    "referenceImage": 2,
+    "typography": {
+      "hourSize": 116,
+      "neighborHourSize": 100,
+      "minuteSize": 39
+    },
+    "minuteScale": {
+      "values": [
+        0,
+        10,
+        20,
+        30,
+        40,
+        50,
+        60
+      ],
+      "radii": [
+        3.1,
+        1.15,
+        1.15,
+        2.2,
+        1.15,
+        1.15,
+        3.1
+      ],
+      "xStart": 47,
+      "xEnd": 419,
+      "y": 316,
+      "indicatorStep": 6.2
+    },
+    "clockRegions": {
+      "hours": [
+        0,
+        137,
+        466,
+        152
+      ],
+      "minutes": [
+        33,
+        309,
+        400,
+        81
+      ]
+    },
+    "filename": "sliding-dark.bin",
+    "seed": "cmf-sliding-dark-v1",
+    "validationFile": "sliding-dark-validation.json",
+    "preview": "sliding-dark-preview.png",
+    "aodPreview": "sliding-dark-aod-preview.png",
+    "sha256": "97738357c872a71ea3835c120a8fe23d586549aca7a769e7bf8f86fd2d8a8abd",
+    "shadowCount": 0,
     "group": "expanded"
   },
   {
@@ -1076,6 +863,441 @@
     ],
     "sha256": "7e694d7b8db827e7040f033ab7b6ee823c859b2e513935f78fddd2d073d7b3da",
     "shadowCount": 0,
+    "group": "expanded"
+  },
+  {
+    "theme": "zenith-ice",
+    "name": "Zenith Ice",
+    "kind": "analog",
+    "revision": 3,
+    "description": "The supplied Zenith dial image with broader polished dark hands, luminous centers and soft moving depth, aligned to its original pivots.",
+    "hasDate": false,
+    "supportsSeconds": true,
+    "subdialLayout": {
+      "minute": [
+        132,
+        233
+      ],
+      "minute30": [
+        334,
+        233
+      ],
+      "second": [
+        233,
+        345
+      ],
+      "radius": 76
+    },
+    "mainPivot": [
+      233,
+      233
+    ],
+    "artworkMode": "supplied-image",
+    "referenceCredit": "User-supplied Zenith dial image; details imported directly.",
+    "referenceNote": "Left register: current minute. Right register: minute modulo 30. Bottom register: current second. Clock values, not a stopwatch.",
+    "sourceImageSha256": "51be8cdbfd1912fe07e50e3114a467892b6330dceb0e38c0f1d66d64ac8ef0be",
+    "filename": "zenith-ice.bin",
+    "seed": "cmf-zenith-ice-v1",
+    "validationFile": "zenith-ice-validation.json",
+    "preview": "zenith-ice-preview.png",
+    "aodPreview": "zenith-ice-aod-preview.png",
+    "expectedSources": [
+      10,
+      11,
+      14,
+      114
+    ],
+    "sha256": "2ac6bc2bc22e51325c16efc895472b0e36aa144c274cda2c8e2580e3d1efc9bb",
+    "shadowCount": 5,
+    "group": "expanded"
+  },
+  {
+    "theme": "motyarstudio-dark",
+    "name": "MotyarStudio Dark",
+    "kind": "analog",
+    "description": "Charcoal dial with mixed-weight branding, white weekdays on red and geometric date numerals on a darker recessed disc.",
+    "revision": 5,
+    "filename": "motyarstudio-dark.bin",
+    "preview": "motyarstudio-dark-preview.png",
+    "aodPreview": "motyarstudio-dark-aod-preview.png",
+    "validationFile": "motyarstudio-dark-validation.json",
+    "supportsSeconds": true,
+    "hasDate": true,
+    "dateBox": {
+      "x": 206,
+      "y": 292,
+      "w": 55,
+      "h": 75
+    },
+    "dayBox": {
+      "x": 208,
+      "y": 294,
+      "w": 50,
+      "h": 26
+    },
+    "dateNumberBox": {
+      "x": 208,
+      "y": 320,
+      "w": 50,
+      "h": 44
+    },
+    "calendarStyle": {
+      "placementCenter": [
+        233,
+        329
+      ],
+      "shadow": "inner-only",
+      "dateFont": "same geometric paths as hour numerals",
+      "dateFontScale": 0.84,
+      "datePaper": "darker recessed dial-tone",
+      "datePaperGain": 0.82,
+      "weekdayPaper": "#b92f34",
+      "weekdayInk": "#ffffff",
+      "arcSag": 1.6,
+      "separatorWidth": 1,
+      "separatorColor": "#7d827c",
+      "orange": "#ff951d"
+    },
+    "branding": {
+      "text": "MotyarStudio",
+      "fontFamily": "Helvetica Neue",
+      "motyarWeight": "Bold",
+      "studioWeight": "Light",
+      "size": 22,
+      "center": [
+        233,
+        128
+      ]
+    },
+    "secondHandTail": 32,
+    "referenceIndex": 1,
+    "minuteTrack": {
+      "divisions": 60,
+      "minorStrokes": 48,
+      "strokesBetweenHours": 4,
+      "innerRadius": 188,
+      "outerRadius": 210,
+      "labelRadius": 199
+    },
+    "seed": "cmf-motyarstudio-dark-v1",
+    "expectedSources": [
+      10,
+      14,
+      23,
+      24,
+      114
+    ],
+    "sha256": "ca8149d3a32d2c0f548539502c729fe0dcd82abb60e068ab70e00d2609de7b39",
+    "shadowCount": 3,
+    "group": "expanded"
+  },
+  {
+    "theme": "casio",
+    "name": "Casio World",
+    "filename": "casio-world.bin",
+    "seed": "cmf-casio-world-v1",
+    "kind": "digital",
+    "description": "Circular LCD time and calendar, a live analogue clock and AMS map target for Amsterdam.",
+    "preview": "casio-preview.png",
+    "aodPreview": "casio-aod-preview.png",
+    "validationFile": "casio-validation.json",
+    "hasDate": true,
+    "dateBox": {
+      "x": 100,
+      "y": 281,
+      "w": 271,
+      "h": 24
+    },
+    "digitalLayout": {
+      "ampm": [
+        357,
+        333,
+        27,
+        14
+      ],
+      "hours": [
+        92,
+        326,
+        84,
+        77
+      ],
+      "lcdCircle": [
+        233,
+        233,
+        218
+      ],
+      "lcdBand": [
+        319,
+        411
+      ]
+    },
+    "mapTarget": {
+      "label": "AMS",
+      "name": "Amsterdam",
+      "longitude": 4.9041,
+      "latitude": 52.3676,
+      "pixel": [
+        318.07062,
+        179.77903172413792
+      ],
+      "fixed": true
+    },
+    "shadowCount": 0,
+    "sha256": "30987ad67a10df77e4a987814e18b929483d3dcf798086002983bc6282689e84",
+    "revision": 2
+  },
+  {
+    "theme": "braun-subdials",
+    "name": "Braun Subdials",
+    "filename": "braun-subdials.bin",
+    "seed": "cmf-braun-subdials-v1",
+    "kind": "subdials",
+    "description": "Ivory dial, aligned subdial spindles, a lower seconds well and a centered four-o\u2019clock date.",
+    "preview": "braun-subdials-preview.png",
+    "aodPreview": "braun-subdials-aod-preview.png",
+    "validationFile": "braun-subdials-validation.json",
+    "hasDate": true,
+    "dateBox": {
+      "x": 304,
+      "y": 262,
+      "w": 58,
+      "h": 58
+    },
+    "subdialLayout": {
+      "minute": [
+        154,
+        183
+      ],
+      "hour24": [
+        312,
+        183
+      ],
+      "second": [
+        233,
+        336
+      ],
+      "radius": 60,
+      "arrangement": "triangle"
+    },
+    "shadowCount": 5,
+    "sha256": "22816a8c19bff19f03eee4aa614203508dba28164769001fc8ee4584b505da67",
+    "revision": 4
+  },
+  {
+    "theme": "skagen",
+    "name": "Skagen Dark",
+    "filename": "skagen-dark.bin",
+    "seed": "cmf-skagen-dark-v1",
+    "kind": "subdials",
+    "description": "Larger subdials at 12, 9 and 6, original Skagen wordmark, four outer hour numerals and gold seconds.",
+    "preview": "skagen-preview.png",
+    "aodPreview": "skagen-aod-preview.png",
+    "validationFile": "skagen-validation.json",
+    "hasDate": false,
+    "subdialLayout": {
+      "minute": [
+        137,
+        233
+      ],
+      "hour24": [
+        233,
+        137
+      ],
+      "second": [
+        233,
+        329
+      ],
+      "radius": 59,
+      "arrangement": "cardinal"
+    },
+    "shadowCount": 5,
+    "sha256": "62aaeb8348124c374904563db07bba4d20330e1b0550d673312bc7e7e36a103a",
+    "revision": 4
+  },
+  {
+    "theme": "motyarstudio-sans",
+    "name": "MotyarStudio Sans",
+    "kind": "analog",
+    "description": "Ivory dial with a dotted minute track, Helvetica Neue Bold hour and date numerals, mixed-weight branding, white weekdays on red and a darker recessed date disc.",
+    "revision": 3,
+    "filename": "motyarstudio-sans.bin",
+    "preview": "motyarstudio-sans-preview.png",
+    "aodPreview": "motyarstudio-sans-aod-preview.png",
+    "validationFile": "motyarstudio-sans-validation.json",
+    "supportsSeconds": true,
+    "hasDate": true,
+    "dateBox": {
+      "x": 206,
+      "y": 292,
+      "w": 55,
+      "h": 75
+    },
+    "dayBox": {
+      "x": 208,
+      "y": 294,
+      "w": 50,
+      "h": 26
+    },
+    "dateNumberBox": {
+      "x": 208,
+      "y": 320,
+      "w": 50,
+      "h": 44
+    },
+    "calendarStyle": {
+      "placementCenter": [
+        233,
+        329
+      ],
+      "shadow": "inner-only",
+      "dateFont": "Helvetica Neue",
+      "datePaper": "darker recessed dial-tone",
+      "datePaperGain": 0.93,
+      "weekdayPaper": "#b92f34",
+      "weekdayInk": "#ffffff",
+      "arcSag": 1.6,
+      "separatorWidth": 1,
+      "separatorColor": "#7d827c",
+      "orange": "#ff951d",
+      "dateFontWeight": "Bold",
+      "dateFontSize": 30
+    },
+    "branding": {
+      "text": "MotyarStudio",
+      "fontFamily": "Helvetica Neue",
+      "motyarWeight": "Bold",
+      "studioWeight": "Light",
+      "size": 22,
+      "center": [
+        233,
+        128
+      ]
+    },
+    "secondHandTail": 32,
+    "referenceIndex": 1,
+    "minuteTrack": {
+      "divisions": 60,
+      "markerStyle": "dots",
+      "minorDots": 48,
+      "dotsBetweenHours": 4,
+      "dotRadius": 1.65,
+      "radius": 199,
+      "labelRadius": 199
+    },
+    "copyOf": "bai-clock",
+    "typography": {
+      "hourFont": "Helvetica Neue",
+      "hourWeight": "Bold",
+      "hourSize": 35,
+      "dateFont": "Helvetica Neue",
+      "dateWeight": "Bold",
+      "dateSize": 30,
+      "weekdayFont": "Helvetica Neue",
+      "weekdayWeight": "Bold"
+    },
+    "seed": "cmf-motyarstudio-sans-v1",
+    "expectedSources": [
+      10,
+      14,
+      23,
+      24,
+      114
+    ],
+    "sha256": "ceb25c49c94277d0850768dd2c2c60316d4d95d25639b7e91c9c8b41e6beef24",
+    "shadowCount": 3,
+    "group": "expanded"
+  },
+  {
+    "theme": "motyarstudio-sans-dark",
+    "name": "MotyarStudio Sans Dark",
+    "kind": "analog",
+    "description": "Charcoal dial with a dotted minute track, Helvetica Neue Bold hour and date numerals, mixed-weight branding, white weekdays on red and a darker recessed date disc.",
+    "revision": 3,
+    "filename": "motyarstudio-sans-dark.bin",
+    "preview": "motyarstudio-sans-dark-preview.png",
+    "aodPreview": "motyarstudio-sans-dark-aod-preview.png",
+    "validationFile": "motyarstudio-sans-dark-validation.json",
+    "supportsSeconds": true,
+    "hasDate": true,
+    "dateBox": {
+      "x": 206,
+      "y": 292,
+      "w": 55,
+      "h": 75
+    },
+    "dayBox": {
+      "x": 208,
+      "y": 294,
+      "w": 50,
+      "h": 26
+    },
+    "dateNumberBox": {
+      "x": 208,
+      "y": 320,
+      "w": 50,
+      "h": 44
+    },
+    "calendarStyle": {
+      "placementCenter": [
+        233,
+        329
+      ],
+      "shadow": "inner-only",
+      "dateFont": "Helvetica Neue",
+      "datePaper": "darker recessed dial-tone",
+      "datePaperGain": 0.82,
+      "weekdayPaper": "#b92f34",
+      "weekdayInk": "#ffffff",
+      "arcSag": 1.6,
+      "separatorWidth": 1,
+      "separatorColor": "#7d827c",
+      "orange": "#ff951d",
+      "dateFontWeight": "Bold",
+      "dateFontSize": 30
+    },
+    "branding": {
+      "text": "MotyarStudio",
+      "fontFamily": "Helvetica Neue",
+      "motyarWeight": "Bold",
+      "studioWeight": "Light",
+      "size": 22,
+      "center": [
+        233,
+        128
+      ]
+    },
+    "secondHandTail": 32,
+    "referenceIndex": 1,
+    "minuteTrack": {
+      "divisions": 60,
+      "markerStyle": "dots",
+      "minorDots": 48,
+      "dotsBetweenHours": 4,
+      "dotRadius": 1.65,
+      "radius": 199,
+      "labelRadius": 199
+    },
+    "copyOf": "motyarstudio-dark",
+    "typography": {
+      "hourFont": "Helvetica Neue",
+      "hourWeight": "Bold",
+      "hourSize": 35,
+      "dateFont": "Helvetica Neue",
+      "dateWeight": "Bold",
+      "dateSize": 30,
+      "weekdayFont": "Helvetica Neue",
+      "weekdayWeight": "Bold"
+    },
+    "seed": "cmf-motyarstudio-sans-dark-v1",
+    "expectedSources": [
+      10,
+      14,
+      23,
+      24,
+      114
+    ],
+    "sha256": "4a7432344307aad5a1312129003300bb1af21f45c358d8cb3c0aed0e97527e9d",
+    "shadowCount": 3,
     "group": "expanded"
   },
   {

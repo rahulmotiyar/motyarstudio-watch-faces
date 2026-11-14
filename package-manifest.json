@@ -7,12 +7,12 @@
     466,
     466
   ],
-  "faceCount": 21,
+  "faceCount": 25,
   "groups": {
     "Braun": 3,
     "MotyarStudio": 5,
-    "Chronographs & Instruments": 4,
-    "Digital & Weather": 5,
+    "Chronographs & Instruments": 6,
+    "Digital & Weather": 7,
     "Photographic Dials": 4
   },
   "faces": [
@@ -35,33 +35,6 @@
       "aodPreview": "aod-preview.png"
     },
     {
-      "name": "Casio World",
-      "theme": "casio",
-      "filename": "casio-world.bin",
-      "revision": 2,
-      "sha256": "30987ad67a10df77e4a987814e18b929483d3dcf798086002983bc6282689e84",
-      "preview": "casio-preview.png",
-      "aodPreview": "casio-aod-preview.png"
-    },
-    {
-      "name": "Braun Subdials",
-      "theme": "braun-subdials",
-      "filename": "braun-subdials.bin",
-      "revision": 4,
-      "sha256": "22816a8c19bff19f03eee4aa614203508dba28164769001fc8ee4584b505da67",
-      "preview": "braun-subdials-preview.png",
-      "aodPreview": "braun-subdials-aod-preview.png"
-    },
-    {
-      "name": "Skagen Dark",
-      "theme": "skagen",
-      "filename": "skagen-dark.bin",
-      "revision": 4,
-      "sha256": "62aaeb8348124c374904563db07bba4d20330e1b0550d673312bc7e7e36a103a",
-      "preview": "skagen-preview.png",
-      "aodPreview": "skagen-aod-preview.png"
-    },
-    {
       "name": "MotyarStudio",
       "theme": "bai-clock",
       "filename": "motyarstudio.bin",
@@ -69,33 +42,6 @@
       "sha256": "a2ba322c3e1fc0615c622efd22afd426ccb260d67f1fe6364eb080742f34cc65",
       "preview": "motyarstudio-preview.png",
       "aodPreview": "motyarstudio-aod-preview.png"
-    },
-    {
-      "name": "MotyarStudio Dark",
-      "theme": "motyarstudio-dark",
-      "filename": "motyarstudio-dark.bin",
-      "revision": 5,
-      "sha256": "ca8149d3a32d2c0f548539502c729fe0dcd82abb60e068ab70e00d2609de7b39",
-      "preview": "motyarstudio-dark-preview.png",
-      "aodPreview": "motyarstudio-dark-aod-preview.png"
-    },
-    {
-      "name": "MotyarStudio Sans",
-      "theme": "motyarstudio-sans",
-      "filename": "motyarstudio-sans.bin",
-      "revision": 3,
-      "sha256": "ceb25c49c94277d0850768dd2c2c60316d4d95d25639b7e91c9c8b41e6beef24",
-      "preview": "motyarstudio-sans-preview.png",
-      "aodPreview": "motyarstudio-sans-aod-preview.png"
-    },
-    {
-      "name": "MotyarStudio Sans Dark",
-      "theme": "motyarstudio-sans-dark",
-      "filename": "motyarstudio-sans-dark.bin",
-      "revision": 3,
-      "sha256": "4a7432344307aad5a1312129003300bb1af21f45c358d8cb3c0aed0e97527e9d",
-      "preview": "motyarstudio-sans-dark-preview.png",
-      "aodPreview": "motyarstudio-sans-dark-aod-preview.png"
     },
     {
       "name": "Xeric Mint",
@@ -107,13 +53,13 @@
       "aodPreview": "xeric-mint-aod-preview.png"
     },
     {
-      "name": "Zenith Ice",
-      "theme": "zenith-ice",
-      "filename": "zenith-ice.bin",
-      "revision": 3,
-      "sha256": "2ac6bc2bc22e51325c16efc895472b0e36aa144c274cda2c8e2580e3d1efc9bb",
-      "preview": "zenith-ice-preview.png",
-      "aodPreview": "zenith-ice-aod-preview.png"
+      "name": "Seiko Ivory",
+      "theme": "seiko-ivory",
+      "filename": "seiko-ivory.bin",
+      "revision": 1,
+      "sha256": "9b2a70c2c51100a1040481a97a6b8e25b3d4e57d7eeedd99cd3d6b206b7c385f",
+      "preview": "seiko-ivory-preview.png",
+      "aodPreview": "seiko-ivory-aod-preview.png"
     },
     {
       "name": "Sternglas Chrono",
@@ -123,6 +69,33 @@
       "sha256": "72569b54cdd7045023264fd8398e1b0c64ba4c014f85103fa9f051f71561f301",
       "preview": "sternglas-preview.png",
       "aodPreview": "sternglas-aod-preview.png"
+    },
+    {
+      "name": "Seiko Orange",
+      "theme": "seiko-orange",
+      "filename": "seiko-orange.bin",
+      "revision": 1,
+      "sha256": "a20b56beb99e2e8997eb3f680e5e016cd316805ac6e7a99aef472faba1bc89a8",
+      "preview": "seiko-orange-preview.png",
+      "aodPreview": "seiko-orange-aod-preview.png"
+    },
+    {
+      "name": "Sliding Numbers Light",
+      "theme": "sliding-light",
+      "filename": "sliding-light.bin",
+      "revision": 2,
+      "sha256": "15aa5da34bf6c162b08c32cdc2fa49098bc773712cfa17dc0d3f12da8797ee32",
+      "preview": "sliding-light-preview.png",
+      "aodPreview": "sliding-light-aod-preview.png"
+    },
+    {
+      "name": "Sliding Numbers Dark",
+      "theme": "sliding-dark",
+      "filename": "sliding-dark.bin",
+      "revision": 2,
+      "sha256": "97738357c872a71ea3835c120a8fe23d586549aca7a769e7bf8f86fd2d8a8abd",
+      "preview": "sliding-dark-preview.png",
+      "aodPreview": "sliding-dark-aod-preview.png"
     },
     {
       "name": "MotiyarStudios Radial Instruments",
@@ -168,6 +141,69 @@
       "sha256": "7e694d7b8db827e7040f033ab7b6ee823c859b2e513935f78fddd2d073d7b3da",
       "preview": "orbit-preview.png",
       "aodPreview": "orbit-aod-preview.png"
+    },
+    {
+      "name": "Zenith Ice",
+      "theme": "zenith-ice",
+      "filename": "zenith-ice.bin",
+      "revision": 3,
+      "sha256": "2ac6bc2bc22e51325c16efc895472b0e36aa144c274cda2c8e2580e3d1efc9bb",
+      "preview": "zenith-ice-preview.png",
+      "aodPreview": "zenith-ice-aod-preview.png"
+    },
+    {
+      "name": "MotyarStudio Dark",
+      "theme": "motyarstudio-dark",
+      "filename": "motyarstudio-dark.bin",
+      "revision": 5,
+      "sha256": "ca8149d3a32d2c0f548539502c729fe0dcd82abb60e068ab70e00d2609de7b39",
+      "preview": "motyarstudio-dark-preview.png",
+      "aodPreview": "motyarstudio-dark-aod-preview.png"
+    },
+    {
+      "name": "Casio World",
+      "theme": "casio",
+      "filename": "casio-world.bin",
+      "revision": 2,
+      "sha256": "30987ad67a10df77e4a987814e18b929483d3dcf798086002983bc6282689e84",
+      "preview": "casio-preview.png",
+      "aodPreview": "casio-aod-preview.png"
+    },
+    {
+      "name": "Braun Subdials",
+      "theme": "braun-subdials",
+      "filename": "braun-subdials.bin",
+      "revision": 4,
+      "sha256": "22816a8c19bff19f03eee4aa614203508dba28164769001fc8ee4584b505da67",
+      "preview": "braun-subdials-preview.png",
+      "aodPreview": "braun-subdials-aod-preview.png"
+    },
+    {
+      "name": "Skagen Dark",
+      "theme": "skagen",
+      "filename": "skagen-dark.bin",
+      "revision": 4,
+      "sha256": "62aaeb8348124c374904563db07bba4d20330e1b0550d673312bc7e7e36a103a",
+      "preview": "skagen-preview.png",
+      "aodPreview": "skagen-aod-preview.png"
+    },
+    {
+      "name": "MotyarStudio Sans",
+      "theme": "motyarstudio-sans",
+      "filename": "motyarstudio-sans.bin",
+      "revision": 3,
+      "sha256": "ceb25c49c94277d0850768dd2c2c60316d4d95d25639b7e91c9c8b41e6beef24",
+      "preview": "motyarstudio-sans-preview.png",
+      "aodPreview": "motyarstudio-sans-aod-preview.png"
+    },
+    {
+      "name": "MotyarStudio Sans Dark",
+      "theme": "motyarstudio-sans-dark",
+      "filename": "motyarstudio-sans-dark.bin",
+      "revision": 3,
+      "sha256": "4a7432344307aad5a1312129003300bb1af21f45c358d8cb3c0aed0e97527e9d",
+      "preview": "motyarstudio-sans-dark-preview.png",
+      "aodPreview": "motyarstudio-sans-dark-aod-preview.png"
     },
     {
       "name": "Submariner Diamond",

@@ -4,27 +4,31 @@ Open the shared installer: **https://rahulmotiyar.github.io/motyarstudio-watch-f
 
 Use desktop Google Chrome or Microsoft Edge on Windows or Mac. No Python, installation or GitHub sign-in is needed. Temporarily release your watch's phone Bluetooth connection, connect the watch once, then choose a face and its install destination. Browsing, groups, previews, inline help and repeated installations keep the same connection. Reloading or closing the tab disconnects it.
 
-This archive contains 21 native 466 × 466 faces, previews, always-on screens, the installer, complete corresponding source, artwork assets and licenses.
+This archive contains 25 native 466 × 466 faces, previews, always-on screens, the installer, complete corresponding source, artwork assets and licenses.
 
 | Face | Revision | File |
 | --- | --- | --- |
 | Braun Round | 7 | `braun-round.bin` |
 | Braun Black | 7 | `braun-black.bin` |
-| Casio World | 2 | `casio-world.bin` |
-| Braun Subdials | 4 | `braun-subdials.bin` |
-| Skagen Dark | 4 | `skagen-dark.bin` |
 | MotyarStudio | 9 | `motyarstudio.bin` |
-| MotyarStudio Dark | 5 | `motyarstudio-dark.bin` |
-| MotyarStudio Sans | 3 | `motyarstudio-sans.bin` |
-| MotyarStudio Sans Dark | 3 | `motyarstudio-sans-dark.bin` |
 | Xeric Mint | 2 | `xeric-mint.bin` |
-| Zenith Ice | 3 | `zenith-ice.bin` |
+| Seiko Ivory | 1 | `seiko-ivory.bin` |
 | Sternglas Chrono | 3 | `sternglas.bin` |
+| Seiko Orange | 1 | `seiko-orange.bin` |
+| Sliding Numbers Light | 2 | `sliding-light.bin` |
+| Sliding Numbers Dark | 2 | `sliding-dark.bin` |
 | MotiyarStudios Radial Instruments | 8 | `radial-dark.bin` |
 | Ceramic Type | 3 | `typographic.bin` |
 | Weather Minimal | 2 | `weather-minimal.bin` |
 | Weather Arc | 3 | `weather-arc.bin` |
 | Orbit Minimal | 2 | `orbit.bin` |
+| Zenith Ice | 3 | `zenith-ice.bin` |
+| MotyarStudio Dark | 5 | `motyarstudio-dark.bin` |
+| Casio World | 2 | `casio-world.bin` |
+| Braun Subdials | 4 | `braun-subdials.bin` |
+| Skagen Dark | 4 | `skagen-dark.bin` |
+| MotyarStudio Sans | 3 | `motyarstudio-sans.bin` |
+| MotyarStudio Sans Dark | 3 | `motyarstudio-sans-dark.bin` |
 | Submariner Diamond | 1 | `photo-submariner-diamond.bin` |
 | Daytona Pearl Photo | 1 | `photo-daytona-pearl.bin` |
 | Chronograph Ivory Photo | 1 | `photo-chrono-ivory.bin` |
@@ -32,7 +36,7 @@ This archive contains 21 native 466 × 466 faces, previews, always-on screens, t
 
 ## This revision
 
-- A minimal single-page installer starts with connection, then reveals the face library beside a live preview and assignment panel. Five groups organize the selection: Braun, MotyarStudio, Chronographs & Instruments, Digital & Weather, and Photographic Dials. Each group has its own section and count, with a picker to isolate one collection. MotiyarStudios Radial Instruments is in the MotyarStudio group. Group and face-type filters work together without changing the selected preview, install destination or watch connection. The destination stays above Install. Always-on preview, reference time and help work inline. Optional preview browsing works without a watch. Earlier install.html and help.html entry links open this same application. The application has 35 simulated-watch flow checks, including grouping, empty filter results, two consecutive uploads on one connection, late destination lists, empty storage, missing files, model/firmware checks, chooser cancellation and connection loss during transfer. These checks do not send files to a physical watch.
+- A minimal single-page installer starts with connection, then reveals the face library beside a live preview and assignment panel. Five groups organize the selection: Braun, MotyarStudio, Chronographs & Instruments, Digital & Weather, and Photographic Dials. Each group has its own section and count. The group dropdown was removed; old group URLs open the complete collection. MotiyarStudios Radial Instruments is in the MotyarStudio group. Optional face-type filters work without changing the selected preview, install destination or watch connection. The destination stays above Install. Always-on preview, reference time and help work inline. Optional preview browsing works without a watch. Earlier install.html and help.html entry links open this same application. The application has simulated-watch flow checks, including grouping, complete inventory, two consecutive uploads on one connection, late destination lists, empty storage, missing files, model/firmware checks, chooser cancellation and connection loss during transfer. These checks do not send files to a physical watch.
 - The photographic selection contains 4 faces: Submariner Diamond, Daytona Pearl Photo, Chronograph Ivory Photo, Tissot Le Locle. These backgrounds use the supplied photographs directly. Source images, crop boxes, original pivots and native register geometry are included in source/photo-dials/. Printed chronograph registers show clock readings on their original scales, rather than an interactive stopwatch. Calendar apertures use native watch values. The other photographic designs were removed from the local gallery, native collection, artwork selection and this package.
 
 - Braun Round/Black now use the Subdials-style aperture with thinner walls, softer inset shading and lighter dial/hand shadows; the large date type is retained.
@@ -43,6 +47,7 @@ This archive contains 21 native 466 × 466 faces, previews, always-on screens, t
 - Broad, contrasting Zenith hands over the unchanged supplied dial image.
 - Sternglas hour labels are now 21px; its date and MECHA·QUARTZ/CHRONO block are raised together.
 - MotiyarStudios Radial Instruments retains its original artwork and install identity under its new name. Three native anticlockwise discs show hours, minutes and seconds through a clear lens that reveals and refracts the underlying disc boundaries. Current numerals receive precomputed convex distortion with up to 24% optical gain; surface-normal lighting supplies a fine variable rim and soft reflections, without oval strokes. The inner disc has twelve positions; the AOD uses the same 12-hour cycle. Centered two-line branding reads bold “motyar” over light “studios”. Image-picker discs still step by hour/minute/second; smooth anticlockwise disc rotation is not verified in the native format.
+- Sliding Numbers uses slightly smaller hours, larger minute numerals and a seven-dot scale: prominent hour boundaries, a medium half-hour marker, and subtle ten-minute markers. The MINUTES label and Diagonal Tracks face are removed.
 - Ceramic time type is slightly reduced to 160/104px while retaining aligned baselines and compact date spacing, with a filled cloud/sun.
 - Weather Arc groups a filled cloud/sun and temperature on the left, steps/pulse on the right, and the live battery at bottom center. Other weather layouts and Zenith are retained from the preceding refinement.
 

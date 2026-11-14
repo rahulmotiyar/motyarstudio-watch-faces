@@ -1,4 +1,4 @@
-import {mountInstaller} from './app.js';
+import {mountInstaller} from './app.js?v=library-20261114';
 
 mountInstaller().catch(error=>{
   const status=document.getElementById('connect-status');

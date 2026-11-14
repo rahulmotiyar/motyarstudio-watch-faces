@@ -1,0 +1,83 @@
+{
+  "theme": "seiko-orange",
+  "name": "Seiko Orange",
+  "kind": "analog",
+  "description": "Blue and grey sports dial, orange hands and bezel markings, three live clock subdials and a date window.",
+  "hasDate": true,
+  "dateBox": {
+    "x": 350,
+    "y": 209,
+    "w": 28,
+    "h": 31
+  },
+  "referenceIndex": 13,
+  "clockSubdialCenters": {
+    "minute": [
+      233,
+      323
+    ],
+    "second": [
+      146,
+      222
+    ],
+    "hour24": [
+      320,
+      222
+    ]
+  },
+  "filename": "seiko-orange.bin",
+  "seed": "cmf-seiko-orange-v1",
+  "revision": 1,
+  "validationFile": "seiko-orange-validation.json",
+  "preview": "seiko-orange-preview.png",
+  "aodPreview": "seiko-orange-aod-preview.png",
+  "supportsSeconds": true,
+  "expectedSources": [
+    4,
+    10,
+    14,
+    23,
+    114
+  ],
+  "sha256": "a20b56beb99e2e8997eb3f680e5e016cd316805ac6e7a99aef472faba1bc89a8",
+  "shadowCount": 5,
+  "group": "expanded",
+  "target": "CMF Watch Pro 2",
+  "resolution": [
+    466,
+    466
+  ],
+  "bytes": 218642,
+  "decodedRgbaBytes": 3813888,
+  "checks": {
+    "byteExactRoundTrip": true,
+    "headerAndResourceCrc": true,
+    "allAssetsDecoded": true,
+    "maxImageSide": 466,
+    "previewsOnBothScreens": true,
+    "nativeSources": [
+      4,
+      10,
+      14,
+      23,
+      114
+    ],
+    "artworkSupersampling": 4
+  },
+  "browserRendering": {
+    "nativeFileLoaded": true,
+    "hasDate": true,
+    "dateIsolated": true,
+    "secondsMove": true,
+    "minuteAndHourMove": true,
+    "clockBoundaryValues": true,
+    "metricChecks": [],
+    "aodLitFraction": 0.006571312788962773,
+    "passed": true
+  },
+  "hardware": {
+    "connected": false,
+    "uploaded": false,
+    "verifiedOnWatch": false
+  }
+}

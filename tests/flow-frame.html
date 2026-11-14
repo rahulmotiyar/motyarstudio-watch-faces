@@ -34,7 +34,7 @@
         </ol>
         <div class="intro-actions">
           <button class="primary" id="connect" type="button" disabled>Connect watch</button>
-          <button class="quiet" id="browse" type="button" disabled>Preview faces first</button>
+          <button class="secondary" id="browse" type="button" disabled>Preview faces first</button>
         </div>
         <p class="connect-status" id="connect-status" aria-live="polite">Loading the collection…</p>
       </div>
@@ -47,7 +47,6 @@
       <section class="library" aria-labelledby="workspace-title">
         <div class="library-head" id="library-top">
           <div><h1 id="workspace-title" tabindex="-1">Choose a face.</h1><span class="count" id="count" role="status"></span></div>
-          <label class="group-picker"><span>Group</span><select id="group-choice" aria-label="Watch face group"><option value="all">All groups</option></select></label>
         </div>
         <nav class="filters" aria-label="Filter faces">
           <button type="button" data-filter="all" aria-pressed="true">All</button>
@@ -56,7 +55,7 @@
           <button type="button" data-filter="photo" aria-pressed="false">Photographic</button>
         </nav>
         <div class="collections" id="faces" aria-label="Watch face groups"></div>
-        <div class="empty" id="empty" hidden><p>No faces match these filters.</p><button class="quiet" id="reset-filter" type="button">Show all types in this group</button></div>
+        <div class="empty" id="empty" hidden><p>No faces match these filters.</p><button class="quiet" id="reset-filter" type="button">Show all faces</button></div>
       </section>
       <aside class="preview-panel" id="preview-panel" aria-labelledby="face-title">
         <div class="preview-heading"><h2 id="face-title">Braun Round</h2><a class="quiet back-to-faces" href="#library-top">All faces ↑</a></div>

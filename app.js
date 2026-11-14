@@ -37,12 +37,14 @@ export async function mountInstaller({root=document,watchFactory=onStatus=>new I
   const variants=await response.json();
   if(!Array.isArray(variants)||!variants.length)throw Error('The face collection is empty');
   const requested=new URLSearchParams(win.location.search).get('theme');
-  const collections=groupFaces(variants),requestedGroup=new URLSearchParams(win.location.search).get('group');
-  let selectedGroup=collections.some(group=>group.id===requestedGroup)?requestedGroup:'all';
+  const collections=groupFaces(variants);
+  // Old group links never hide retained faces on a later visit.
+  const entryUrl=new URL(win.location.href);entryUrl.searchParams.delete('group');
+  win.history.replaceState(null,'',entryUrl);
   let variant=variants.find(v=>v.theme===requested)??variants[0];
   let bytes,doc,store,faceReady=false,connected=false,connecting=false,uploading=false,loading=false;
-  const initialFilter=root.body.dataset.startFilter==='photo'?'photo':'all';
-  let opened=initialFilter!=='all'||selectedGroup!=='all'||Boolean(requested&&variants.some(v=>v.theme===requested)),everConnected=false,info=null,deviceId=null,full=false,receipts=[];
+  const initialFilter='all';
+  let opened=root.body.dataset.startFilter==='photo'||Boolean(requested&&variants.some(v=>v.theme===requested)),everConnected=false,info=null,deviceId=null,full=false,receipts=[];
   let aod=false,reference=false,filter=initialFilter,selector,destroyed=false,animationId;
   const sim=defaultSim(),fixed=new Date(2026,0,29,10,8,35).getTime(),tiles=new Map(),sections=new Map();
   const isStandalone=standalone??win.self===win.top;
@@ -77,7 +79,7 @@ export async function mountInstaller({root=document,watchFactory=onStatus=>new I
     $('retry-face').hidden=faceReady||loading;
     for(const [theme,tile] of tiles){tile.disabled=busy();tile.setAttribute('aria-pressed',String(theme===variant.theme));}
     for(const button of root.querySelectorAll('[data-filter]'))button.disabled=uploading;
-    $('group-choice').disabled=uploading;$('reset-filter').disabled=uploading;
+    $('reset-filter').disabled=uploading;
   }
   function showSlots(){
     let registry={faces:[],retired:[]};try{if(deviceId)registry=readRegistry(storage,deviceId);}catch{}
@@ -116,7 +118,7 @@ export async function mountInstaller({root=document,watchFactory=onStatus=>new I
       let visible=0;
       for(const v of group.faces){
         const matchesType=filter==='all'||filter==='analog'&&v.kind!=='digital'||filter==='digital'&&v.kind==='digital'||filter==='photo'&&v.theme.startsWith('photo-');
-        const match=(selectedGroup==='all'||selectedGroup===group.id)&&matchesType;
+        const match=matchesType;
         tiles.get(v.theme).hidden=!match;if(match)visible++;
       }
       sections.get(group.id).section.hidden=visible===0;
@@ -127,13 +129,11 @@ export async function mountInstaller({root=document,watchFactory=onStatus=>new I
     for(const b of root.querySelectorAll('[data-filter]'))b.setAttribute('aria-pressed',String(b.dataset.filter===filter));
   }
   for(const group of collections){
-    const option=root.createElement('option');option.value=group.id;option.textContent=`${group.name} (${group.faces.length})`;$('group-choice').append(option);
     const section=root.createElement('section'),header=root.createElement('div'),heading=root.createElement('h2'),count=root.createElement('span'),grid=root.createElement('div');
     section.className='face-group';section.dataset.group=group.id;heading.id=`group-${group.id}`;heading.textContent=group.name;
     section.setAttribute('aria-labelledby',heading.id);header.className='group-heading';count.className='group-count';grid.className='faces';
     header.append(heading,count);section.append(header,grid);$('faces').append(section);sections.set(group.id,{section,count,grid});
   }
-  $('group-choice').value=selectedGroup;
   for(const v of variants){
     const tile=root.createElement('button'),image=root.createElement('img'),name=root.createElement('span');
     tile.type='button';tile.className='face-card';tile.dataset.theme=v.theme;tile.setAttribute('aria-pressed',String(v===variant));
@@ -143,12 +143,6 @@ export async function mountInstaller({root=document,watchFactory=onStatus=>new I
     tile.addEventListener('click',()=>switchTheme(v.theme));
   }
   for(const button of root.querySelectorAll('[data-filter]'))button.addEventListener('click',()=>{filter=button.dataset.filter;showLibrary();});
-  $('group-choice').addEventListener('change',()=>{
-    selectedGroup=$('group-choice').value;
-    const url=new URL(win.location.href);
-    if(selectedGroup==='all')url.searchParams.delete('group');else url.searchParams.set('group',selectedGroup);
-    win.history.replaceState(null,'',url);showLibrary();
-  });
   $('reset-filter').addEventListener('click',()=>{filter='all';showLibrary();});
   function openWorkspace(focus=false){opened=true;update();if(focus)$('workspace-title').focus({preventScroll:true});}
   $('browse').addEventListener('click',()=>openWorkspace(true));

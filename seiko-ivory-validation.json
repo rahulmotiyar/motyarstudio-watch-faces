@@ -1,0 +1,83 @@
+{
+  "theme": "seiko-ivory",
+  "name": "Seiko Ivory",
+  "kind": "analog",
+  "description": "Cream vintage dial, blue steel hands, serif numerals, three recessed clock subdials and a live date.",
+  "hasDate": true,
+  "dateBox": {
+    "x": 333,
+    "y": 331,
+    "w": 29,
+    "h": 31
+  },
+  "referenceIndex": 6,
+  "clockSubdialCenters": {
+    "minute": [
+      143,
+      216
+    ],
+    "second": [
+      323,
+      216
+    ],
+    "hour24": [
+      233,
+      330
+    ]
+  },
+  "filename": "seiko-ivory.bin",
+  "seed": "cmf-seiko-ivory-v1",
+  "revision": 1,
+  "validationFile": "seiko-ivory-validation.json",
+  "preview": "seiko-ivory-preview.png",
+  "aodPreview": "seiko-ivory-aod-preview.png",
+  "supportsSeconds": true,
+  "expectedSources": [
+    4,
+    10,
+    14,
+    23,
+    114
+  ],
+  "sha256": "9b2a70c2c51100a1040481a97a6b8e25b3d4e57d7eeedd99cd3d6b206b7c385f",
+  "shadowCount": 5,
+  "group": "expanded",
+  "target": "CMF Watch Pro 2",
+  "resolution": [
+    466,
+    466
+  ],
+  "bytes": 246547,
+  "decodedRgbaBytes": 3824128,
+  "checks": {
+    "byteExactRoundTrip": true,
+    "headerAndResourceCrc": true,
+    "allAssetsDecoded": true,
+    "maxImageSide": 466,
+    "previewsOnBothScreens": true,
+    "nativeSources": [
+      4,
+      10,
+      14,
+      23,
+      114
+    ],
+    "artworkSupersampling": 4
+  },
+  "browserRendering": {
+    "nativeFileLoaded": true,
+    "hasDate": true,
+    "dateIsolated": true,
+    "secondsMove": true,
+    "minuteAndHourMove": true,
+    "clockBoundaryValues": true,
+    "metricChecks": [],
+    "aodLitFraction": 0.006571312788962773,
+    "passed": true
+  },
+  "hardware": {
+    "connected": false,
+    "uploaded": false,
+    "verifiedOnWatch": false
+  }
+}
