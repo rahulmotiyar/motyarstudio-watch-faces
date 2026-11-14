@@ -3,7 +3,7 @@ import {decodePixels} from './engine/editor/core/format/pixels-codec.js';
 import {fromLegacy} from './engine/editor/core/document/doc.js';
 import {defaultSim} from './engine/editor/core/document/sources.js';
 import {renderDoc} from './engine/editor/core/render/render.js';
-import {verifyNativeRendering} from './native-verification.js';
+import {verifyNativeRendering} from './native-verification.js?v=radial-lite-window-v2';
 import {Watch,NoFreeSlotError} from './engine/device/lib/ble.js';
 import {CMD,UUID,dialId} from './engine/device/lib/ble-protocol.js';
 import {rememberDial,dialLabel} from './engine/device/lib/catalog-names.js';
@@ -47,6 +47,7 @@ export async function mountInstaller({root=document,watchFactory=onStatus=>new I
   let opened=root.body.dataset.startFilter==='photo'||Boolean(requested&&variants.some(v=>v.theme===requested)),everConnected=false,info=null,deviceId=null,full=false,receipts=[];
   let aod=false,reference=false,filter=initialFilter,selector,destroyed=false,animationId;
   const sim=defaultSim(),fixed=new Date(2026,0,29,10,8,35).getTime(),tiles=new Map(),sections=new Map();
+  const imageURL=v=>v.preview+'?v='+v.sha256.slice(0,12);
   const isStandalone=standalone??win.self===win.top;
   const allowed=win.isSecureContext&&bluetoothAvailable&&isStandalone;
   const busy=()=>connecting||uploading||loading;
@@ -137,7 +138,7 @@ export async function mountInstaller({root=document,watchFactory=onStatus=>new I
   for(const v of variants){
     const tile=root.createElement('button'),image=root.createElement('img'),name=root.createElement('span');
     tile.type='button';tile.className='face-card';tile.dataset.theme=v.theme;tile.setAttribute('aria-pressed',String(v===variant));
-    tile.setAttribute('aria-label',`Preview ${v.name}`);image.src=v.preview;image.alt='';image.width=466;image.height=466;image.loading='lazy';
+    tile.setAttribute('aria-label',`Preview ${v.name}`);image.src=imageURL(v);image.alt='';image.width=466;image.height=466;image.loading='lazy';
     name.textContent=v.name;tile.append(image,name);tiles.set(v.theme,tile);
     const group=collections.find(group=>group.faces.includes(v));sections.get(group.id).grid.append(tile);
     tile.addEventListener('click',()=>switchTheme(v.theme));
@@ -160,10 +161,10 @@ export async function mountInstaller({root=document,watchFactory=onStatus=>new I
 
   async function loadFace(){
     loading=true;faceReady=false;$('face').hidden=true;$('face-poster').hidden=false;$('verification').hidden=true;
-    $('face-title').textContent=variant.name;$('face-poster').src=variant.preview;$('face-poster').alt=`${variant.name} image preview`;
+    $('face-title').textContent=variant.name;$('face-poster').src=imageURL(variant);$('face-poster').alt=`${variant.name} image preview`;
     canvas.setAttribute('aria-label',`${variant.name} live watch-face preview`);
     $('description').textContent=variant.description??'';
-    $('download').href=variant.filename;$('download').download=variant.filename;$('image-link').href=variant.preview;
+    $('download').href=variant.filename;$('download').download=variant.filename;$('image-link').href=imageURL(variant);
     caption();showSlots();
     const cache=new Map();
     try{

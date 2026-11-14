@@ -5,7 +5,7 @@
 import {parseBin,assertFlashable} from './engine/editor/core/format/bin.js';
 import {decodePixels} from './engine/editor/core/format/pixels-codec.js';
 import {fromLegacy} from './engine/editor/core/document/doc.js';
-import {verifyNativeRendering} from './native-verification.js';
+import {verifyNativeRendering} from './native-verification.js?v=radial-lite-window-v2';
 async function runVerification(){
   const button=document.querySelector('#run'),status=document.querySelector('#status'),results=document.querySelector('#results');button.disabled=true;results.replaceChildren();let passed=0,failed=0;
   const allVariants=await(await fetch('variants.json',{cache:'no-store'})).json();

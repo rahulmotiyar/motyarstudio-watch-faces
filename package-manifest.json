@@ -254,8 +254,8 @@
       "name": "MotyarStudio Radial Lite (Test)",
       "theme": "radial-lite",
       "filename": "radial-lite.bin",
-      "revision": 1,
-      "sha256": "9ed5ddd86b3c699766ebac6614b7154b7737170e133c5a78d9c9da2de7192ac2",
+      "revision": 2,
+      "sha256": "c88378cde92352a7d335c5e5953e3eb2f1ae7ce3475c70a4ede6229603362d08",
       "preview": "radial-lite-preview.png",
       "aodPreview": "radial-lite-aod-preview.png"
     }

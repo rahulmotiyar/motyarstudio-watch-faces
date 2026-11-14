@@ -130,6 +130,16 @@ export async function verifyNativeRendering(variant,doc,store,{savePreviews=true
         }
       }
     }
+    if(variant.readingLens?.readsSecondsFromRotor){
+      check(!main.some(l=>l.kind!=='hand'&&[15,18,114].includes(l.meta?.source)),'moving seconds window still contains a separate digital counter');
+      const [x,y,w,h]=variant.readingLens.bounds,box={x,y,w,h};
+      const apertureAt=seconds=>{
+        const sim={...defaultSim(),live:false,time:new Date(2026,0,29,10,8,0).getTime()+seconds*1000};
+        renderDoc(ctx,doc,store,'main',sim);return new Uint8ClampedArray(ctx.getImageData(0,0,466,466).data);
+      };
+      check(difference(apertureAt(35),apertureAt(35.5),box)>20,'seconds window does not reveal fractional-second ring movement');
+      for(const second of [0,1,9,10,58,59])check(difference(apertureAt(second),apertureAt((second+1)%60),box)>20,'seconds window does not show successive printed numerals');
+    }
     nativeRotatingDiscsChecked=true;
   }
   let discsRotateAnticlockwise=false;
@@ -210,7 +220,7 @@ export async function verifyNativeRendering(variant,doc,store,{savePreviews=true
   const result={nativeFileLoaded:true,hasDate:variant.hasDate!==false,dateIsolated:true,secondsMove:seconds,
     minuteAndHourMove:true,clockBoundaryValues:true,metricChecks:[...new Set(metricChecks)],
     ...(photographicGeometryChecked?{photographedPivotsChecked:true,printedRegisterScalesChecked:true}:{}),
-    ...(nativeRotatingDiscsChecked?{nativeRotatingDiscsChecked:true,nativeSecondsSubsecondPreview:true,nativeClockwiseRotation:true,hardwareMotionVerified:false}:{}),
+    ...(nativeRotatingDiscsChecked?{nativeRotatingDiscsChecked:true,nativeSecondsSubsecondPreview:true,nativeClockwiseRotation:true,hardwareMotionVerified:false,...(variant.readingLens?.readsSecondsFromRotor?{movingSecondsApertureVerified:true}:{})}:{}),
     ...(discsRotateAnticlockwise?{discsRotateAnticlockwise:true,discWindowWrapChecked:true,hoursDiscRotates:!!variant.discLayout?.hours}:{}),
     ...(variant.hourFormat==='12-hour disc'?{twelveHourCycle:true,timePreferenceIndependent:true,alwaysOnTwelveHourCycle:true}:{}),
     ...((sources.includes(54)||sources.includes(95))?{negativeTemperatureSign:true,missingTemperatureFallback:true}:{}),aodLitFraction:lit/(466*466),passed:true};
