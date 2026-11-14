@@ -84,7 +84,7 @@
       "theme": "sliding-light",
       "filename": "sliding-light.bin",
       "revision": 2,
-      "sha256": "15aa5da34bf6c162b08c32cdc2fa49098bc773712cfa17dc0d3f12da8797ee32",
+      "sha256": "6ccd4f9967bcd4002c5f19bfd49dfc6624e1d63aac7966f899131afe00e37685",
       "preview": "sliding-light-preview.png",
       "aodPreview": "sliding-light-aod-preview.png"
     },
@@ -93,7 +93,7 @@
       "theme": "sliding-dark",
       "filename": "sliding-dark.bin",
       "revision": 2,
-      "sha256": "97738357c872a71ea3835c120a8fe23d586549aca7a769e7bf8f86fd2d8a8abd",
+      "sha256": "1d47028b05a908fe3ee1523afe986229654c67d0d70283f215093caf864844c8",
       "preview": "sliding-dark-preview.png",
       "aodPreview": "sliding-dark-aod-preview.png"
     },

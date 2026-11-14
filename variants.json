@@ -342,6 +342,12 @@
     },
     "minuteScale": {
       "values": [
+        -60,
+        -50,
+        -40,
+        -30,
+        -20,
+        -10,
         0,
         10,
         20,
@@ -350,19 +356,21 @@
         50,
         60
       ],
-      "radii": [
-        3.1,
-        1.15,
-        1.15,
-        2.2,
-        1.15,
-        1.15,
-        3.1
+      "majorHoursX": [
+        33,
+        233,
+        433
       ],
-      "xStart": 47,
-      "xEnd": 419,
+      "halfHoursX": [
+        133,
+        333
+      ],
+      "majorRadius": 3.1,
+      "halfHourRadius": 2.2,
+      "minorRadius": 1.15,
       "y": 316,
-      "indicatorStep": 6.2
+      "indicatorStartX": 233,
+      "indicatorStep": 3.3333333333333335
     },
     "clockRegions": {
       "hours": [
@@ -383,7 +391,7 @@
     "validationFile": "sliding-light-validation.json",
     "preview": "sliding-light-preview.png",
     "aodPreview": "sliding-light-aod-preview.png",
-    "sha256": "15aa5da34bf6c162b08c32cdc2fa49098bc773712cfa17dc0d3f12da8797ee32",
+    "sha256": "6ccd4f9967bcd4002c5f19bfd49dfc6624e1d63aac7966f899131afe00e37685",
     "shadowCount": 0,
     "group": "expanded"
   },
@@ -408,6 +416,12 @@
     },
     "minuteScale": {
       "values": [
+        -60,
+        -50,
+        -40,
+        -30,
+        -20,
+        -10,
         0,
         10,
         20,
@@ -416,19 +430,21 @@
         50,
         60
       ],
-      "radii": [
-        3.1,
-        1.15,
-        1.15,
-        2.2,
-        1.15,
-        1.15,
-        3.1
+      "majorHoursX": [
+        33,
+        233,
+        433
       ],
-      "xStart": 47,
-      "xEnd": 419,
+      "halfHoursX": [
+        133,
+        333
+      ],
+      "majorRadius": 3.1,
+      "halfHourRadius": 2.2,
+      "minorRadius": 1.15,
       "y": 316,
-      "indicatorStep": 6.2
+      "indicatorStartX": 233,
+      "indicatorStep": 3.3333333333333335
     },
     "clockRegions": {
       "hours": [
@@ -449,7 +465,7 @@
     "validationFile": "sliding-dark-validation.json",
     "preview": "sliding-dark-preview.png",
     "aodPreview": "sliding-dark-aod-preview.png",
-    "sha256": "97738357c872a71ea3835c120a8fe23d586549aca7a769e7bf8f86fd2d8a8abd",
+    "sha256": "1d47028b05a908fe3ee1523afe986229654c67d0d70283f215093caf864844c8",
     "shadowCount": 0,
     "group": "expanded"
   },
