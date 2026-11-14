@@ -1,0 +1,136 @@
+{
+  "theme": "radial-lite",
+  "name": "MotyarStudio Radial Lite (Test)",
+  "kind": "digital",
+  "revision": 1,
+  "description": "Lighter experimental trial: only the seconds ring requests continuous native rotation; hour and minute rings step once per hour/minute. Rings turn clockwise, with a fixed upright time window. Intended to reduce the pauses reported with three rotating rings; smoothness still needs a watch test.",
+  "hasDate": false,
+  "supportsSeconds": true,
+  "expectedSources": [
+    4,
+    11,
+    15,
+    18
+  ],
+  "hourFormat": "12-hour disc",
+  "experimental": true,
+  "clockRegions": {
+    "hours": [
+      301,
+      217,
+      40,
+      34
+    ],
+    "minutes": [
+      356,
+      217,
+      40,
+      34
+    ],
+    "seconds": [
+      412,
+      217,
+      40,
+      34
+    ]
+  },
+  "nativeRotatingDiscs": {
+    "direction": "clockwise",
+    "center": [
+      233,
+      233
+    ],
+    "hours": {
+      "source": 4,
+      "size": 228,
+      "zeroMarkerRadius": 104,
+      "periodHours": 12,
+      "widget": "picker",
+      "frames": 12
+    },
+    "minutes": {
+      "source": 11,
+      "size": 360,
+      "zeroMarkerRadius": 173,
+      "periodMinutes": 60,
+      "widget": "picker",
+      "frames": 60
+    },
+    "seconds": {
+      "source": 18,
+      "size": 456,
+      "zeroMarkerRadius": 222,
+      "periodSeconds": 60
+    },
+    "readout": "fixed upright native values",
+    "reverseRotationVerified": false,
+    "hardwareVerified": false,
+    "cadence": "one native smooth seconds rotor; hour/minute image pickers step once per hour/minute",
+    "continuousRotatingPixels": 207936,
+    "previousContinuousRotatingPixels": 398740,
+    "continuousRotatingAreaReduction": 0.4785173295882028
+  },
+  "readingLens": {
+    "style": "fixed readout with decorative glass highlights",
+    "runtimeRefraction": false,
+    "precomputedRefraction": false,
+    "bounds": [
+      288,
+      209,
+      172,
+      48
+    ]
+  },
+  "filename": "radial-lite.bin",
+  "seed": "cmf-radial-lite-v1",
+  "validationFile": "radial-lite-validation.json",
+  "preview": "radial-lite-preview.png",
+  "aodPreview": "radial-lite-aod-preview.png",
+  "sha256": "9ed5ddd86b3c699766ebac6614b7154b7737170e133c5a78d9c9da2de7192ac2",
+  "shadowCount": 0,
+  "group": "expanded",
+  "target": "CMF Watch Pro 2",
+  "resolution": [
+    466,
+    466
+  ],
+  "bytes": 1564208,
+  "decodedRgbaBytes": 38653280,
+  "checks": {
+    "byteExactRoundTrip": true,
+    "headerAndResourceCrc": true,
+    "allAssetsDecoded": true,
+    "maxImageSide": 466,
+    "previewsOnBothScreens": true,
+    "nativeSources": [
+      4,
+      11,
+      15,
+      18
+    ],
+    "artworkSupersampling": 4
+  },
+  "browserRendering": {
+    "nativeFileLoaded": true,
+    "hasDate": false,
+    "dateIsolated": true,
+    "secondsMove": true,
+    "minuteAndHourMove": true,
+    "clockBoundaryValues": true,
+    "metricChecks": [],
+    "nativeRotatingDiscsChecked": true,
+    "nativeSecondsSubsecondPreview": true,
+    "nativeClockwiseRotation": true,
+    "hardwareMotionVerified": false,
+    "twelveHourCycle": true,
+    "timePreferenceIndependent": true,
+    "alwaysOnTwelveHourCycle": true,
+    "aodLitFraction": 0.009431008123192544,
+    "passed": true
+  },
+  "hardware": {
+    "connected": false,
+    "uploaded": false,
+    "verifiedOnWatch": false
+  }
+}

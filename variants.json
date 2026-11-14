@@ -1752,7 +1752,7 @@
     "name": "MotyarStudio Radial Motion (Test)",
     "kind": "digital",
     "revision": 1,
-    "description": "Experimental native rotating rings with a fixed upright 12-hour time window. Rings turn clockwise. Seconds use the stock smooth-hand source; on-watch motion is not yet verified. The original anticlockwise Radial Instruments remains available.",
+    "description": "First native rotation trial with three clockwise rotating rings. The user reports pauses and jumps on the watch. Radial Lite is a separate trial with fewer continuously rotating layers.",
     "hasDate": false,
     "supportsSeconds": true,
     "expectedSources": [
@@ -1831,6 +1831,99 @@
     "preview": "radial-native-preview.png",
     "aodPreview": "radial-native-aod-preview.png",
     "sha256": "7936930f6c665f4497a93878b682682926b0eec44612da09dae009bfd8c0793d",
+    "shadowCount": 0,
+    "group": "expanded",
+    "userReportedMotion": "pauses and jumps"
+  },
+  {
+    "theme": "radial-lite",
+    "name": "MotyarStudio Radial Lite (Test)",
+    "kind": "digital",
+    "revision": 1,
+    "description": "Lighter experimental trial: only the seconds ring requests continuous native rotation; hour and minute rings step once per hour/minute. Rings turn clockwise, with a fixed upright time window. Intended to reduce the pauses reported with three rotating rings; smoothness still needs a watch test.",
+    "hasDate": false,
+    "supportsSeconds": true,
+    "expectedSources": [
+      4,
+      11,
+      15,
+      18
+    ],
+    "hourFormat": "12-hour disc",
+    "experimental": true,
+    "clockRegions": {
+      "hours": [
+        301,
+        217,
+        40,
+        34
+      ],
+      "minutes": [
+        356,
+        217,
+        40,
+        34
+      ],
+      "seconds": [
+        412,
+        217,
+        40,
+        34
+      ]
+    },
+    "nativeRotatingDiscs": {
+      "direction": "clockwise",
+      "center": [
+        233,
+        233
+      ],
+      "hours": {
+        "source": 4,
+        "size": 228,
+        "zeroMarkerRadius": 104,
+        "periodHours": 12,
+        "widget": "picker",
+        "frames": 12
+      },
+      "minutes": {
+        "source": 11,
+        "size": 360,
+        "zeroMarkerRadius": 173,
+        "periodMinutes": 60,
+        "widget": "picker",
+        "frames": 60
+      },
+      "seconds": {
+        "source": 18,
+        "size": 456,
+        "zeroMarkerRadius": 222,
+        "periodSeconds": 60
+      },
+      "readout": "fixed upright native values",
+      "reverseRotationVerified": false,
+      "hardwareVerified": false,
+      "cadence": "one native smooth seconds rotor; hour/minute image pickers step once per hour/minute",
+      "continuousRotatingPixels": 207936,
+      "previousContinuousRotatingPixels": 398740,
+      "continuousRotatingAreaReduction": 0.4785173295882028
+    },
+    "readingLens": {
+      "style": "fixed readout with decorative glass highlights",
+      "runtimeRefraction": false,
+      "precomputedRefraction": false,
+      "bounds": [
+        288,
+        209,
+        172,
+        48
+      ]
+    },
+    "filename": "radial-lite.bin",
+    "seed": "cmf-radial-lite-v1",
+    "validationFile": "radial-lite-validation.json",
+    "preview": "radial-lite-preview.png",
+    "aodPreview": "radial-lite-aod-preview.png",
+    "sha256": "9ed5ddd86b3c699766ebac6614b7154b7737170e133c5a78d9c9da2de7192ac2",
     "shadowCount": 0,
     "group": "expanded"
   }

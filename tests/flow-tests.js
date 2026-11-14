@@ -46,14 +46,14 @@ try{
   check($('slot').options.length>=3&&$('slot').value===''&&$('install').disabled,'Destinations load before Install and require an explicit choice');
   selectTarget(280);check(!$('install').disabled,'Choosing a destination enables installation');
   const motyar=root.querySelector('[data-group="motyarstudio"]');
-  check(motyar.querySelectorAll('.face-card').length===6&&motyar.querySelector('[data-theme="radial-native"]')&&motyar.querySelector('[data-theme="radial-dark"]'),'MotyarStudio keeps the original radial face beside the separate native motion trial and four calendar faces');
+  check(motyar.querySelectorAll('.face-card').length===7&&motyar.querySelector('[data-theme="radial-lite"]')&&motyar.querySelector('[data-theme="radial-native"]')&&motyar.querySelector('[data-theme="radial-dark"]'),'MotyarStudio keeps the original radial face beside the two separate native motion trials and four calendar faces');
   root.querySelector('[data-filter="digital"]').click();
   check(visibleFaces().length===all.filter(v=>v.kind==='digital').length&&visibleFaces().some(tile=>tile.dataset.theme==='radial-dark'),'Digital filtering is explicit and includes the radial face');
   check($('slot').value==='280'&&device.gatt.connected&&calls===1,'Filtering preserves the destination and watch connection');
   root.querySelector('[data-filter="all"]').click();
   check(visibleFaces().length===all.length&&[...root.querySelectorAll('.face-group')].every(group=>!group.hidden)&&win.performance.timeOrigin===origin,'All restores every grouped face without navigation');
-  for(const theme of ['black','bai-clock','radial-native','photo-daytona-pearl'])await choose(theme);
-  check(calls===1&&device.gatt.connected&&win.performance.timeOrigin===origin,'Switching four faces, including the native ring trial, preserves the connection and document');
+  for(const theme of ['black','bai-clock','radial-native','radial-lite','photo-daytona-pearl'])await choose(theme);
+  check(calls===1&&device.gatt.connected&&win.performance.timeOrigin===origin,'Switching five faces, including both native ring trials, preserves the connection and document');
   check($('slot').value==='280'&&!$('install').disabled,'Face switching preserves the selected destination');
   fake.reportedWf.push(282);fake.mergeDials();check($('slot').value==='280','A late face list preserves the selected destination');
   $('mode').click();$('reference').click();$('help-open').click();

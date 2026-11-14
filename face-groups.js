@@ -1,6 +1,6 @@
 const groups=[
   {id:'braun',name:'Braun',themes:['white','black','braun-subdials']},
-  {id:'motyarstudio',name:'MotyarStudio',themes:['bai-clock','motyarstudio-dark','motyarstudio-sans','motyarstudio-sans-dark','radial-dark','radial-native']},
+  {id:'motyarstudio',name:'MotyarStudio',themes:['bai-clock','motyarstudio-dark','motyarstudio-sans','motyarstudio-sans-dark','radial-dark','radial-native','radial-lite']},
   {id:'instruments',name:'Chronographs & Instruments',themes:['skagen','xeric-mint','zenith-ice','sternglas','seiko-ivory','seiko-orange']},
   {id:'digital-weather',name:'Digital & Weather',themes:['casio','typographic','weather-minimal','weather-arc','orbit','sliding-light','sliding-dark']},
   {id:'photographic',name:'Photographic Dials',themes:['photo-submariner-diamond','photo-daytona-pearl','photo-chrono-ivory','photo-tissot-lelocle']},

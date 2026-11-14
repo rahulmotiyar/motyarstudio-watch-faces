@@ -7,8 +7,8 @@ import {verifyNativeRendering} from './native-verification.js';
 import {Watch,NoFreeSlotError} from './engine/device/lib/ble.js';
 import {CMD,UUID,dialId} from './engine/device/lib/ble-protocol.js';
 import {rememberDial,dialLabel} from './engine/device/lib/catalog-names.js';
-import {faceSeed,readRegistry,rememberInstallation,receiptFaces,faceChoices,createFaceSelector} from './face-slots.js?v=radial-native-v1';
-import {groupFaces} from './face-groups.js?v=radial-native-v1';
+import {faceSeed,readRegistry,rememberInstallation,receiptFaces,faceChoices,createFaceSelector} from './face-slots.js?v=radial-lite-v1';
+import {groupFaces} from './face-groups.js?v=radial-lite-v1';
 
 // Inspection reads identity and battery without synchronizing the watch's clock.
 class InspectWatch extends Watch {

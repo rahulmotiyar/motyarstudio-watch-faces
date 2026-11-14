@@ -125,6 +125,14 @@
     "aodLitFraction": 0.009431008123192544,
     "passed": true
   },
+  "userReports": [
+    {
+      "date": "2026-11-14",
+      "motion": "pauses and jumps",
+      "firmware": "not supplied",
+      "independentlyObserved": false
+    }
+  ],
   "hardware": {
     "connected": false,
     "uploaded": false,

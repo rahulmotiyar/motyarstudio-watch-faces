@@ -7,10 +7,10 @@
     466,
     466
   ],
-  "faceCount": 26,
+  "faceCount": 27,
   "groups": {
     "Braun": 3,
-    "MotyarStudio": 6,
+    "MotyarStudio": 7,
     "Chronographs & Instruments": 6,
     "Digital & Weather": 7,
     "Photographic Dials": 4
@@ -249,6 +249,15 @@
       "sha256": "7936930f6c665f4497a93878b682682926b0eec44612da09dae009bfd8c0793d",
       "preview": "radial-native-preview.png",
       "aodPreview": "radial-native-aod-preview.png"
+    },
+    {
+      "name": "MotyarStudio Radial Lite (Test)",
+      "theme": "radial-lite",
+      "filename": "radial-lite.bin",
+      "revision": 1,
+      "sha256": "9ed5ddd86b3c699766ebac6614b7154b7737170e133c5a78d9c9da2de7192ac2",
+      "preview": "radial-lite-preview.png",
+      "aodPreview": "radial-lite-aod-preview.png"
     }
   ],
   "hardwareVerification": "Recipient must verify on the physical watch. No physical watch was flashed during website validation."

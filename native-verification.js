@@ -92,7 +92,20 @@ export async function verifyNativeRendering(variant,doc,store,{savePreviews=true
       return new Uint8ClampedArray(ctx.getImageData(0,0,466,466).data);
     };
     for(const name of ['hours','minutes','seconds']){
-      const spec=layout[name],layer=main.find(l=>l.kind==='hand'&&l.meta.source===spec.source);
+      const spec=layout[name];
+      if(spec.widget==='picker'){
+        const layer=main.find(l=>l.kind==='image'&&l.meta.source===spec.source&&l.frames.length===spec.frames&&doc.images.get(l.frames[0])?.w===spec.size);
+        check(layer,name+' lightweight ring lacks its native image picker');
+        if(name==='hours'){
+          check(difference(isolated(layer),isolated(layer,1))>25,'hour picker does not advance');
+          check(difference(isolated(layer),isolated(layer,0,30))===0,'hour picker unexpectedly changes within an hour');
+        }else{
+          check(difference(isolated(layer),isolated(layer,0,1))>25,'minute picker does not advance');
+          check(difference(isolated(layer),isolated(layer,0,0,30))===0,'minute picker unexpectedly changes within a minute');
+        }
+        continue;
+      }
+      const layer=main.find(l=>l.kind==='hand'&&l.meta.source===spec.source);
       check(layer&&layer.frames.length===1,name+' disc is not a single native rotating image');
       check(layer.meta.w===0&&layer.meta.h===0&&layer.meta.max===60,'full-size rotor has background rather than stock hand metadata');
       check(layer.x+layer.pivotX===233&&layer.y+layer.pivotY===233,name+' rotor pivot is off-center');

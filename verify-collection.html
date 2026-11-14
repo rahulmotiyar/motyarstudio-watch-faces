@@ -11,7 +11,7 @@ async function runVerification(){
   const allVariants=await(await fetch('variants.json',{cache:'no-store'})).json();
   const family=new URLSearchParams(location.search).get('family');
   const motyarThemes=new Set(['bai-clock','motyarstudio-dark','motyarstudio-sans','motyarstudio-sans-dark','radial-dark']);
-  const variants=allVariants.filter(v=>family==='photos'?v.theme.startsWith('photo-'):family==='native-radial'?v.theme==='radial-native':family==='motyar'?motyarThemes.has(v.theme)||v.theme==='radial-native':family==='sliding'?v.theme.startsWith('sliding-'):true);
+  const variants=allVariants.filter(v=>family==='photos'?v.theme.startsWith('photo-'):family==='radial-lite'?v.theme==='radial-lite':family==='native-radial'?v.theme==='radial-native':family==='motyar'?motyarThemes.has(v.theme)||['radial-native','radial-lite'].includes(v.theme):family==='sliding'?v.theme.startsWith('sliding-'):true);
   for(const variant of variants){
     status.textContent=`Checking ${variant.name}…`;const row=document.createElement('li');results.append(row);const cache=new Map();
     try{

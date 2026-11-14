@@ -1,4 +1,4 @@
-import {mountInstaller} from './app.js?v=radial-native-v1';
+import {mountInstaller} from './app.js?v=radial-lite-v1';
 
 mountInstaller().catch(error=>{
   const status=document.getElementById('connect-status');
